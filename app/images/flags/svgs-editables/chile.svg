@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="480px" height="320px" viewBox="0 0 480 320" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>chile</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="chile" sketch:type="MSLayerGroup">
+            <path d="M480,320 L0,320 L0,0 L480,0 L480,320 Z" id="Shape" fill="#D52B1E" sketch:type="MSShapeGroup"></path>
+            <path d="M160,160 L480,160 L480,0 L0,0 L160,160 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M160,160 L0,160 L0,0 L160,0 L160,160 Z" id="Shape" fill="#0039A6" sketch:type="MSShapeGroup"></path>
+            <polygon id="Star-1" fill="#FFFFFF" sketch:type="MSShapeGroup" points="80 105 50.6107374 120.45085 56.2235871 87.7254249 32.4471742 64.5491503 65.3053687 59.7745751 80 30 94.6946313 59.7745751 127.552826 64.5491503 103.776413 87.7254249 109.389263 120.45085 "></polygon>
+        </g>
+    </g>
+</svg>

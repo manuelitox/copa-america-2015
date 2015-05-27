@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="500px" height="334px" viewBox="0 0 500 334" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>venezuela</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="venezuela" sketch:type="MSLayerGroup">
+            <path d="M0,0 L499.99498,0 L499.99498,333.329987 L0,333.329987 L0,0 Z" id="Shape" fill="#CF142B" sketch:type="MSShapeGroup"></path>
+            <path d="M0,0 L499.99498,0 L499.99498,222.219991 L0,222.219991 L0,0 Z" id="Shape" fill="#00247D" sketch:type="MSShapeGroup"></path>
+            <path d="M0,0 L499.99498,0 L499.99498,111.109996 L0,111.109996 L0,0 Z" id="Shape" fill="#FFCC00" sketch:type="MSShapeGroup"></path>
+            <polygon id="Star-1" fill="#FFFFFF" sketch:type="MSShapeGroup" points="156.5 208.25 148.564899 212.421729 150.080369 203.585865 143.660737 197.328271 152.53245 196.039135 156.5 188 160.46755 196.039135 169.339263 197.328271 162.919631 203.585865 164.435101 212.421729 "></polygon>
+            <polygon id="Star-1-Copy" fill="#FFFFFF" sketch:type="MSShapeGroup" points="173.5 176.25 165.564899 180.421729 167.080369 171.585865 160.660737 165.328271 169.53245 164.039135 173.5 156 177.46755 164.039135 186.339263 165.328271 179.919631 171.585865 181.435101 180.421729 "></polygon>
+            <polygon id="Star-1-Copy-2" fill="#FFFFFF" sketch:type="MSShapeGroup" points="200.5 154.25 192.564899 158.421729 194.080369 149.585865 187.660737 143.328271 196.53245 142.039135 200.5 134 204.46755 142.039135 213.339263 143.328271 206.919631 149.585865 208.435101 158.421729 "></polygon>
+            <polygon id="Star-1-Copy-3" fill="#FFFFFF" sketch:type="MSShapeGroup" points="232.5 141.25 224.564899 145.421729 226.080369 136.585865 219.660737 130.328271 228.53245 129.039135 232.5 121 236.46755 129.039135 245.339263 130.328271 238.919631 136.585865 240.435101 145.421729 "></polygon>
+            <polygon id="Star-1-Copy-4" fill="#FFFFFF" sketch:type="MSShapeGroup" points="267.5 141.25 259.564899 145.421729 261.080369 136.585865 254.660737 130.328271 263.53245 129.039135 267.5 121 271.46755 129.039135 280.339263 130.328271 273.919631 136.585865 275.435101 145.421729 "></polygon>
+            <polygon id="Star-1-Copy-5" fill="#FFFFFF" sketch:type="MSShapeGroup" points="300.5 154.25 292.564899 158.421729 294.080369 149.585865 287.660737 143.328271 296.53245 142.039135 300.5 134 304.46755 142.039135 313.339263 143.328271 306.919631 149.585865 308.435101 158.421729 "></polygon>
+            <polygon id="Star-1-Copy-6" fill="#FFFFFF" sketch:type="MSShapeGroup" points="326.5 176.25 318.564899 180.421729 320.080369 171.585865 313.660737 165.328271 322.53245 164.039135 326.5 156 330.46755 164.039135 339.339263 165.328271 332.919631 171.585865 334.435101 180.421729 "></polygon>
+            <polygon id="Star-1-Copy-7" fill="#FFFFFF" sketch:type="MSShapeGroup" points="344.5 208.25 336.564899 212.421729 338.080369 203.585865 331.660737 197.328271 340.53245 196.039135 344.5 188 348.46755 196.039135 357.339263 197.328271 350.919631 203.585865 352.435101 212.421729 "></polygon>
+        </g>
+    </g>
+</svg>
