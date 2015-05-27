@@ -1,15 +1,12 @@
-var React, Teams;
+var React, Matches;
 
 React = require('react');
-Teams = require('./teams/base.jsx');
-
-var foo = { "codename": "VEN", "country": "venezuela" };
-
+Matches = require('./matches/base.jsx');
 
 APP = React.createClass({		
 	render: function() {
 		return (
-			<Teams team={ foo } />	
+			<Matches />	
 		);
 	}
 });

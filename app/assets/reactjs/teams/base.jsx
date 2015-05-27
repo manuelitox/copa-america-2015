@@ -1,7 +1,7 @@
 var React, Flag;
 
 React = require('react');
-Flag 	= require('./flag.jsx')
+Flag 	= require('./flag.jsx');
 
 module.exports = React.createClass({ 
  	render: function() {
