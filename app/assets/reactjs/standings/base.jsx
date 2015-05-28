@@ -1,8 +1,8 @@
-var React, GenerateGroup, Teams;
+var React, TableContent, TableHeader;
 
-React = require('react');
-GenerateGroup = require('./generate-group.jsx');
-Teams = require('../teams/base.jsx');
+React        = require('react');
+TableContent = require('./table-cnt.jsx');
+TableHeader  = require('./table-header.jsx');
 
 module.exports = React.createClass({ 
 	loadResolutionsFromServer: function() {
@@ -28,21 +28,21 @@ module.exports = React.createClass({
 		this.loadResolutionsFromServer();
 	},	
  	render: function() {		
- 		var groupNodes, group, groupId = this.state.group;
+ 		var tableCntNode, tableCnt, groupId = this.state.group;
 		function byGroup(value) {
 			return value.belong_to == groupId ? value : "";
 		}
-		group = this.state.data.filter(byGroup);
-		groupNodes = group.map(function (group, index) {
+		tableCnt = this.state.data.filter(byGroup);
+		tableCntNode = tableCnt.map(function (group, index) {
 			return (
-				<GenerateGroup key={ index } teams={ group.teams } />
+				<TableContent key={ index } teams={ group.teams } />
 			);
 		});
 		return (
-			<div>
-				<p>tabla</p>
-				{ groupNodes }
-			</div>
+			<table>
+				<TableHeader />
+				{ tableCntNode }
+			</table>
 		);
 	}
 });

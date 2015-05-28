@@ -8,13 +8,24 @@ module.exports = React.createClass({
  		var teamsNode;		
 		teamsNode = this.props.teams.map(function (team, index) {
 			return (
-				<Teams key={ index } team={ team } />
+				<tr key={ index }>
+					<td>
+						<Teams team={ team } />
+					</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>					
+				</tr>
 			);
 		});
 		return (
-			<div>
+			<tbody>
 				{ teamsNode }
-			</div>
+			</tbody>	
 		);
 	}
 });
