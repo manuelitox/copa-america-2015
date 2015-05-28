@@ -16,12 +16,11 @@ APP = React.createClass({displayName: "APP",
 		this.setState({ group: e.target.dataset.group });
 	},
 	render: function() {
-		console.log(this.state.group);
 		return (
 			React.createElement("div", null, 
 				React.createElement(Header, {group:  this.setGroup}), 
 				React.createElement(CalendarGroups, {group:  this.state.group, url: "data/calendar.json"}), 
-				React.createElement(Standings, {url: "data/teams.json"})
+				React.createElement(Standings, {group:  this.state.group, url: "data/teams.json"})
 			)
 		);
 	}
@@ -194,14 +193,13 @@ module.exports = React.createClass({displayName: "exports",
 	getInitialState: function() {
 		return { 
 			data: [],
-			group: "A"
 		};
 	},
 	componentDidMount: function() {
 		this.loadResolutionsFromServer();
 	},	
  	render: function() {		
- 		var tableCntNode, tableCnt, groupId = this.state.group;
+ 		var tableCntNode, tableCnt, groupId = this.props.group;
 		function byGroup(value) {
 			return value.belong_to == groupId ? value : "";
 		}

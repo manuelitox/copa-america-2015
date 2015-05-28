@@ -15,12 +15,11 @@ APP = React.createClass({
 		this.setState({ group: e.target.dataset.group });
 	},
 	render: function() {
-		console.log(this.state.group);
 		return (
 			<div>
 				<Header group={ this.setGroup } />
 				<CalendarGroups group={ this.state.group } url="data/calendar.json" />
-				<Standings url="data/teams.json" />
+				<Standings group={ this.state.group } url="data/teams.json" />
 			</div>
 		);
 	}

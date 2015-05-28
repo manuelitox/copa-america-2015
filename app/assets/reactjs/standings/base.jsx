@@ -21,14 +21,13 @@ module.exports = React.createClass({
 	getInitialState: function() {
 		return { 
 			data: [],
-			group: "A"
 		};
 	},
 	componentDidMount: function() {
 		this.loadResolutionsFromServer();
 	},	
  	render: function() {		
- 		var tableCntNode, tableCnt, groupId = this.state.group;
+ 		var tableCntNode, tableCnt, groupId = this.props.group;
 		function byGroup(value) {
 			return value.belong_to == groupId ? value : "";
 		}
