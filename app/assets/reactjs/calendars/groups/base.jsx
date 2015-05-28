@@ -1,9 +1,7 @@
-var React, Matches, ByDay;
+var React, ByDay;
 
 React = require('react');
 ByDay = require('./by-day.jsx');
-
-Matches = require('../../matches/base.jsx');
 
 module.exports = React.createClass({ 
 	loadResolutionsFromServer: function() {
@@ -21,19 +19,22 @@ module.exports = React.createClass({
 	},
 	getInitialState: function() {
 		return { 
-			data: [],	
+			data: [],
+			group: "A",
 		};
 	},
 	componentDidMount: function() {
 		this.loadResolutionsFromServer();
 	},	
  	render: function() {
- 		var daysNode;
+ 		var daysNode, group = this.state.group;
  		daysNode = this.state.data.map(function (daysMatches, index) {
 			return (
 				<div key={ index } className="by-day">
 					<header className="matches--header">{ daysMatches.date }</header>
-					<ByDay day={ daysMatches } />			
+					<ByDay
+						group={ group } 
+						day={ daysMatches } />			
 				</div>	
 			);
 		}); 		

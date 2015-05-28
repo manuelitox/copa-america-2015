@@ -17,12 +17,10 @@ React.render(
 	document.body
 );
 },{"./calendars/groups/base.jsx":2,"react":163}],2:[function(require,module,exports){
-var React, Matches, ByDay;
+var React, ByDay;
 
 React = require('react');
 ByDay = require('./by-day.jsx');
-
-Matches = require('../../matches/base.jsx');
 
 module.exports = React.createClass({displayName: "exports", 
 	loadResolutionsFromServer: function() {
@@ -40,19 +38,22 @@ module.exports = React.createClass({displayName: "exports",
 	},
 	getInitialState: function() {
 		return { 
-			data: [],	
+			data: [],
+			group: "A",
 		};
 	},
 	componentDidMount: function() {
 		this.loadResolutionsFromServer();
 	},	
  	render: function() {
- 		var daysNode;
- 		daysNode = this.state.data.map(function (day, index) {
+ 		var daysNode, group = this.state.group;
+ 		daysNode = this.state.data.map(function (daysMatches, index) {
 			return (
 				React.createElement("div", {key:  index, className: "by-day"}, 
-					React.createElement("header", {className: "matches--header"},  day.date), 
-					React.createElement(ByDay, {day:  day })			
+					React.createElement("header", {className: "matches--header"},  daysMatches.date), 
+					React.createElement(ByDay, {
+						group:  group, 
+						day:  daysMatches })			
 				)	
 			);
 		}); 		
@@ -63,7 +64,7 @@ module.exports = React.createClass({displayName: "exports",
 		);
 	}
 });
-},{"../../matches/base.jsx":4,"./by-day.jsx":3,"react":163}],3:[function(require,module,exports){
+},{"./by-day.jsx":3,"react":163}],3:[function(require,module,exports){
 var React, Matches;
 
 React = require('react');
@@ -71,11 +72,13 @@ Matches = require('../../matches/base.jsx');
 
 module.exports = React.createClass({displayName: "exports", 
  	render: function() {	
- 		var matchesNode;
+ 		var matchesNode, group = this.props.group;
  		matchesNode = this.props.day.matches.map(function (match, index) {
- 		 	return (
-			 	React.createElement(Matches, {key:  index, match:  match })
- 			);
+ 			if (match.belong_to == group) {
+	 		 	return (
+				 	React.createElement(Matches, {key:  index, match:  match })
+	 			);
+ 			}
  		});
 		return (
 			React.createElement("div", {className: "matches--cnt"}, 

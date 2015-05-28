@@ -5,11 +5,13 @@ Matches = require('../../matches/base.jsx');
 
 module.exports = React.createClass({ 
  	render: function() {	
- 		var matchesNode;
+ 		var matchesNode, group = this.props.group;
  		matchesNode = this.props.day.matches.map(function (match, index) {
- 		 	return (
-			 	<Matches key={ index } match={ match } />
- 			);
+ 			if (match.belong_to == group) {
+	 		 	return (
+				 	<Matches key={ index } match={ match } />
+	 			);
+ 			}
  		});
 		return (
 			<div className="matches--cnt">
