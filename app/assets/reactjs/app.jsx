@@ -19,7 +19,7 @@ APP = React.createClass({
 		return (
 			<div>
 				<Header group={ this.setGroup } />
-				<CalendarGroups url="data/calendar.json" />
+				<CalendarGroups group={ this.state.group } url="data/calendar.json" />
 				<Standings url="data/teams.json" />
 			</div>
 		);

@@ -20,7 +20,7 @@ APP = React.createClass({displayName: "APP",
 		return (
 			React.createElement("div", null, 
 				React.createElement(Header, {group:  this.setGroup}), 
-				React.createElement(CalendarGroups, {url: "data/calendar.json"}), 
+				React.createElement(CalendarGroups, {group:  this.state.group, url: "data/calendar.json"}), 
 				React.createElement(Standings, {url: "data/teams.json"})
 			)
 		);
@@ -53,15 +53,14 @@ module.exports = React.createClass({displayName: "exports",
 	},
 	getInitialState: function() {
 		return { 
-			data: [],
-			group: "A",
+			data: []
 		};
 	},
 	componentDidMount: function() {
 		this.loadResolutionsFromServer();
 	},	
  	render: function() {
- 		var daysNode, group = this.state.group;
+ 		var daysNode, group = this.props.group;
  		daysNode = this.state.data.map(function (daysMatches, index) {
 			return (
 				React.createElement("div", {key:  index, className: "by-day"}, 

@@ -19,15 +19,14 @@ module.exports = React.createClass({
 	},
 	getInitialState: function() {
 		return { 
-			data: [],
-			group: "A",
+			data: []
 		};
 	},
 	componentDidMount: function() {
 		this.loadResolutionsFromServer();
 	},	
  	render: function() {
- 		var daysNode, group = this.state.group;
+ 		var daysNode, group = this.props.group;
  		daysNode = this.state.data.map(function (daysMatches, index) {
 			return (
 				<div key={ index } className="by-day">
