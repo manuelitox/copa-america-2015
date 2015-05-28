@@ -1,63 +1,65 @@
 [
-	"flags-path" : "images/flags/",
 	{
-	"country"    : "Chile",
-	"codename"	 : "chi",
-	"belong_to"  : "A"
+		"belong_to": "A", 
+		"teams": [
+			{
+				"country": "chile",
+				"codename": "CHI"
+			},
+			{
+				"country": "mexico",
+				"codename": "MEX"
+			},			
+			{
+				"country": "ecuador",
+				"codename": "ECU"
+			},			
+			{
+				"country": "bolivia",
+				"codename": "BOL"
+			}
+		]	
 	},
 	{
-	"country"    : "Mexico",
-	"codename"	 : "mex",	
-	"belong_to"  : "A"
+		"belong_to": "B", 
+		"teams": [
+			{
+				"country": "argentina",
+				"codename": "ARG"
+			},
+			{
+				"country": "uruguay",
+				"codename": "URU"
+			},			
+			{
+				"country": "paraguay",
+				"codename": "PAR"
+			},			
+			{
+				"country": "jamaica",
+				"codename": "JAM"
+			}
+		]	
 	},
 	{
-	"country"    : "Ecuador",
-	"codename"	 : "ecu",	
-	"belong_to"  : "A"
-	},
-	{
-	"country"    : "Bolivia",
-	"codename"	 : "bol",	
-	"belong_to"  : "A"
-	},
-	{
-	"country"    : "Argentina",
-	"codename"	 : "arg",	
-	"belong_to"  : "B"
-	},
-	{
-	"country"    : "Uruguay",
-	"codename"	 : "uru",	
-	"belong_to"  : "B"
-	},
-	{
-	"country"    : "Paraguay",
-	"codename"	 : "par",	
-	"belong_to"  : "B"
-	},
-	{
-	"country"    : "Jamaica",
-	"codename"	 : "jam",	
-	"belong_to"  : "B"
-	},
-	{
-	"country"    : "Brasil",
-	"codename"	 : "bra",	
-	"belong_to"  : "C"
-	},
-	{
-	"country"    : "Colombia",
-	"codename"	 : "col",	
-	"belong_to"  : "C"
-	},
-	{
-	"country"    : "Peru",
-	"codename"	 : "per",	
-	"belong_to"  : "C"
-	}	
-	{
-	"country"    : "Venezuela",
-	"codename"	 : "ven",	
-	"belong_to"  : "C"
+		"belong_to": "C", 
+		"teams": [
+			{
+				"country": "brasil",
+				"codename": "BRA"
+			},
+			{
+				"country": "colombia",
+				"codename": "COL"
+			},			
+			{
+				"country": "peru",
+				"codename": "PER"
+			},			
+			{
+				"country": "venezuela",
+				"codename": "VEN"
+			}
+		]	
 	}
 ]

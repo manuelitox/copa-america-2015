@@ -1,12 +1,16 @@
-var React, CalendarGroups; 
+var React, CalendarGroups, Standings;
 
-React = require('react');
+React          = require('react');
 CalendarGroups = require('./calendars/groups/base.jsx');
+Standings      = require('./standings/base.jsx');
 
 APP = React.createClass({	
 	render: function() {
 		return (
-			<CalendarGroups url="data/calendar.json" />
+			<div>
+				<CalendarGroups url="data/calendar.json" />
+				<Standings url="data/teams.json" />
+			</div>
 		);
 	}
 });
