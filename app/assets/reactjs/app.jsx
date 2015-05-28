@@ -1,12 +1,12 @@
-var React, Matches;
+var React, CalendarGroups; 
 
 React = require('react');
-Matches = require('./matches/base.jsx');
+CalendarGroups = require('./calendars/groups/base.jsx');
 
-APP = React.createClass({		
+APP = React.createClass({	
 	render: function() {
 		return (
-			<Matches />	
+			<CalendarGroups url="data/calendar.json" />
 		);
 	}
 });
