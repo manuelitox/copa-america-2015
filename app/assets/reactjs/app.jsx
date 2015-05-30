@@ -19,10 +19,9 @@ APP = React.createClass({
 		this.setState({ section: e.target.dataset.section });
 	},
 	render: function() {
-		console.log(this.state.section);
 		return (
 			<div>
-				<Header section={ this.setSection } group={ this.setGroup } />
+				<Header currentSection={ this.state.section } section={ this.setSection } group={ this.setGroup } />
 				{ this.state.section == 'calendar' ? <CalendarGroups group={ this.state.group } url="data/calendar.json" /> : null }
 				{ this.state.section == 'groups' ? <Standings group={ this.state.group } url="data/teams.json" /> : null }
 				{ this.state.section == 'final' ? "fase final" : null }

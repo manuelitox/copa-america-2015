@@ -9,7 +9,7 @@ module.exports = React.createClass({
  		return (
  			<header>
  				<SelectGroup group={ this.props.group } />
- 				<Navigation section={ this.props.section } />
+ 				<Navigation currentSection={ this.props.currentSection } section={ this.props.section } />
  			</header>
  		);
 	}

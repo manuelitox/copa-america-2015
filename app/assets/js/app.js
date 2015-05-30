@@ -20,10 +20,9 @@ APP = React.createClass({displayName: "APP",
 		this.setState({ section: e.target.dataset.section });
 	},
 	render: function() {
-		console.log(this.state.section);
 		return (
 			React.createElement("div", null, 
-				React.createElement(Header, {section:  this.setSection, group:  this.setGroup}), 
+				React.createElement(Header, {currentSection:  this.state.section, section:  this.setSection, group:  this.setGroup}), 
 				 this.state.section == 'calendar' ? React.createElement(CalendarGroups, {group:  this.state.group, url: "data/calendar.json"}) : null, 
 				 this.state.section == 'groups' ? React.createElement(Standings, {group:  this.state.group, url: "data/teams.json"}) : null, 
 				 this.state.section == 'final' ? "fase final" : null
@@ -118,7 +117,7 @@ module.exports = React.createClass({displayName: "exports",
  		return (
  			React.createElement("header", null, 
  				React.createElement(SelectGroup, {group:  this.props.group}), 
- 				React.createElement(Navigation, {section:  this.props.section})
+ 				React.createElement(Navigation, {currentSection:  this.props.currentSection, section:  this.props.section})
  			)
  		);
 	}
@@ -130,12 +129,19 @@ React = require('react');
 
 module.exports = React.createClass({displayName: "exports",
  	render: function() {
+ 		console.log(this.props.currentSection);
  		return (
  			React.createElement("nav", null, 
  				React.createElement("ul", null, 
- 					React.createElement("li", null, React.createElement("button", {"data-section": "calendar", onClick:  this.props.section}, "Calendario")), 
- 					React.createElement("li", null, React.createElement("button", {"data-section": "groups", onClick:  this.props.section}, "Grupos")), 
-					React.createElement("li", null, React.createElement("button", {"data-section": "final", onClick:  this.props.section}, "Fase final"))					
+					React.createElement("li", {className:  this.props.currentSection == 'calendar' ? 'actived' : null}, 
+						React.createElement("button", {"data-section": "calendar", onClick:  this.props.section}, "Calendario")
+					), 
+					React.createElement("li", {className:  this.props.currentSection == 'groups' ? 'actived' : null}, 
+						React.createElement("button", {"data-section": "groups", onClick:  this.props.section}, "Grupos")
+					), 
+					React.createElement("li", {className:  this.props.currentSection == 'final' ? 'actived' : null}, 
+						React.createElement("button", {"data-section": "final", onClick:  this.props.section}, "Fase final")
+					)
  				)
  			)
  		);
