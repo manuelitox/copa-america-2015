@@ -7,9 +7,9 @@ module.exports = React.createClass({
  		return (
  			<nav>
  				<ul>
- 					<li><button>Calendario</button></li>
- 					<li><button>Grupos</button></li>
-					<li><button>Fase final</button></li> 					
+					<li><button data-section="calendar" onClick={ this.props.section }>Calendario</button></li>
+					<li><button data-section="groups" onClick={ this.props.section }>Grupos</button></li>
+					<li><button data-section="final" onClick={ this.props.section }>Fase final</button></li> 					
  				</ul>
  			</nav>
  		);

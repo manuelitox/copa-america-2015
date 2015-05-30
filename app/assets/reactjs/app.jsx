@@ -8,18 +8,24 @@ Header 				 = require('./header/base.jsx');
 APP = React.createClass({	
 	getInitialState: function() {
 		return { 
-			group: "A"
+			group: "A",
+			section: "calendar"
 		};
 	}, 	
 	setGroup: function(e) {
 		this.setState({ group: e.target.dataset.group });
 	},
+	setSection: function(e) {
+		this.setState({ section: e.target.dataset.section });
+	},
 	render: function() {
+		console.log(this.state.section);
 		return (
 			<div>
-				<Header group={ this.setGroup } />
-				<CalendarGroups group={ this.state.group } url="data/calendar.json" />
-				<Standings group={ this.state.group } url="data/teams.json" />
+				<Header section={ this.setSection } group={ this.setGroup } />
+				{ this.state.section == 'calendar' ? <CalendarGroups group={ this.state.group } url="data/calendar.json" /> : null }
+				{ this.state.section == 'groups' ? <Standings group={ this.state.group } url="data/teams.json" /> : null }
+				{ this.state.section == 'final' ? "fase final" : null }
 			</div>
 		);
 	}
