@@ -128,18 +128,21 @@ var React, SelectGroup;
 React = require('react');
 
 module.exports = React.createClass({displayName: "exports",
+	isActive: function(element) {
+		return this.props.currentSection == element ? 'actived' : null;
+	},
  	render: function() {
  		console.log(this.props.currentSection);
  		return (
  			React.createElement("nav", null, 
  				React.createElement("ul", null, 
-					React.createElement("li", {className:  this.props.currentSection == 'calendar' ? 'actived' : null}, 
+					React.createElement("li", {className:  this.isActive('calendar') }, 
 						React.createElement("button", {"data-section": "calendar", onClick:  this.props.section}, "Calendario")
 					), 
-					React.createElement("li", {className:  this.props.currentSection == 'groups' ? 'actived' : null}, 
+					React.createElement("li", {className:  this.isActive('groups') }, 
 						React.createElement("button", {"data-section": "groups", onClick:  this.props.section}, "Grupos")
 					), 
-					React.createElement("li", {className:  this.props.currentSection == 'final' ? 'actived' : null}, 
+					React.createElement("li", {className:  this.isActive('final') }, 
 						React.createElement("button", {"data-section": "final", onClick:  this.props.section}, "Fase final")
 					)
  				)
