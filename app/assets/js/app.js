@@ -22,7 +22,9 @@ APP = React.createClass({displayName: "APP",
 	render: function() {
 		return (
 			React.createElement("div", null, 
-				React.createElement(Header, {currentSection:  this.state.section, section:  this.setSection, group:  this.setGroup}), 
+				React.createElement(Header, {
+					currentSection:  this.state.section, section:  this.setSection, 
+					currentGroup:  this.state.group, group:  this.setGroup}), 
 				 this.state.section == 'calendar' ? React.createElement(CalendarGroups, {group:  this.state.group, url: "data/calendar.json"}) : null, 
 				 this.state.section == 'groups' ? React.createElement(Standings, {group:  this.state.group, url: "data/teams.json"}) : null, 
 				 this.state.section == 'final' ? "fase final" : null
@@ -116,7 +118,7 @@ module.exports = React.createClass({displayName: "exports",
  	render: function() {
  		return (
  			React.createElement("header", null, 
- 				React.createElement(SelectGroup, {group:  this.props.group}), 
+ 				React.createElement(SelectGroup, {currentGroup:  this.props.currentGroup, group:  this.props.group}), 
  				React.createElement(Navigation, {currentSection:  this.props.currentSection, section:  this.props.section})
  			)
  		);
@@ -159,6 +161,7 @@ module.exports = React.createClass({displayName: "exports",
  	render: function() {
  		return (
  			React.createElement("div", {className: "select-group"}, 
+ 				React.createElement("h2", null, "Grupo Actual: ",  this.props.currentGroup), 
  				React.createElement("button", {"data-group": "A", onClick:  this.props.group}, "Grupo A"), 
  				React.createElement("button", {"data-group": "B", onClick:  this.props.group}, "Grupo B"), 
  				React.createElement("button", {"data-group": "C", onClick:  this.props.group}, "Grupo C")
