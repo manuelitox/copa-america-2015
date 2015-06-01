@@ -7,11 +7,11 @@ module.exports = React.createClass({
  	render: function() {
 		return (
 			<div className="match">
-				<form className="match--form">
+				<form className="match--form" name={ this.props.match.id }>
 					<fieldset>
-						<FormTeam team={ this.props.match.local } />
+						<FormTeam belongMatch={ this.props.match.id } team={ this.props.match.local } type="local" />
 						<span className="match--time">{ this.props.match.time }</span>
-						<FormTeam team={ this.props.match.visitante } />
+						<FormTeam belongMatch={ this.props.match.id } team={ this.props.match.visitante } type="visitante" />
 					</fieldset>
 				</form>
 			</div>
