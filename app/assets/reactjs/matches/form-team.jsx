@@ -11,7 +11,8 @@ module.exports = React.createClass({
 				<input 
 					type="number" 
 					id={ this.props.team.codename } 
-					name={ this.props.team.codename } 
+					name={ this.props.team.codename }
+					value="0"
 					onChange={ this.props.goals } />
 			</div>
 		);
