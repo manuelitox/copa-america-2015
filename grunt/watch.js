@@ -23,7 +23,7 @@ module.exports = {
 		tasks: ['postcss']
 	},
 	react: {
-		files: 'app/assets/reactjs/*.jsx',
+		files: 'app/assets/reactjs/**/*.jsx',
 		tasks: ['browserify']
 	}	
 };
