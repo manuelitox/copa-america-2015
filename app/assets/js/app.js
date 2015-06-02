@@ -170,7 +170,7 @@ module.exports = React.createClass({displayName: "exports",
 	}
 });
 },{"react":169}],7:[function(require,module,exports){
-var React, FormTeam, Results;
+var React, FormTeam;
 
 React = require('react');
 FormTeam = require('./form-team.jsx');
@@ -252,8 +252,7 @@ module.exports = React.createClass({displayName: "exports",
 	componentDidMount: function() {
 		this.loadResolutionsFromServer();
 	},	
- 	render: function() {
- 		console.log(this.getTeams(this.state.data));	
+ 	render: function() {	
  		var tableCntNode, tableCnt, groupId = this.props.group;
 		function byGroup(value) {
 			return value.belong_to == groupId ? value : "";
