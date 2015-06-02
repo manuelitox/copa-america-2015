@@ -1,11 +1,9 @@
-var React, Teams, Results;
+var React, Teams;
 
 React = require('react');
 Teams = require('../teams/base.jsx');
-Results = require('../matches/results.jsx');
 
 module.exports = React.createClass({ 
-	mixins: [Results],
  	render: function() {
  		var teamsNode; 
 		teamsNode = this.props.teams.map(function (team, index) {

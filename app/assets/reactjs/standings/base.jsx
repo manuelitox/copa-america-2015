@@ -26,7 +26,8 @@ module.exports = React.createClass({
 	componentDidMount: function() {
 		this.loadResolutionsFromServer();
 	},	
- 	render: function() {		
+ 	render: function() {
+ 		console.log(this.getTeams(this.state.data));	
  		var tableCntNode, tableCnt, groupId = this.props.group;
 		function byGroup(value) {
 			return value.belong_to == groupId ? value : "";

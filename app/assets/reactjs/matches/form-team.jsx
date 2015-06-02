@@ -12,7 +12,7 @@ module.exports = React.createClass({
 					type="number" 
 					id={ this.props.team.codename } 
 					name={ this.props.team.codename }
-					value="0"
+					placeholder="0"
 					onChange={ this.props.goals } />
 			</div>
 		);

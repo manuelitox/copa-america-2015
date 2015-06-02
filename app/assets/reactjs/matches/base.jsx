@@ -1,14 +1,11 @@
-var React, FormTeam, Results;
+var React, FormTeam;
 
 React = require('react');
 FormTeam = require('./form-team.jsx');
-Results = require('./results.jsx');
 
 module.exports = React.createClass({ 
-	mixins: [Results],	
 	getInitialState: function() {
 		return {
-			match: this.props.match,
 			goalsLocal: 0,
 			goalsVisitor: 0
 		};
@@ -20,13 +17,6 @@ module.exports = React.createClass({
 		this.setState({ goalsVisitor: e.target.value });
 	},
  	render: function() {
-		console.log(
-			this.data(
-				this.state.match, 
-				this.state.goalsLocal, 
-				this.state.goalsVisitor
-			)
-		);
 		return (
 			<div className="match">
 				<form className="match--form" name={ this.props.match.id }>
