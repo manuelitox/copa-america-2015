@@ -7,7 +7,7 @@
 				"time": "20:30",
 				"belong_to": "A",
 				"local": { "codename": "CHI", "country": "chile" },
-				"visitante": { "codename": "ECU", "country": "ecuador" }	
+				"visitor": { "codename": "ECU", "country": "ecuador" }	
 			}
 		]	
 	},
@@ -19,7 +19,7 @@
 				"time": "20:30",
 				"belong_to": "A",				
 				"local": { "codename": "MEX", "country": "mexico" },
-				"visitante": { "codename": "BOL", "country": "bolivia" }			
+				"visitor": { "codename": "BOL", "country": "bolivia" }			
 			}	
 		]	
 	},
@@ -31,14 +31,14 @@
 				"time": "16:00",
 				"belong_to": "B",				
 				"local": { "codename": "URU", "country": "uruguay" },
-				"visitante": { "codename": "JAM", "country": "jamaica" }			
+				"visitor": { "codename": "JAM", "country": "jamaica" }			
 			},
 			{
 				"id": 4,				
 				"time": "18:30",
 				"belong_to": "B",				
 				"local": { "codename": "ARG", "country": "argentina" },
-				"visitante": { "codename": "PAR", "country": "paraguay" }			
+				"visitor": { "codename": "PAR", "country": "paraguay" }			
 			}				
 		]	
 	},	
@@ -50,14 +50,14 @@
 				"time": "16:00",
 				"belong_to": "C",				
 				"local": { "codename": "COL", "country": "colombia" },
-				"visitante": { "codename": "VEN", "country": "venezuela" }			
+				"visitor": { "codename": "VEN", "country": "venezuela" }			
 			},
 			{
 				"id": 6,				
 				"time": "18:30",
 				"belong_to": "C",
 				"local": { "codename": "BRA", "country": "brasil" },
-				"visitante": { "codename": "PER", "country": "peru" }			
+				"visitor": { "codename": "PER", "country": "peru" }			
 			}				
 		]	
 	},
@@ -69,14 +69,14 @@
 				"time": "18:00",
 				"belong_to": "A",				
 				"local": { "codename": "ECU", "country": "ecuador" },
-				"visitante": { "codename": "BOL", "country": "bolivia" }			
+				"visitor": { "codename": "BOL", "country": "bolivia" }			
 			},
 			{
 				"id": 8,
 				"time": "20:30",
 				"belong_to": "A",
 				"local": { "codename": "CHI", "country": "chile" },
-				"visitante": { "codename": "mexico", "country": "mexico" }			
+				"visitor": { "codename": "mexico", "country": "mexico" }			
 			}				
 		]	
 	},
@@ -88,14 +88,14 @@
 				"time": "18:00",
 				"belong_to": "B",
 				"local": { "codename": "PAR", "country": "paraguay" },
-				"visitante": { "codename": "JAM", "country": "jamaica" }			
+				"visitor": { "codename": "JAM", "country": "jamaica" }			
 			},
 			{
 				"id": 10,
 				"time": "20:30",
 				"belong_to": "B",				
 				"local": { "codename": "ARG", "country": "argentina" },
-				"visitante": { "codename": "URU", "country": "uruguay" }			
+				"visitor": { "codename": "URU", "country": "uruguay" }			
 			}				
 		]	
 	},
@@ -107,7 +107,7 @@
 				"time": "21:00",
 				"belong_to": "C",
 				"local": { "codename": "BRA", "country": "brasil" },
-				"visitante": { "codename": "COL", "country": "colombia" }			
+				"visitor": { "codename": "COL", "country": "colombia" }			
 			}		
 		]	
 	},
@@ -119,7 +119,7 @@
 				"time": "20:30",
 				"belong_to": "C",
 				"local": { "codename": "PER", "country": "peru" },
-				"visitante": { "codename": "VEN", "country": "venezuela" }			
+				"visitor": { "codename": "VEN", "country": "venezuela" }			
 			}		
 		]	
 	},
@@ -131,14 +131,14 @@
 				"time": "18:00",
 				"belong_to": "A",
 				"local": { "codename": "MEX", "country": "mexico" },
-				"visitante": { "codename": "ECU", "country": "ecuador" }			
+				"visitor": { "codename": "ECU", "country": "ecuador" }			
 			},
 			{
 				"id": 14,
 				"time": "20:30",
 				"belong_to": "A",
 				"local": { "codename": "CHI", "country": "chile" },
-				"visitante": { "codename": "BOL", "country": "bolivia" }			
+				"visitor": { "codename": "BOL", "country": "bolivia" }			
 			}				
 		]	
 	},
@@ -150,14 +150,14 @@
 				"time": "16:00",
 				"belong_to": "B",
 				"local": { "codename": "URU", "country": "uruguay" },
-				"visitante": { "codename": "PAR", "country": "paraguay" }			
+				"visitor": { "codename": "PAR", "country": "paraguay" }			
 			},
 			{
 				"id": 16,
 				"time": "18:30",
 				"belong_to": "B",
 				"local": { "codename": "ARG", "country": "argentina" },
-				"visitante": { "codename": "JAM", "country": "jamaica" }			
+				"visitor": { "codename": "JAM", "country": "jamaica" }			
 			}				
 		]	
 	},
@@ -169,14 +169,14 @@
 				"time": "16:00",
 				"belong_to": "C",
 				"local": { "codename": "COL", "country": "colombia" },
-				"visitante": { "codename": "PER", "country": "peru" }			
+				"visitor": { "codename": "PER", "country": "peru" }			
 			},
 			{
 				"id": 18,
 				"time": "18:30",
 				"belong_to": "C",
 				"local": { "codename": "BRA", "country": "brasil" },
-				"visitante": { "codename": "venezuela", "country": "venezuela" }			
+				"visitor": { "codename": "venezuela", "country": "venezuela" }			
 			}				
 		]	
 	}
