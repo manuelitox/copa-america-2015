@@ -19,12 +19,12 @@ module.exports = React.createClass({
 	},
  	render: function() {
 		Results.get(
- 			this.props.match.id, 
- 			this.props.match.local.codename,
- 			this.props.match.visitor.codename, 
- 			this.state.goalsLocal, 
- 			this.state.goalsVisitor
- 		); 		 		
+ 	 		this.props.match.id, 
+ 	 		this.props.match.local.codename,
+ 	 		this.props.match.visitor.codename, 
+ 	 		this.state.goalsLocal, 
+ 	 		this.state.goalsVisitor
+ 	 	); 		 		
 		return (
 			<div className="match">
 				<form className="match--form" name={ this.props.match.id }>

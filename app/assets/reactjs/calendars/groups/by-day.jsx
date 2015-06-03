@@ -3,7 +3,7 @@ var React, Matches;
 React = require('react');
 Matches = require('../../matches/base.jsx');
 
-module.exports = React.createClass({ 
+module.exports = React.createClass({
  	render: function() {	
  		var matchesNode, group = this.props.group;
  		matchesNode = this.props.day.matches.map(function (match, index) {

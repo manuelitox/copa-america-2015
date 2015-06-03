@@ -35,10 +35,10 @@ module.exports = {
 	// @goalsVisitor visitor goals	
 	//
 	model: function(id, local, visitor, goalsLocal, goalsVisitor) {
-		this.match.id = id;
-		this.match.local = local;
-		this.match.visitor = visitor;
-		this.match.goalsLocal = goalsLocal;
+		this.match.id           = id;
+		this.match.local        = local;
+		this.match.visitor      = visitor;
+		this.match.goalsLocal   = goalsLocal;
 		this.match.goalsVisitor = goalsVisitor;
 
 		// call cheking
@@ -62,7 +62,9 @@ module.exports = {
 	// Storing Local Storage
 	//
 	storeLS: function() {
-		localStorage.setItem('match', JSON.stringify(this.match));
-		return localStorage.match;
+ 		var id = this.match.id;
+
+		localStorage.setItem(id, JSON.stringify(this.match));
+		return localStorage;
 	}
 };

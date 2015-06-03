@@ -90,7 +90,7 @@ var React, Matches;
 React = require('react');
 Matches = require('../../matches/base.jsx');
 
-module.exports = React.createClass({displayName: "exports", 
+module.exports = React.createClass({displayName: "exports",
  	render: function() {	
  		var matchesNode, group = this.props.group;
  		matchesNode = this.props.day.matches.map(function (match, index) {
@@ -191,12 +191,12 @@ module.exports = React.createClass({displayName: "exports",
 	},
  	render: function() {
 		Results.get(
- 			this.props.match.id, 
- 			this.props.match.local.codename,
- 			this.props.match.visitor.codename, 
- 			this.state.goalsLocal, 
- 			this.state.goalsVisitor
- 		); 		 		
+ 	 		this.props.match.id, 
+ 	 		this.props.match.local.codename,
+ 	 		this.props.match.visitor.codename, 
+ 	 		this.state.goalsLocal, 
+ 	 		this.state.goalsVisitor
+ 	 	); 		 		
 		return (
 			React.createElement("div", {className: "match"}, 
 				React.createElement("form", {className: "match--form", name:  this.props.match.id}, 
@@ -303,10 +303,10 @@ module.exports = {
 	// @goalsVisitor visitor goals	
 	//
 	model: function(id, local, visitor, goalsLocal, goalsVisitor) {
-		this.match.id = id;
-		this.match.local = local;
-		this.match.visitor = visitor;
-		this.match.goalsLocal = goalsLocal;
+		this.match.id           = id;
+		this.match.local        = local;
+		this.match.visitor      = visitor;
+		this.match.goalsLocal   = goalsLocal;
 		this.match.goalsVisitor = goalsVisitor;
 
 		// call cheking
@@ -330,8 +330,10 @@ module.exports = {
 	// Storing Local Storage
 	//
 	storeLS: function() {
-		localStorage.setItem('match', JSON.stringify(this.match));
-		return localStorage.match;
+ 		var id = this.match.id;
+
+		localStorage.setItem(id, JSON.stringify(this.match));
+		return localStorage;
 	}
 };
 },{"./checking.jsx":8}],11:[function(require,module,exports){
