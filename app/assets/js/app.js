@@ -176,34 +176,49 @@ React = require('react');
 FormTeam = require('./form-team.jsx');
 Results = require('./results.jsx');
 
-module.exports = React.createClass({displayName: "exports", 
+module.exports = React.createClass({displayName: "exports",
 	getInitialState: function() {
 		return {
 			goalsLocal: 0,
-			goalsVisitor: 0
+			goalsVisitor: 0,
+			isActive: false
 		};
 	},	
 	setGoalsLocal: function(e) {
-		this.setState({ goalsLocal: e.target.value });
+		this.setState({ 
+			goalsLocal: e.target.value, 
+			isActive: true
+		});
 	},
 	setGoalsVisitor: function(e) {
-		this.setState({ goalsVisitor: e.target.value });
+		this.setState({ 
+			goalsVisitor: e.target.value,
+			isActive: true			
+		});
 	},
  	render: function() {
-		Results.get(
- 	 		this.props.match.id, 
- 	 		this.props.match.local.codename,
- 	 		this.props.match.visitor.codename, 
- 	 		this.state.goalsLocal, 
- 	 		this.state.goalsVisitor
- 	 	); 		 		
+ 		if (this.state.isActive) {
+			Results.get(
+	 	 		this.props.match.id, 
+	 	 		this.props.match.local.codename,
+	 	 		this.props.match.visitor.codename, 
+	 	 		this.state.goalsLocal, 
+	 	 		this.state.goalsVisitor
+	 	 	);
+	 	}
 		return (
 			React.createElement("div", {className: "match"}, 
 				React.createElement("form", {className: "match--form", name:  this.props.match.id}, 
 					React.createElement("fieldset", null, 
-						React.createElement(FormTeam, {team:  this.props.match.local, goals:  this.setGoalsLocal}), 
+						React.createElement(FormTeam, {
+							team:  this.props.match.local, 
+							goals:  this.setGoalsLocal, 
+							id:  this.props.match.id}), 
 						React.createElement("span", {className: "match--time"},  this.props.match.time), 
-						React.createElement(FormTeam, {team:  this.props.match.visitor, goals:  this.setGoalsVisitor})
+						React.createElement(FormTeam, {
+							team:  this.props.match.visitor, 
+							goals:  this.setGoalsVisitor, 
+							id:  this.props.match.id})
 					)
 				)
 			)
