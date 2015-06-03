@@ -179,8 +179,8 @@ Results = require('./results.jsx');
 module.exports = React.createClass({displayName: "exports",
 	getInitialState: function() {
 		return {
-			goalsLocal: 0,
-			goalsVisitor: 0,
+			goalsLocal: JSON.parse(localStorage[this.props.match.id] || 0) !== 0 ? JSON.parse(localStorage[this.props.match.id]).goalsLocal : null,
+			goalsVisitor: JSON.parse(localStorage[this.props.match.id] || 0) !== 0 ? JSON.parse(localStorage[this.props.match.id]).goalsVisitor : null,
 			isActive: false
 		};
 	},	
@@ -212,12 +212,14 @@ module.exports = React.createClass({displayName: "exports",
 					React.createElement("fieldset", null, 
 						React.createElement(FormTeam, {
 							team:  this.props.match.local, 
-							goals:  this.setGoalsLocal, 
+							setGoals:  this.setGoalsLocal, 
+							goals:  this.state.goalsLocal, 
 							id:  this.props.match.id}), 
 						React.createElement("span", {className: "match--time"},  this.props.match.time), 
 						React.createElement(FormTeam, {
 							team:  this.props.match.visitor, 
-							goals:  this.setGoalsVisitor, 
+							setGoals:  this.setGoalsVisitor, 
+							goals:  this.state.goalsVisitor, 
 							id:  this.props.match.id})
 					)
 				)
@@ -275,7 +277,8 @@ module.exports = React.createClass({displayName: "exports",
 					id:  this.props.team.codename, 
 					name:  this.props.team.codename, 
 					placeholder: "0", 
-					onChange:  this.props.goals})
+					value:  this.props.goals, 
+					onChange:  this.props.setGoals})
 			)
 		);
 	}

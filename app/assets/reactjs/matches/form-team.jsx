@@ -13,7 +13,8 @@ module.exports = React.createClass({
 					id={ this.props.team.codename } 
 					name={ this.props.team.codename }
 					placeholder="0"
-					onChange={ this.props.goals } />
+					value={ this.props.goals }
+					onChange={ this.props.setGoals } />
 			</div>
 		);
 	}

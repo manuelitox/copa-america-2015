@@ -7,8 +7,8 @@ Results = require('./results.jsx');
 module.exports = React.createClass({
 	getInitialState: function() {
 		return {
-			goalsLocal: 0,
-			goalsVisitor: 0,
+			goalsLocal: JSON.parse(localStorage[this.props.match.id] || 0) !== 0 ? JSON.parse(localStorage[this.props.match.id]).goalsLocal : null,
+			goalsVisitor: JSON.parse(localStorage[this.props.match.id] || 0) !== 0 ? JSON.parse(localStorage[this.props.match.id]).goalsVisitor : null,
 			isActive: false
 		};
 	},	
@@ -40,12 +40,14 @@ module.exports = React.createClass({
 					<fieldset>
 						<FormTeam 
 							team={ this.props.match.local } 
-							goals={ this.setGoalsLocal }  
+							setGoals={ this.setGoalsLocal }
+							goals={ this.state.goalsLocal }  
 							id={ this.props.match.id } />
 						<span className="match--time">{ this.props.match.time }</span>
 						<FormTeam 
 							team={ this.props.match.visitor } 
-							goals={ this.setGoalsVisitor } 
+							setGoals={ this.setGoalsVisitor }
+							goals={ this.state.goalsVisitor }
 							id={ this.props.match.id } />
 					</fieldset>
 				</form>
