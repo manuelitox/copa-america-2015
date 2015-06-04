@@ -75,6 +75,13 @@ module.exports = React.createClass({
 			}
 		};
 		return totalGoals - count;		
+	},
+	countPoints: function(codename, wins, draws) {
+		var pointsByWins = 0, pointsByDraws = 0;
+		pointsByWins = 3 * wins;
+		pointsByDraws = 1 * draws;
+
+		return pointsByWins + pointsByDraws;		
 	},		
  	render: function() {
  		var teamsNode, 
@@ -83,7 +90,8 @@ module.exports = React.createClass({
  				countLoser = this.countLoser,
  				countDraw = this.countDraw,
  				countGoals = this.countGoals,
- 				countGoalsDifference = this.countGoalsDifference;
+ 				countGoalsDifference = this.countGoalsDifference,
+ 				countPoints = this.countPoints;
 	
 		teamsNode = this.props.teams.map(function (team, index) {
 			return (
@@ -97,7 +105,7 @@ module.exports = React.createClass({
 					<td>{ countLoser(team.codename) }</td>
 					<td>{ countGoals(team.codename) }</td>
 					<td>{ countGoalsDifference(team.codename, countGoals(team.codename)) }</td>
-					<td>0</td>					
+					<td>{ countPoints(team.codename, countWinner(team.codename), countDraw(team.codename)) }</td>					
 				</tr>
 			);
 		});
