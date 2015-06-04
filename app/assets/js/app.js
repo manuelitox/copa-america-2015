@@ -458,12 +458,40 @@ module.exports = React.createClass({displayName: "exports",
 		};
 		return count;		
 	},	
+	countGoals: function(codename) {
+		var count = 0;
+		for (var i = 1; i < 19; i++) {
+			if (JSON.parse(localStorage[i] || 0) !== 0) {
+				if (JSON.parse(localStorage[i]).local == codename) {
+			 		count += parseInt(JSON.parse(localStorage[i]).goalsLocal);
+			 	} else if (JSON.parse(localStorage[i]).visitor == codename) {
+			 		count += parseInt(JSON.parse(localStorage[i]).goalsVisitor);
+			 	}
+			}
+		};
+		return count;		
+	},	
+	countGoalsDifference: function(codename, totalGoals) {
+		var count = 0;
+		for (var i = 1; i < 19; i++) {
+			if (JSON.parse(localStorage[i] || 0) !== 0) {
+				if (JSON.parse(localStorage[i]).local == codename) {
+			 		count += parseInt(JSON.parse(localStorage[i]).goalsVisitor);
+			 	} else if (JSON.parse(localStorage[i]).visitor == codename) {
+			 		count += parseInt(JSON.parse(localStorage[i]).goalsLocal);
+			 	}
+			}
+		};
+		return totalGoals - count;		
+	},		
  	render: function() {
  		var teamsNode, 
  				countMatches = this.countMatches, 
  				countWinner = this.countWinner,
  				countLoser = this.countLoser,
- 				countDraw = this.countDraw;
+ 				countDraw = this.countDraw,
+ 				countGoals = this.countGoals,
+ 				countGoalsDifference = this.countGoalsDifference;
 	
 		teamsNode = this.props.teams.map(function (team, index) {
 			return (
@@ -475,8 +503,8 @@ module.exports = React.createClass({displayName: "exports",
 					React.createElement("td", null,  countWinner(team.codename) ), 
 					React.createElement("td", null,  countDraw(team.codename) ), 
 					React.createElement("td", null,  countLoser(team.codename) ), 
-					React.createElement("td", null, "0"), 
-					React.createElement("td", null, "0"), 
+					React.createElement("td", null,  countGoals(team.codename) ), 
+					React.createElement("td", null,  countGoalsDifference(team.codename, countGoals(team.codename)) ), 
 					React.createElement("td", null, "0")					
 				)
 			);

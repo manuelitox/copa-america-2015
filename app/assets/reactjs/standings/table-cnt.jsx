@@ -50,12 +50,40 @@ module.exports = React.createClass({
 		};
 		return count;		
 	},	
+	countGoals: function(codename) {
+		var count = 0;
+		for (var i = 1; i < 19; i++) {
+			if (JSON.parse(localStorage[i] || 0) !== 0) {
+				if (JSON.parse(localStorage[i]).local == codename) {
+			 		count += parseInt(JSON.parse(localStorage[i]).goalsLocal);
+			 	} else if (JSON.parse(localStorage[i]).visitor == codename) {
+			 		count += parseInt(JSON.parse(localStorage[i]).goalsVisitor);
+			 	}
+			}
+		};
+		return count;		
+	},	
+	countGoalsDifference: function(codename, totalGoals) {
+		var count = 0;
+		for (var i = 1; i < 19; i++) {
+			if (JSON.parse(localStorage[i] || 0) !== 0) {
+				if (JSON.parse(localStorage[i]).local == codename) {
+			 		count += parseInt(JSON.parse(localStorage[i]).goalsVisitor);
+			 	} else if (JSON.parse(localStorage[i]).visitor == codename) {
+			 		count += parseInt(JSON.parse(localStorage[i]).goalsLocal);
+			 	}
+			}
+		};
+		return totalGoals - count;		
+	},		
  	render: function() {
  		var teamsNode, 
  				countMatches = this.countMatches, 
  				countWinner = this.countWinner,
  				countLoser = this.countLoser,
- 				countDraw = this.countDraw;
+ 				countDraw = this.countDraw,
+ 				countGoals = this.countGoals,
+ 				countGoalsDifference = this.countGoalsDifference;
 	
 		teamsNode = this.props.teams.map(function (team, index) {
 			return (
@@ -67,8 +95,8 @@ module.exports = React.createClass({
 					<td>{ countWinner(team.codename) }</td>
 					<td>{ countDraw(team.codename) }</td>
 					<td>{ countLoser(team.codename) }</td>
-					<td>0</td>
-					<td>0</td>
+					<td>{ countGoals(team.codename) }</td>
+					<td>{ countGoalsDifference(team.codename, countGoals(team.codename)) }</td>
 					<td>0</td>					
 				</tr>
 			);
