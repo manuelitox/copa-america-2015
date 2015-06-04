@@ -239,14 +239,17 @@ module.exports = {
 		if (match.goalsLocal > match.goalsVisitor) {
 			match.winner = match.local;
 			match.loser  = match.visitor;
+			match.draw 	 = false;
 		}
 		else if (match.goalsLocal < match.goalsVisitor) {
 			match.winner = match.visitor;
-			match.loser  = match.local;			
+			match.loser  = match.local;	
+			match.draw 	 = false;		
 		}
 		else {
 			match.winner = null;
 			match.loser  = null;
+			match.draw 	 = true;
 		}			
 	},
 
@@ -433,8 +436,35 @@ module.exports = React.createClass({displayName: "exports",
 		};
 		return count;		
 	},
+	countLoser: function(codename) {
+		var count = 0;
+		for (var i = 1; i < 19; i++) {
+			if (JSON.parse(localStorage[i] || 0) !== 0) {
+				if (JSON.parse(localStorage[i]).loser == codename) {
+			 		count++;
+			 	}
+			}
+		};
+		return count;		
+	},
+	countDraw: function(codename) {
+		var count = 0;
+		for (var i = 1; i < 19; i++) {
+			if (JSON.parse(localStorage[i] || 0) !== 0) {
+				if (JSON.parse(localStorage[i]).local == codename || JSON.parse(localStorage[i]).visitor == codename) {
+			 		JSON.parse(localStorage[i]).draw ? count++ : count;
+			 	}
+			}
+		};
+		return count;		
+	},	
  	render: function() {
- 		var teamsNode, countMatches = this.countMatches, countWinner = this.countWinner;
+ 		var teamsNode, 
+ 				countMatches = this.countMatches, 
+ 				countWinner = this.countWinner,
+ 				countLoser = this.countLoser,
+ 				countDraw = this.countDraw;
+	
 		teamsNode = this.props.teams.map(function (team, index) {
 			return (
 				React.createElement("tr", {key:  index }, 
@@ -443,8 +473,8 @@ module.exports = React.createClass({displayName: "exports",
 					), 
 					React.createElement("td", null,  countMatches(team.codename) ), 
 					React.createElement("td", null,  countWinner(team.codename) ), 
-					React.createElement("td", null, "0"), 
-					React.createElement("td", null, "0"), 
+					React.createElement("td", null,  countDraw(team.codename) ), 
+					React.createElement("td", null,  countLoser(team.codename) ), 
 					React.createElement("td", null, "0"), 
 					React.createElement("td", null, "0"), 
 					React.createElement("td", null, "0")					

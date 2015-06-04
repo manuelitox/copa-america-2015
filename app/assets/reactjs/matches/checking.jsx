@@ -9,14 +9,17 @@ module.exports = {
 		if (match.goalsLocal > match.goalsVisitor) {
 			match.winner = match.local;
 			match.loser  = match.visitor;
+			match.draw 	 = false;
 		}
 		else if (match.goalsLocal < match.goalsVisitor) {
 			match.winner = match.visitor;
-			match.loser  = match.local;			
+			match.loser  = match.local;	
+			match.draw 	 = false;		
 		}
 		else {
 			match.winner = null;
 			match.loser  = null;
+			match.draw 	 = true;
 		}			
 	},
 
