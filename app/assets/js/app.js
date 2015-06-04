@@ -409,16 +409,40 @@ React = require('react');
 Teams = require('../teams/base.jsx');
 
 module.exports = React.createClass({displayName: "exports", 
+	countMatches: function(codename) {
+		var count = 0;
+		for (var i = 1; i < 19; i++) {
+			if (JSON.parse(localStorage[i] || 0) !== 0) {
+				if (JSON.parse(localStorage[i]).local === codename) {
+			 		count++;
+			 	} else if (JSON.parse(localStorage[i]).visitor === codename) {
+			 		count++;
+				}
+			}
+		};
+		return count;
+	},
+	countWinner: function(codename) {
+		var count = 0;
+		for (var i = 1; i < 19; i++) {
+			if (JSON.parse(localStorage[i] || 0) !== 0) {
+				if (JSON.parse(localStorage[i]).winner === codename) {
+			 		count++;
+			 	}
+			}
+		};
+		return count;		
+	},
  	render: function() {
- 		var teamsNode; 
+ 		var teamsNode, countMatches = this.countMatches, countWinner = this.countWinner;
 		teamsNode = this.props.teams.map(function (team, index) {
 			return (
 				React.createElement("tr", {key:  index }, 
 					React.createElement("td", null, 
 						React.createElement(Teams, {team:  team })
 					), 
-					React.createElement("td", null, "0"), 
-					React.createElement("td", null, "0"), 
+					React.createElement("td", null,  countMatches(team.codename) ), 
+					React.createElement("td", null,  countWinner(team.codename) ), 
 					React.createElement("td", null, "0"), 
 					React.createElement("td", null, "0"), 
 					React.createElement("td", null, "0"), 
