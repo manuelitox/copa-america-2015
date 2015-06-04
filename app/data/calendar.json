@@ -76,7 +76,7 @@
 				"time": "20:30",
 				"belong_to": "A",
 				"local": { "codename": "CHI", "country": "chile" },
-				"visitor": { "codename": "mexico", "country": "mexico" }			
+				"visitor": { "codename": "MEX", "country": "mexico" }			
 			}				
 		]	
 	},
@@ -176,7 +176,7 @@
 				"time": "18:30",
 				"belong_to": "C",
 				"local": { "codename": "BRA", "country": "brasil" },
-				"visitor": { "codename": "venezuela", "country": "venezuela" }			
+				"visitor": { "codename": "VEN", "country": "venezuela" }			
 			}				
 		]	
 	}
