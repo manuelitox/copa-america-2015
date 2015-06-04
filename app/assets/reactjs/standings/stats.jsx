@@ -118,10 +118,28 @@ module.exports = {
 	//	
 	countPoints: function(codename, wins, draws) {
 		var pointsByWins = 0, pointsByDraws = 0;
-		pointsByWins = 3 * wins;
+		
+		pointsByWins  = 3 * wins;
 		pointsByDraws = 1 * draws;
 
 		return pointsByWins + pointsByDraws;		
+	},
+
+	// add stats to each team
+	//
+	// @param
+	// team: object team
+	//
+	addStats: function(team) {
+		team.matches         = this.countMatches(team.codename);
+		team.wins            = this.countWinner(team.codename);
+		team.draws           = this.countDraw(team.codename);
+		team.loses           = this.countLoser(team.codename);
+		team.goals           = this.countGoals(team.codename);
+		team.goalsDifference = this.countGoalsDifference(team.codename, this.countGoals(team.codename));
+		team.points          = this.countPoints(team.codename, this.countWinner(team.codename), this.countDraw(team.codename));
+	
+		return team;
 	}
 	
 };

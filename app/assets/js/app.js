@@ -526,10 +526,28 @@ module.exports = {
 	//	
 	countPoints: function(codename, wins, draws) {
 		var pointsByWins = 0, pointsByDraws = 0;
-		pointsByWins = 3 * wins;
+		
+		pointsByWins  = 3 * wins;
 		pointsByDraws = 1 * draws;
 
 		return pointsByWins + pointsByDraws;		
+	},
+
+	// add stats to each team
+	//
+	// @param
+	// team: object team
+	//
+	addStats: function(team) {
+		team.matches         = this.countMatches(team.codename);
+		team.wins            = this.countWinner(team.codename);
+		team.draws           = this.countDraw(team.codename);
+		team.loses           = this.countLoser(team.codename);
+		team.goals           = this.countGoals(team.codename);
+		team.goalsDifference = this.countGoalsDifference(team.codename, this.countGoals(team.codename));
+		team.points          = this.countPoints(team.codename, this.countWinner(team.codename), this.countDraw(team.codename));
+	
+		return team;
 	}
 	
 };
@@ -540,22 +558,35 @@ React = require('react');
 Teams = require('../teams/base.jsx');
 Stats = require('./stats.jsx');
 
-module.exports = React.createClass({displayName: "exports", 
+module.exports = React.createClass({displayName: "exports",
+	sortByPoints: function (teams) {
+		var keySorted, newTeams = [];
+		keysSorted = Object.keys(teams).sort(
+			function(a,b) { 
+				return teams[a].points-teams[b].points; 
+			});
+		
+		keysSorted.map(function (key) {
+		  newTeams.push(teams[key]);
+		});		
+		return newTeams;
+	}, 
  	render: function() {
- 		var teamsNode;
+ 		var teamsNode, teams = this.sortByPoints(this.props.teams);
 		teamsNode = this.props.teams.map(function (team, index) {
+			Stats.addStats(team);
 			return (
 				React.createElement("tr", {key:  index }, 
 					React.createElement("td", null, 
 						React.createElement(Teams, {team:  team })
 					), 
-					React.createElement("td", null,  Stats.countMatches(team.codename) ), 
-					React.createElement("td", null,  Stats.countWinner(team.codename) ), 
-					React.createElement("td", null,  Stats.countDraw(team.codename) ), 
-					React.createElement("td", null,  Stats.countLoser(team.codename) ), 
-					React.createElement("td", null,  Stats.countGoals(team.codename) ), 
-					React.createElement("td", null,  Stats.countGoalsDifference(team.codename, Stats.countGoals(team.codename)) ), 
-					React.createElement("td", null,  Stats.countPoints(team.codename, Stats.countWinner(team.codename), Stats.countDraw(team.codename)) )					
+					React.createElement("td", null,  team.matches), 
+					React.createElement("td", null,  team.wins), 
+					React.createElement("td", null,  team.draws), 
+					React.createElement("td", null,  team.loses), 
+					React.createElement("td", null,  team.goals), 
+					React.createElement("td", null,  team.goalsDifference), 
+					React.createElement("td", null,  team.points)
 				)
 			);
 		});
