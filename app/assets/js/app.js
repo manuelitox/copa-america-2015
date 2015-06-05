@@ -526,30 +526,52 @@ module.exports = {
 	//	
 	countPoints: function(codename, wins, draws) {
 		var pointsByWins = 0, pointsByDraws = 0;
-		
 		pointsByWins  = 3 * wins;
 		pointsByDraws = 1 * draws;
-
 		return pointsByWins + pointsByDraws;		
 	},
 
 	// add stats to each team
 	//
 	// @param
-	// team: object team
+	// team: team object
 	//
-	addStats: function(team) {
-		team.matches         = this.countMatches(team.codename);
-		team.wins            = this.countWinner(team.codename);
-		team.draws           = this.countDraw(team.codename);
-		team.loses           = this.countLoser(team.codename);
-		team.goals           = this.countGoals(team.codename);
-		team.goalsDifference = this.countGoalsDifference(team.codename, this.countGoals(team.codename));
-		team.points          = this.countPoints(team.codename, this.countWinner(team.codename), this.countDraw(team.codename));
-	
-		return team;
+	addStats: function(teams) {
+		var self = this;
+		teams.map(function (team) {
+			team.matches         = self.countMatches(team.codename);
+			team.wins            = self.countWinner(team.codename);
+			team.draws           = self.countDraw(team.codename);
+			team.loses           = self.countLoser(team.codename);
+			team.goals           = self.countGoals(team.codename);
+			team.goalsDifference = self.countGoalsDifference(team.codename, self.countGoals(team.codename));
+			team.points          = self.countPoints(team.codename, self.countWinner(team.codename), self.countDraw(team.codename));
+		});
+		return this.sortByPoints(teams);
+	},
+
+	// sort teams by points
+	// 
+	// @param
+	// team: team object, recieved from addStats function.
+	//
+	sortByPoints: function(teams) {
+    var keyssorted, newTeams = [];
+	 	keysSorted = Object.keys(teams).sort(
+	 		function(a, b) {
+	 			if (teams[b].points == teams[a].points) {
+	 				return teams[b].goalsDifference-teams[a].goalsDifference;
+	 			} else {
+	 				return teams[b].points-teams[a].points
+	 			}
+	 		}
+	 	);
+	 	keysSorted.map(function (key) {
+   		newTeams.push(teams[key]);
+	 	});
+	 	return newTeams;
 	}
-	
+
 };
 },{}],13:[function(require,module,exports){
 var React, Teams;
@@ -559,22 +581,9 @@ Teams = require('../teams/base.jsx');
 Stats = require('./stats.jsx');
 
 module.exports = React.createClass({displayName: "exports",
-	sortByPoints: function (teams) {
-		var keySorted, newTeams = [];
-		keysSorted = Object.keys(teams).sort(
-			function(a,b) { 
-				return teams[a].points-teams[b].points; 
-			});
-		
-		keysSorted.map(function (key) {
-		  newTeams.push(teams[key]);
-		});		
-		return newTeams;
-	}, 
  	render: function() {
- 		var teamsNode, teams = this.sortByPoints(this.props.teams);
-		teamsNode = this.props.teams.map(function (team, index) {
-			Stats.addStats(team);
+ 		var teamsNode, teams = this.props.teams;
+		teamsNode = Stats.addStats(teams).map(function (team, index) {
 			return (
 				React.createElement("tr", {key:  index }, 
 					React.createElement("td", null, 
