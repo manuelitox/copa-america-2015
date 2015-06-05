@@ -1,0 +1,85 @@
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 240px) and (max-width: 1023px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+body {
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: normal;
+  margin: 0 0 20px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: normal;
+  margin: 0 0 10px;
+}
+
+h4 {
+  font-size: 0.9rem;
+  font-weight: normal;
+  margin: 0 0 10px;
+}
+
+h5 {
+  font-size: 0.7rem;
+  font-weight: normal;
+}
+
+p {
+  margin: 0 0 20px 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+figure {
+  margin: 0 0 20px 0;
+  padding: 0;
+  text-align: center;
+}
+
+figcaption {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+body,
+input, textarea {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=main.css.map */
