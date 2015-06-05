@@ -14,5 +14,15 @@
 
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>  
 	<script src="assets/js/app.js"></script>	
+
+	<script src="assets/graphics/output/grunticon.loader.js"></script>
+	<script>
+		grunticon(
+			["assets/graphics/output/icons.data.svg.css", "assets/graphics/output/icons.data.png.css", "assets/graphics/output/icons.fallback.css"],
+			grunticon.svgLoadedCallback);
+	</script>
+	<noscript>
+    <link href="assets/graphics/output/icons.fallback.css" rel="stylesheet">
+  </noscript>		
 </body>
 </html>

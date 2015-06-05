@@ -11,11 +11,11 @@ module.exports = {
 		tasks: ['uglify']
 	},
 	minifysvg: {
-		files: ['app/graphics/svgs/*.svg'],
+		files: ['app/assets/graphics/svgs/*.svg'],
 		tasks: ['svgmin']
 	},
 	icons: {
-		files: ['app/graphics/sources/*.svg'],
+		files: ['app/assets/graphics/sources/*.svg'],
 		tasks: ['grunticon']
 	},
 	postcss: {

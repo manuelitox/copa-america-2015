@@ -3,9 +3,9 @@ module.exports = {
 		files: [
 			{
 				expand: true,
-				cwd: 'app/graphics/svgs',
+				cwd: 'app/assets/graphics/svgs',
 				src: ['*.svg'],
-				dest: 'app/graphics/sources'
+				dest: 'app/assets/graphics/sources'
 			}
 		]
 	}

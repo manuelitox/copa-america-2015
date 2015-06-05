@@ -2,9 +2,9 @@ module.exports = {
 	dist: {
 		files: [{
 			expand: true,
-			cwd: 'app/graphics/sources',
+			cwd: 'app/assets/graphics/sources',
 			src: ['*.svg', '*.png'],
-			dest: 'app/graphics/output'
+			dest: 'app/assets/graphics/output'
 		}],
 		options: {
 			enhanceSVG: true
