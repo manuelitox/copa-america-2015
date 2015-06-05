@@ -1,0 +1,30 @@
+$th-select-group: (
+	bg      : map-get($th-header-main, bg),
+	bg-dark : map-get($th-header-main, dark)
+) !default;
+
+.select-group {
+
+	button {
+
+		&:hover, &:focus, &:active {
+			color: white;
+		}
+	}
+
+	&--current {
+		color: map-get($th-select-group, bg-dark);
+	}
+
+	&--list {
+		background-color: map-get($th-select-group, bg-dark);
+
+		button {
+			color: white;
+
+			&:hover, &:focus, &:active {
+				background-color: map-get($th-select-group, bg);
+			}
+		}
+	}
+}

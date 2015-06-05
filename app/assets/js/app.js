@@ -117,7 +117,7 @@ Navigation  = require('./navigation/base.jsx');
 module.exports = React.createClass({displayName: "exports",
  	render: function() {
  		return (
- 			React.createElement("header", null, 
+ 			React.createElement("header", {className: "header-main"}, 
  				React.createElement(SelectGroup, {currentGroup:  this.props.currentGroup, group:  this.props.group}), 
  				React.createElement(Navigation, {currentSection:  this.props.currentSection, section:  this.props.section})
  			)
@@ -158,13 +158,26 @@ var React;
 React = require('react');
 
 module.exports = React.createClass({displayName: "exports", 
+	getInitialState: function() {
+		return {
+			isActive: false
+		};
+	},
+	toggle: function() {
+		this.setState({ isActive: !this.state.isActive });
+	},
+	dinamycClasses: function () {
+		return this.state.isActive ? 'select-group actived' : "select-group";
+	},
  	render: function() {
  		return (
- 			React.createElement("div", {className: "select-group"}, 
- 				React.createElement("h2", null, "Grupo Actual: ",  this.props.currentGroup), 
- 				React.createElement("button", {"data-group": "A", onClick:  this.props.group}, "Grupo A"), 
- 				React.createElement("button", {"data-group": "B", onClick:  this.props.group}, "Grupo B"), 
- 				React.createElement("button", {"data-group": "C", onClick:  this.props.group}, "Grupo C")
+ 			React.createElement("div", {className:  this.dinamycClasses() }, 
+ 				React.createElement("button", {className: "select-group--current", onClick:  this.toggle}, "Grupo ",  this.props.currentGroup), 
+ 				React.createElement("ul", {className: "select-group--list"}, 
+	 				 this.props.currentGroup != 'A' ? React.createElement("li", null, React.createElement("button", {"data-group": "A", onClick:  this.props.group}, "Grupo A")) : null, 
+	 				 this.props.currentGroup != 'B' ? React.createElement("li", null, React.createElement("button", {"data-group": "B", onClick:  this.props.group}, "Grupo B")) : null, 
+	 				 this.props.currentGroup != 'C' ? React.createElement("li", null, React.createElement("button", {"data-group": "C", onClick:  this.props.group}, "Grupo C")) : null
+ 				)
  			)
  		);
 	}

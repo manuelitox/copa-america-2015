@@ -7,3 +7,23 @@ input, textarea {
 h1, h2, h3, h4 {
 	font-weight: 700;
 }
+
+button {
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+	padding: 0;
+
+	&:focus, &:active {
+		border: 0;
+		outline: 0;
+	}
+
+	@include breakpoint(large) {
+		font-size: map-fetch($fonts, sizes normal);
+	}
+
+	@include breakpoint(small-to-medium) {
+		font-size: map-fetch($fonts, sizes small);
+	}
+}

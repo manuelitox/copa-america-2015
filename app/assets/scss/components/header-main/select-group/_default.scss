@@ -1,0 +1,47 @@
+.select-group {
+	height: inherit;
+
+	button {
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	&--current {
+		height: inherit;
+	}
+
+	&--list {
+		height: 0;
+		overflow: hidden;
+		transition: .2s height;
+
+		left: 0;
+		list-style: none;
+		margin: 0;
+		text-align: center;
+		top: 100%;
+		padding: 0;
+		position: absolute;
+		width: 100px;
+
+		button {
+			display: block;
+			line-height: 40px;
+			margin: auto;
+			width: 100%;
+
+			@include breakpoint('large') {
+				font-size: .8rem;				
+			}
+		}
+
+		li {
+			@include sizes(100%, 40px);
+			line-height: 40px;
+		}
+	}
+
+	.actived &--list {
+		height: 80px;
+	}
+}

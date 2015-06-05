@@ -1,0 +1,9 @@
+$th-header-main: (
+	bg   : map-get($colors, bg),
+	dark : map-get($colors, dk-bg)
+) !default;
+
+.header-main {
+	background-color: map-get($th-header-main, bg);
+	color: map-get($th-header-main, dark);
+}

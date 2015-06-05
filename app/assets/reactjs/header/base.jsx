@@ -7,7 +7,7 @@ Navigation  = require('./navigation/base.jsx');
 module.exports = React.createClass({
  	render: function() {
  		return (
- 			<header>
+ 			<header className="header-main">
  				<SelectGroup currentGroup={ this.props.currentGroup } group={ this.props.group } />
  				<Navigation currentSection={ this.props.currentSection } section={ this.props.section } />
  			</header>
