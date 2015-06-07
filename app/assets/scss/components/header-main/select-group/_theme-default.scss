@@ -4,16 +4,17 @@ $th-select-group: (
 ) !default;
 
 .select-group {
-
-	button {
-
-		&:hover, &:focus, &:active {
-			color: white;
-		}
-	}
-
+	
 	&--current {
 		color: map-get($th-select-group, bg-dark);
+	}
+
+	&--navicon {
+		background-color: map-get($th-select-group, bg-dark);
+
+		&:before, &:after {
+			background-color: map-get($th-select-group, bg-dark);			
+		}
 	}
 
 	&--list {

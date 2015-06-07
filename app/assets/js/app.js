@@ -172,7 +172,10 @@ module.exports = React.createClass({displayName: "exports",
  	render: function() {
  		return (
  			React.createElement("div", {className:  this.dinamycClasses() }, 
- 				React.createElement("button", {className: "select-group--current", onClick:  this.toggle}, "Grupo ",  this.props.currentGroup), 
+ 				React.createElement("button", {className: "select-group--current", onClick:  this.toggle}, 
+ 					React.createElement("div", {className: "select-group--navicon"}), 
+ 					"Grupo ",  this.props.currentGroup
+ 				), 
  				React.createElement("ul", {className: "select-group--list"}, 
 	 				 this.props.currentGroup != 'A' ? React.createElement("li", null, React.createElement("button", {"data-group": "A", onClick:  this.props.group}, "Grupo A")) : null, 
 	 				 this.props.currentGroup != 'B' ? React.createElement("li", null, React.createElement("button", {"data-group": "B", onClick:  this.props.group}, "Grupo B")) : null, 

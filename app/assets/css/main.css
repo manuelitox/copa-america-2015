@@ -118,13 +118,50 @@ button:focus, button:active {
 
 .select-group {
   height: inherit;
+  position: relative;
+  width: 120px;
 }
 .select-group button {
   text-transform: uppercase;
   font-weight: 700;
+  width: 100%;
 }
 .select-group--current {
   height: inherit;
+  text-align: left;
+  padding-left: 30px;
+  position: relative;
+}
+.select-group--navicon {
+  height: 6px;
+  width: 6px;
+  border-radius: 6px;
+  content: '';
+  display: block;
+  left: 10px;
+  top: 26px;
+  position: absolute;
+  -webkit-transition: .2s top;
+          transition: .2s top;
+}
+.select-group--navicon:after, .select-group--navicon:before {
+  height: 6px;
+  width: 6px;
+  border-radius: 6px;
+  content: '';
+  left: 0;
+  position: absolute;
+  -webkit-transition: .2s top;
+          transition: .2s top;
+}
+.select-group--navicon:before {
+  top: -10px;
+}
+.select-group--navicon:after {
+  top: 10px;
+}
+.actived .select-group--navicon:before, .actived .select-group--navicon:after {
+  top: 0;
 }
 .select-group--list {
   height: 0;
@@ -138,13 +175,12 @@ button:focus, button:active {
   top: 100%;
   padding: 0;
   position: absolute;
-  width: 100px;
+  width: 120px;
 }
 .select-group--list button {
   display: block;
   line-height: 40px;
   margin: auto;
-  width: 100%;
 }
 @media (min-width: 1024px) {
   .select-group--list button {
@@ -160,11 +196,14 @@ button:focus, button:active {
   height: 80px;
 }
 
-.select-group button:hover, .select-group button:focus, .select-group button:active {
-  color: white;
-}
 .select-group--current {
   color: #0e4477;
+}
+.select-group--navicon {
+  background-color: #0e4477;
+}
+.select-group--navicon:before, .select-group--navicon:after {
+  background-color: #0e4477;
 }
 .select-group--list {
   background-color: #0e4477;
@@ -175,5 +214,4 @@ button:focus, button:active {
 .select-group--list button:hover, .select-group--list button:focus, .select-group--list button:active {
   background-color: #308ad9;
 }
-
 /*# sourceMappingURL=main.css.map */

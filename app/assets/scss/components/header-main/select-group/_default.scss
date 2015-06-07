@@ -1,13 +1,54 @@
 .select-group {
 	height: inherit;
+	position: relative;
+	width: 120px;
 
 	button {
 		text-transform: uppercase;
 		font-weight: 700;
+		width: 100%;		
 	}
 
 	&--current {
 		height: inherit;
+		text-align: left;
+		padding-left: 30px;
+		position: relative;
+	}
+
+	&--navicon {
+		@include sizes(6px);
+		border-radius: 6px;
+		content: '';
+		display: block;
+		left: 10px;
+		top: 26px;
+		position: absolute;
+		transition: .2s top;
+
+		&:after, &:before {
+			@include sizes(6px);
+			border-radius: 6px;			
+			content: '';
+			left: 0;
+			position: absolute;
+			transition: .2s top;
+		}
+
+		&:before {
+			top: -10px;
+		}
+
+		&:after {
+			top: 10px;
+		}
+	}	
+
+	.actived &--navicon {
+
+		&:before, &:after {
+			top: 0;
+		}
 	}
 
 	&--list {
@@ -22,13 +63,12 @@
 		top: 100%;
 		padding: 0;
 		position: absolute;
-		width: 100px;
+		width: 120px;
 
 		button {
 			display: block;
 			line-height: 40px;
 			margin: auto;
-			width: 100%;
 
 			@include breakpoint('large') {
 				font-size: .8rem;				
