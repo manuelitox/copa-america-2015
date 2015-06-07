@@ -110,6 +110,14 @@ button:focus, button:active {
   padding: 0 10px;
   position: relative;
 }
+.header-main h3 {
+  height: inherit;
+  font-size: 1rem;
+  line-height: 60px;
+  margin: 0;
+  text-transform: uppercase;
+  width: 120px;
+}
 
 .header-main {
   background-color: #308ad9;

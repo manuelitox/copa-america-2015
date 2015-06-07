@@ -3,4 +3,13 @@
 	height: 60px;
 	padding: 0 10px;
 	position: relative;
+
+	h3 {
+		height: inherit;
+		font-size: 1rem;
+		line-height: 60px;
+		margin: 0;
+		text-transform: uppercase;
+		width: 120px;
+	}
 }

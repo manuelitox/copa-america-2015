@@ -116,9 +116,13 @@ Navigation  = require('./navigation/base.jsx');
 
 module.exports = React.createClass({displayName: "exports",
  	render: function() {
+ 		var nodeSelectGroup;
+ 		nodeSelectGroup = React.createElement(SelectGroup, {currentGroup:  this.props.currentGroup, group:  this.props.group})
  		return (
  			React.createElement("header", {className: "header-main"}, 
- 				React.createElement(SelectGroup, {currentGroup:  this.props.currentGroup, group:  this.props.group}), 
+ 				 this.props.currentSection == 'calendar' ? nodeSelectGroup : null, 
+ 				 this.props.currentSection == 'groups' ? nodeSelectGroup : null, 
+ 				 this.props.currentSection == 'final' ? React.createElement("h3", null, "Fase Final") : null, 
  				React.createElement(Navigation, {currentSection:  this.props.currentSection, section:  this.props.section})
  			)
  		);
