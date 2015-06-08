@@ -299,4 +299,14 @@ button:focus, button:active {
   color: #8e8e8e;
 }
 
+.team--flag, .team--codename {
+  float: left;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+.team--codename {
+  font-size: 1.2rem;
+  line-height: 34px;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,13 @@
+.team {
+
+	&--flag, &--codename {
+		float: left;
+		margin-bottom: 0;
+		margin-right: 10px;
+	}
+
+	&--codename {
+		font-size: 1.2rem;
+		line-height: 34px;
+	}
+}
