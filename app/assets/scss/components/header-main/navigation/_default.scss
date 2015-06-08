@@ -1,0 +1,36 @@
+.navigation {
+	@include sizes(150px, inherit);
+	float: right;
+
+	ul {
+		height: inherit;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		@include sizes(50px, inherit);		
+		display: inline-block;
+		text-align: center;
+	}
+
+	button {
+		height: inherit;
+	}
+	
+	svg {
+		@include sizes(23px);
+		vertical-align: middle;
+	}
+
+	[class^='icon-'] {
+		@include sizes(23px);
+		background-size: 23px;
+		display: inline-block;
+	}
+
+	li.actived svg path {
+		fill: white;
+	}
+}

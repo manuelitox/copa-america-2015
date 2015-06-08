@@ -112,6 +112,7 @@ button:focus, button:active {
 }
 .header-main h3 {
   height: inherit;
+  float: left;
   font-size: 1rem;
   line-height: 60px;
   margin: 0;
@@ -125,6 +126,7 @@ button:focus, button:active {
 }
 
 .select-group {
+  float: left;
   height: inherit;
   position: relative;
   width: 120px;
@@ -221,5 +223,40 @@ button:focus, button:active {
 }
 .select-group--list button:hover, .select-group--list button:focus, .select-group--list button:active {
   background-color: #308ad9;
+}
+
+.navigation {
+  height: inherit;
+  width: 150px;
+  float: right;
+}
+.navigation ul {
+  height: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navigation li {
+  height: inherit;
+  width: 50px;
+  display: inline-block;
+  text-align: center;
+}
+.navigation button {
+  height: inherit;
+}
+.navigation svg {
+  height: 23px;
+  width: 23px;
+  vertical-align: middle;
+}
+.navigation [class^='icon-'] {
+  height: 23px;
+  width: 23px;
+  background-size: 23px;
+  display: inline-block;
+}
+.navigation li.actived svg path {
+  fill: white;
 }
 /*# sourceMappingURL=main.css.map */

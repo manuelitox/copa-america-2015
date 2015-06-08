@@ -15,8 +15,8 @@ APP = React.createClass({
 	setGroup: function(e) {
 		this.setState({ group: e.target.dataset.group });
 	},
-	setSection: function(e) {
-		this.setState({ section: e.target.dataset.section });
+	setSection: function(section) {
+		this.setState({ section: section });
 	},
 	render: function() {
 		return (

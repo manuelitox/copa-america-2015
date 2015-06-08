@@ -16,8 +16,8 @@ APP = React.createClass({displayName: "APP",
 	setGroup: function(e) {
 		this.setState({ group: e.target.dataset.group });
 	},
-	setSection: function(e) {
-		this.setState({ section: e.target.dataset.section });
+	setSection: function(section) {
+		this.setState({ section: section });
 	},
 	render: function() {
 		return (
@@ -138,18 +138,23 @@ module.exports = React.createClass({displayName: "exports",
 		return this.props.currentSection == element ? 'actived' : null;
 	},
  	render: function() {
- 		console.log(this.props.currentSection);
  		return (
- 			React.createElement("nav", null, 
+ 			React.createElement("nav", {className: "navigation"}, 
  				React.createElement("ul", null, 
 					React.createElement("li", {className:  this.isActive('calendar') }, 
-						React.createElement("button", {"data-section": "calendar", onClick:  this.props.section}, "Calendario")
+						React.createElement("button", {"data-section": "calendar", onClick:  this.props.section.bind(null, 'calendar') }, 
+							React.createElement("span", {className: "icon-calendar", "data-grunticon-embed": true})
+						)
 					), 
 					React.createElement("li", {className:  this.isActive('groups') }, 
-						React.createElement("button", {"data-section": "groups", onClick:  this.props.section}, "Grupos")
+						React.createElement("button", {"data-section": "groups", onClick:  this.props.section.bind(null, 'groups') }, 
+							React.createElement("span", {className: "icon-standings", "data-grunticon-embed": true})
+						)
 					), 
 					React.createElement("li", {className:  this.isActive('final') }, 
-						React.createElement("button", {"data-section": "final", onClick:  this.props.section}, "Fase final")
+						React.createElement("button", {"data-section": "final", onClick:  this.props.section.bind(null, 'final') }, 
+							React.createElement("span", {className: "icon-final", "data-grunticon-embed": true})
+						)
 					)
  				)
  			)
