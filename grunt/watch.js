@@ -25,5 +25,5 @@ module.exports = {
 	react: {
 		files: 'app/assets/reactjs/**/*.jsx',
 		tasks: ['browserify']
-	}	
+	}
 };
