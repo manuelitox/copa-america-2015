@@ -241,12 +241,14 @@ module.exports = React.createClass({displayName: "exports",
 				React.createElement("form", {className: "match--form", name:  this.props.match.id}, 
 					React.createElement("fieldset", null, 
 						React.createElement(FormTeam, {
+							type: "local", 
 							team:  this.props.match.local, 
 							setGoals:  this.setGoalsLocal, 
 							goals:  this.state.goalsLocal, 
 							id:  this.props.match.id}), 
 						React.createElement("span", {className: "match--time"},  this.props.match.time), 
 						React.createElement(FormTeam, {
+							type: "visitor", 
 							team:  this.props.match.visitor, 
 							setGoals:  this.setGoalsVisitor, 
 							goals:  this.state.goalsVisitor, 
@@ -302,19 +304,22 @@ Teams   = require('../teams/base.jsx');
 
 module.exports = React.createClass({displayName: "exports",
  	render: function() {
+ 		var nodeInput, nodeLabel;
+ 		nodeLabel = React.createElement("label", {htmlFor:  this.props.team.codename}, React.createElement(Teams, {team:  this.props.team, type:  this.props.type}));
+ 		nodeInput = React.createElement("input", {
+									type: "number", 
+									id:  this.props.team.codename, 
+									name:  this.props.team.codename, 
+									placeholder: "0", 
+									value:  this.props.goals, 
+									onChange:  this.props.setGoals});
 		return (
 			React.createElement("div", {className: "match--form--team"}, 
-				React.createElement("label", {htmlFor:  this.props.team.codename}, React.createElement(Teams, {team:  this.props.team})), 
-				React.createElement("input", {
-					type: "number", 
-					id:  this.props.team.codename, 
-					name:  this.props.team.codename, 
-					placeholder: "0", 
-					value:  this.props.goals, 
-					onChange:  this.props.setGoals})
+				 this.props.type == 'local' ? nodeLabel : nodeInput, 
+				 this.props.type == 'local' ? nodeInput : nodeLabel
 			)
 		);
-	}
+	},	
 });
 },{"../teams/base.jsx":15,"react":172}],10:[function(require,module,exports){
 var Checking;
@@ -671,11 +676,17 @@ React = require('react');
 Flag 	= require('./flag.jsx');
 
 module.exports = React.createClass({displayName: "exports", 
+	getInitialState: function () {
+		return ({ type: this.props.type ? this.props.type : 'local' });
+	},
  	render: function() {
+ 		var nodeFlag, nodeCodename;
+ 		nodeFlag     = React.createElement(Flag, {country:  this.props.team.country});
+ 		nodeCodename = React.createElement("h3", {className: "team--codename"},  this.props.team.codename);
 		return (
 			React.createElement("div", {className: "team"}, 
-				React.createElement(Flag, {country:  this.props.team.country}), 
-				React.createElement("h3", {className: "team--codename"},  this.props.team.codename)
+				 this.state.type == 'local' ? nodeFlag : nodeCodename, 
+				 this.state.type == 'local' ? nodeCodename : nodeFlag				
 			)
 		);
 	}

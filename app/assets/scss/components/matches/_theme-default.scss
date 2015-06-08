@@ -1,0 +1,12 @@
+$th-match: (
+	border: map-get($colors, lg-gray),
+	text-time: darken-color(map-get($colors, gray), 30%)
+) !default;
+
+.match {
+	border-bottom-color: map-get($th-match, border);
+
+	&--time {
+		color: map-get($th-match, text-time);
+	}
+}

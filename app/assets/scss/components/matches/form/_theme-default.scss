@@ -1,0 +1,10 @@
+$th-match-form: (
+	border-color: map-get($colors, gray)
+) !default;
+
+.match--form {
+
+	input {
+		border-color: map-get($th-match-form, border-color);
+	}
+}

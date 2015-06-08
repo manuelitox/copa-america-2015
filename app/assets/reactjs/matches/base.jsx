@@ -38,13 +38,15 @@ module.exports = React.createClass({
 			<div className="match">
 				<form className="match--form" name={ this.props.match.id }>
 					<fieldset>
-						<FormTeam 
+						<FormTeam
+							type="local"
 							team={ this.props.match.local } 
 							setGoals={ this.setGoalsLocal }
 							goals={ this.state.goalsLocal }  
 							id={ this.props.match.id } />
 						<span className="match--time">{ this.props.match.time }</span>
-						<FormTeam 
+						<FormTeam
+							type="visitor"
 							team={ this.props.match.visitor } 
 							setGoals={ this.setGoalsVisitor }
 							goals={ this.state.goalsVisitor }
