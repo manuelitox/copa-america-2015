@@ -279,6 +279,8 @@ button:focus, button:active {
 }
 
 .matches--header {
+  -webkit-box-shadow: 0 2px 2px;
+          box-shadow: 0 2px 2px;
   height: 40px;
   text-align: center;
 }
@@ -286,10 +288,12 @@ button:focus, button:active {
   font-size: 1rem;
   font-weight: 400;
   line-height: 40px;
+  margin-bottom: 0;
 }
 
 .matches--header {
   background-color: #f7f7f7;
+  color: #cccccc;
 }
 .matches--header h2 {
   color: #8e8e8e;
