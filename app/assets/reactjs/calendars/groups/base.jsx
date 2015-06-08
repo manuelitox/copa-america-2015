@@ -39,6 +39,9 @@ module.exports = React.createClass({
 		}); 		
 		return (
 			<section className="matches">
+				<header className="titles">
+					<h1>Calendario Fase de Grupos</h1>
+				</header>
 				{ daysNode }
 			</section>
 		);

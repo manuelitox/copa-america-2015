@@ -79,6 +79,9 @@ module.exports = React.createClass({displayName: "exports",
 		}); 		
 		return (
 			React.createElement("section", {className: "matches"}, 
+				React.createElement("header", {className: "titles"}, 
+					React.createElement("h1", null, "Calendario Fase de Grupos")
+				), 
 				 daysNode 
 			)
 		);
@@ -423,9 +426,14 @@ module.exports = React.createClass({displayName: "exports",
 			);
 		});
 		return (
-			React.createElement("table", null, 
-				React.createElement(TableHeader, null), 
-				 tableCntNode 
+			React.createElement("section", {className: "groups"}, 
+				React.createElement("header", {className: "titles"}, 
+					React.createElement("h1", null, "Tabla de Posiciones")
+				), 
+				React.createElement("table", null, 
+					React.createElement(TableHeader, null), 
+					 tableCntNode 
+				)
 			)
 		);
 	}

@@ -260,4 +260,21 @@ button:focus, button:active {
 .navigation li.actived svg path {
   fill: white;
 }
+
+.titles {
+  height: 40px;
+  text-align: center;
+}
+.titles h1 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.titles {
+  background-color: #0e4477;
+}
+.titles h1 {
+  color: white;
+}
 /*# sourceMappingURL=main.css.map */

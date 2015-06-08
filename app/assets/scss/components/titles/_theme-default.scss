@@ -1,0 +1,11 @@
+$th-titles: (
+	bg : map-get($colors, dk-bg)
+) !default;
+
+.titles {
+	background-color: map-get($th-titles, bg);
+
+	h1 {
+		color: white;
+	}
+}

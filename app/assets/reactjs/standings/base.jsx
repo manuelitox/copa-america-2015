@@ -38,10 +38,15 @@ module.exports = React.createClass({
 			);
 		});
 		return (
-			<table>
-				<TableHeader />
-				{ tableCntNode }
-			</table>
+			<section className="groups">
+				<header className="titles">
+					<h1>Tabla de Posiciones</h1>
+				</header>
+				<table>
+					<TableHeader />
+					{ tableCntNode }
+				</table>
+			</section>
 		);
 	}
 });
