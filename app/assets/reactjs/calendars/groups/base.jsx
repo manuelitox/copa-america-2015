@@ -30,7 +30,9 @@ module.exports = React.createClass({
  		daysNode = this.state.data.map(function (daysMatches, index) {
 			return (
 				<div key={ index } className="by-day">
-					<header className="matches--header">{ daysMatches.date }</header>
+					<header className="matches--header">
+						<h2>{ daysMatches.date }</h2>
+					</header>
 					<ByDay
 						group={ group } 
 						day={ daysMatches } />			

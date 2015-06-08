@@ -1,0 +1,12 @@
+$th-subtitles: (
+	bg   : map-get($colors, lg-gray),
+	text : darken-color(map-get($colors, gray), 30%)
+) !default;
+
+.matches--header {
+	background-color: map-get($th-subtitles, bg);
+
+	h2 {
+		color: map-get($th-subtitles, text);
+	}
+}

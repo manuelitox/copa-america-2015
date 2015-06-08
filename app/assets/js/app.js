@@ -70,7 +70,9 @@ module.exports = React.createClass({displayName: "exports",
  		daysNode = this.state.data.map(function (daysMatches, index) {
 			return (
 				React.createElement("div", {key:  index, className: "by-day"}, 
-					React.createElement("header", {className: "matches--header"},  daysMatches.date), 
+					React.createElement("header", {className: "matches--header"}, 
+						React.createElement("h2", null,  daysMatches.date)
+					), 
 					React.createElement(ByDay, {
 						group:  group, 
 						day:  daysMatches })			
