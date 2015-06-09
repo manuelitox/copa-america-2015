@@ -24,9 +24,11 @@ APP = React.createClass({
 				<Header 
 					currentSection={ this.state.section } section={ this.setSection } 
 					currentGroup={ this.state.group } group={ this.setGroup } />
-				{ this.state.section == 'calendar' ? <CalendarGroups group={ this.state.group } url="data/calendar.json" /> : null }
-				{ this.state.section == 'groups' ? <Standings group={ this.state.group } url="data/teams.json" /> : null }
-				{ this.state.section == 'final' ? "fase final" : null }
+				<main>
+					{ this.state.section == 'calendar' ? <CalendarGroups group={ this.state.group } url="data/calendar.json" /> : null }
+					{ this.state.section == 'groups' ? <Standings group={ this.state.group } url="data/teams.json" /> : null }
+					{ this.state.section == 'final' ? "fase final" : null }
+				</main>
 			</div>
 		);
 	}

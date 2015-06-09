@@ -25,9 +25,11 @@ APP = React.createClass({displayName: "APP",
 				React.createElement(Header, {
 					currentSection:  this.state.section, section:  this.setSection, 
 					currentGroup:  this.state.group, group:  this.setGroup}), 
-				 this.state.section == 'calendar' ? React.createElement(CalendarGroups, {group:  this.state.group, url: "data/calendar.json"}) : null, 
-				 this.state.section == 'groups' ? React.createElement(Standings, {group:  this.state.group, url: "data/teams.json"}) : null, 
-				 this.state.section == 'final' ? "fase final" : null
+				React.createElement("main", null, 
+					 this.state.section == 'calendar' ? React.createElement(CalendarGroups, {group:  this.state.group, url: "data/calendar.json"}) : null, 
+					 this.state.section == 'groups' ? React.createElement(Standings, {group:  this.state.group, url: "data/teams.json"}) : null, 
+					 this.state.section == 'final' ? "fase final" : null
+				)
 			)
 		);
 	}
