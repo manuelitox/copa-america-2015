@@ -1,8 +1,7 @@
-var React, TableContent, TableHeader;
+var React, TableContent;
 
 React        = require('react');
 TableContent = require('./table-cnt.jsx');
-TableHeader  = require('./table-header.jsx');
 
 module.exports = React.createClass({ 
 	loadResolutionsFromServer: function() {
@@ -42,10 +41,7 @@ module.exports = React.createClass({
 				<header className="titles">
 					<h1>Tabla de Posiciones</h1>
 				</header>
-				<table>
-					<TableHeader />
-					{ tableCntNode }
-				</table>
+				{ tableCntNode }
 			</section>
 		);
 	}

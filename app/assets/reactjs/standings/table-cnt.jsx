@@ -9,24 +9,24 @@ module.exports = React.createClass({
  		var teamsNode, teams = this.props.teams;
 		teamsNode = Stats.addStats(teams).map(function (team, index) {
 			return (
-				<tr key={ index }>
-					<td>
-						<Teams team={ team } />
-					</td>
-					<td>{ team.matches }</td>
-					<td>{ team.wins }</td>
-					<td>{ team.draws }</td>
-					<td>{ team.loses }</td>
-					<td>{ team.goals }</td>
-					<td>{ team.goalsDifference }</td>
-					<td>{ team.points }</td>
-				</tr>
+				<div className="groups--team" key={ index }>
+					<div className="groups--team--who"><Teams team={ team } /></div>
+					<div className="groups--team--matches">{ team.matches }</div>
+					<div className="groups--team--wins">{ team.wins }</div>
+					<div className="groups--team--secondary">
+						<div className="groups--team--draws">{ team.draws }</div>
+						<div className="groups--team--loses">{ team.loses }</div>
+						<div className="groups--team--goals">{ team.goals }</div>
+						<div className="groups--team--goals-difference">{ team.goalsDifference }</div>
+						<div className="groups--team--points">{ team.points }</div>
+					</div>
+				</div>
 			);
 		});
 		return (
-			<tbody>
+			<div className="groups--teams">
 				{ teamsNode }
-			</tbody>	
+			</div>
 		);
 	}
 });
