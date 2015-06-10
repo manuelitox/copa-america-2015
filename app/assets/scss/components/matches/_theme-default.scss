@@ -6,7 +6,7 @@ $th-match: (
 .match {
 	border-bottom-color: map-get($th-match, border);
 
-	&--time {
+	&--time, &--date {
 		color: map-get($th-match, text-time);
-	}
+	} 
 }

@@ -334,11 +334,15 @@ button:focus, button:active {
     top: 10px;
   }
 }
+.match--date {
+  margin-bottom: 20px;
+  text-align: center;
+}
 
 .match {
   border-bottom-color: #f7f7f7;
 }
-.match--time {
+.match--time, .match--date {
   color: #8e8e8e;
 }
 
@@ -470,5 +474,4 @@ button:focus, button:active {
 .groups--team--points {
   background-color: #f7f7f7;
 }
-
 /*# sourceMappingURL=main.css.map */
