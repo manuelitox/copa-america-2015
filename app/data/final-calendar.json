@@ -1,0 +1,98 @@
+[
+	{
+		"date": "24/06/2015", 
+		"matches": [
+			{
+				"id": 1,
+				"time": "20:30",
+				"local": "A1",
+				"visitor": "B3/C3",	
+				"belong_to": "Quarter final",
+			}
+		]	
+	},
+	{
+		"date": "25/06/2015", 
+		"matches": [
+			{
+				"id": 2,
+				"time": "20:30",
+				"local": "A2",
+				"visitor": "C2",	
+				"belong_to": "Quarter final",
+			}
+		]	
+	},
+	{
+		"date": "26/06/2015", 
+		"matches": [
+			{
+				"id": 3,
+				"time": "20:30",
+				"local": "B1",
+				"visitor": "A3/C3",	
+				"belong_to": "Quarter final",
+			}
+		]	
+	},
+	{
+		"date": "27/06/2015", 
+		"matches": [
+			{
+				"id": 4,
+				"time": "18:30",
+				"local": "C1",
+				"visitor": "B2",	
+				"belong_to": "Quarter finals",
+			}
+		]	
+	},
+	{
+		"date": "29/06/2015", 
+		"matches": [
+			{
+				"id": 5,
+				"time": "20:30",
+				"local": "GAN CF1",
+				"visitor": "GAN CF2",	
+				"belong_to": "Semi finals",
+			}
+		]	
+	},
+	{
+		"date": "30/06/2015", 
+		"matches": [
+			{
+				"id": 6,
+				"time": "20:30",
+				"local": "GAN CF3",
+				"visitor": "GAN CF4",	
+				"belong_to": "Semi finals",
+			}
+		]	
+	},
+	{
+		"date": "03/07/2015", 
+		"matches": [
+			{
+				"id": 7,
+				"time": "20:30",
+				"local": "PER SF1",
+				"visitor": "PER SF2",	
+				"belong_to": "Third-place",
+			}
+		]	
+	},
+	{
+		"date": "04/07/2015", 
+		"matches": [
+			{
+				"id": 8,
+				"time": "17:00",
+				"local": "GAN SF1",
+				"visitor": "GAN SF2",	
+				"belong_to": "Final",
+			}
+		]	
+	},
+]
