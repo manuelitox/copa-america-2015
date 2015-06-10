@@ -1,0 +1,68 @@
+.groups {
+	clear: both;
+	float: left;
+	overflow: hidden;
+	width: 100%;
+
+	&--team {
+		border-bottom: 1px solid;
+		overflow: hidden;
+	}
+
+	&--team--main, &--team--secondary {
+		padding: 0 20px;
+		overflow: hidden;
+	}
+
+	&--team--main {
+		border-bottom: 1px solid;
+		cursor: pointer;
+		height: 60px;
+		position: relative;
+	}
+
+	&--team--secondary {
+		clear: both;
+		height: 0;
+		line-height: 40px;
+		transition: .2s height;
+
+		& > div {
+			box-sizing: border-box;
+			float: left;
+			text-align: center;
+			width: 16.66%;
+		}
+	}
+
+	&--team.actived &--team--secondary {
+		height: 40px;
+	}
+
+	&--team--btn {
+		@include sizes(13px);
+		position: absolute;
+		right: 100px;
+		top: 25px;
+
+		.icon-plus {
+			@include sizes(13px);
+			@include rotate(0deg);
+			background-size: 13px;
+			display: block;
+			transition: .2s transform;
+		}
+	}
+
+	&--team--who {
+		float: left;
+		padding: 11px 0;
+	}
+
+	&--team--points {
+		@include sizes(60px, inherit);
+		float: right;
+		line-height: 60px;
+		text-align: center;
+	}	
+}

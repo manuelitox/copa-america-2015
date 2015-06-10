@@ -1,0 +1,23 @@
+$th-groups: (
+	border: map-get($colors, lg-gray),
+	color-span: darken-color(map-get($colors, gray), 30%)
+) !default;
+
+.groups {
+
+	&--team {
+		border-bottom-color: map-get($th-groups, border);
+	}
+
+	&--team--highlight {
+		color: map-get($th-groups, color-span);
+	}	
+
+	&--team--main {
+		border-bottom-color: map-get($th-groups, border);
+	}
+
+	&--team--points {
+		background-color: map-get($th-groups, border);
+	}
+}

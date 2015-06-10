@@ -612,27 +612,60 @@ module.exports = {
 
 };
 },{}],13:[function(require,module,exports){
-var React, Teams;
+var React, Teams, Stats;
 
 React = require('react');
 Teams = require('../teams/base.jsx');
 Stats = require('./stats.jsx');
 
 module.exports = React.createClass({displayName: "exports",
+	getInitialState: function() {
+    return {
+    	isActive: -1
+    };
+	},
+	toggle: function(i) {
+		this.setState({ isActive : i });
+	},
+	dynamicClasses: function(i) {
+		if (this.state.isActive == i) {
+			return 'groups--team actived';
+		} else {
+			return 'groups--team';
+		}
+	},
+	showBtn: function(i) {
+		if (this.state.isActive == i) {
+			return null;
+		} else {
+			return (
+				React.createElement("button", {className: "groups--team--btn"}, 
+					React.createElement("span", {className: "icon-plus"})
+				)
+			);
+		}
+	},
  	render: function() {
- 		var teamsNode, teams = this.props.teams;
+ 		var teamsNode, teams, dynamicClasses, toggle, showBtn; 
+ 		teams          = this.props.teams;
+ 		dynamicClasses = this.dynamicClasses;
+ 		toggle         = this.toggle;
+ 		showBtn        = this.showBtn;
 		teamsNode = Stats.addStats(teams).map(function (team, index) {
 			return (
-				React.createElement("div", {className: "groups--team", key:  index }, 
-					React.createElement("div", {className: "groups--team--who"}, React.createElement(Teams, {team:  team })), 
-					React.createElement("div", {className: "groups--team--matches"},  team.matches), 
-					React.createElement("div", {className: "groups--team--wins"},  team.wins), 
+				React.createElement("div", {className:  dynamicClasses(index), key:  index }, 
+					React.createElement("div", {className: "groups--team--main", onClick:  toggle.bind(null, index) }, 
+						React.createElement("div", {className: "groups--team--who"}, React.createElement(Teams, {team:  team })), 
+						 showBtn(index), 
+						React.createElement("div", {className: "groups--team--points"},  team.points, " ", React.createElement("span", {className: "groups--team--highlight"}, "Pts"))
+					), 
 					React.createElement("div", {className: "groups--team--secondary"}, 
-						React.createElement("div", {className: "groups--team--draws"},  team.draws), 
-						React.createElement("div", {className: "groups--team--loses"},  team.loses), 
-						React.createElement("div", {className: "groups--team--goals"},  team.goals), 
-						React.createElement("div", {className: "groups--team--goals-difference"},  team.goalsDifference), 
-						React.createElement("div", {className: "groups--team--points"},  team.points)
+						React.createElement("div", {className: "groups--team--matches"},  team.matches, " ", React.createElement("span", {className: "groups--team--highlight"}, "P")), 
+						React.createElement("div", {className: "groups--team--wins"},  team.wins, " ", React.createElement("span", {className: "groups--team--highlight"}, "V")), 
+						React.createElement("div", {className: "groups--team--draws"},  team.draws, " ", React.createElement("span", {className: "groups--team--highlight"}, "E")), 
+						React.createElement("div", {className: "groups--team--loses"},  team.loses, " ", React.createElement("span", {className: "groups--team--highlight"}, "D")), 
+						React.createElement("div", {className: "groups--team--goals"},  team.goals, " ", React.createElement("span", {className: "groups--team--highlight"}, "G")), 
+						React.createElement("div", {className: "groups--team--goals-difference"},  team.goalsDifference, " ", React.createElement("span", {className: "groups--team--highlight"}, "DG"))
 					)
 				)
 			);

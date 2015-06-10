@@ -389,4 +389,84 @@ button:focus, button:active {
 .match--form input {
   border-color: #cccccc;
 }
+
+.groups {
+  clear: both;
+  float: left;
+  overflow: hidden;
+  width: 100%;
+}
+.groups--team {
+  border-bottom: 1px solid;
+  overflow: hidden;
+}
+.groups--team--main, .groups--team--secondary {
+  padding: 0 20px;
+  overflow: hidden;
+}
+.groups--team--main {
+  border-bottom: 1px solid;
+  cursor: pointer;
+  height: 60px;
+  position: relative;
+}
+.groups--team--secondary {
+  clear: both;
+  height: 0;
+  line-height: 40px;
+  -webkit-transition: .2s height;
+          transition: .2s height;
+}
+.groups--team--secondary > div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: left;
+  text-align: center;
+  width: 16.66%;
+}
+.groups--team.actived .groups--team--secondary {
+  height: 40px;
+}
+.groups--team--btn {
+  height: 13px;
+  width: 13px;
+  position: absolute;
+  right: 100px;
+  top: 25px;
+}
+.groups--team--btn .icon-plus {
+  height: 13px;
+  width: 13px;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  background-size: 13px;
+  display: block;
+  -webkit-transition: .2s -webkit-transform;
+          transition: .2s transform;
+}
+.groups--team--who {
+  float: left;
+  padding: 11px 0;
+}
+.groups--team--points {
+  height: inherit;
+  width: 60px;
+  float: right;
+  line-height: 60px;
+  text-align: center;
+}
+
+.groups--team {
+  border-bottom-color: #f7f7f7;
+}
+.groups--team--highlight {
+  color: #8e8e8e;
+}
+.groups--team--main {
+  border-bottom-color: #f7f7f7;
+}
+.groups--team--points {
+  background-color: #f7f7f7;
+}
 /*# sourceMappingURL=main.css.map */
