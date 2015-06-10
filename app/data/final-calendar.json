@@ -1,9 +1,9 @@
 [
 	{
-		"date": "24/06/2015", 
 		"matches": [
 			{
 				"id": 1,
+				"date": "24/06/2015", 
 				"time": "20:30",
 				"local": "A1",
 				"visitor": "B3/C3",	
@@ -12,10 +12,10 @@
 		]	
 	},
 	{
-		"date": "25/06/2015", 
 		"matches": [
 			{
 				"id": 2,
+				"date": "25/06/2015", 
 				"time": "20:30",
 				"local": "A2",
 				"visitor": "C2",	
@@ -24,10 +24,10 @@
 		]	
 	},
 	{
-		"date": "26/06/2015", 
 		"matches": [
 			{
 				"id": 3,
+				"date": "26/06/2015", 
 				"time": "20:30",
 				"local": "B1",
 				"visitor": "A3/C3",	
@@ -36,10 +36,10 @@
 		]	
 	},
 	{
-		"date": "27/06/2015", 
 		"matches": [
 			{
 				"id": 4,
+				"date": "27/06/2015", 
 				"time": "18:30",
 				"local": "C1",
 				"visitor": "B2",	
@@ -48,10 +48,10 @@
 		]	
 	},
 	{
-		"date": "29/06/2015", 
 		"matches": [
 			{
 				"id": 5,
+				"date": "29/06/2015", 
 				"time": "20:30",
 				"local": "GAN CF1",
 				"visitor": "GAN CF2",	
@@ -60,10 +60,10 @@
 		]	
 	},
 	{
-		"date": "30/06/2015", 
 		"matches": [
 			{
 				"id": 6,
+				"date": "30/06/2015", 
 				"time": "20:30",
 				"local": "GAN CF3",
 				"visitor": "GAN CF4",	
@@ -72,10 +72,10 @@
 		]	
 	},
 	{
-		"date": "03/07/2015", 
 		"matches": [
 			{
 				"id": 7,
+				"date": "03/07/2015", 
 				"time": "20:30",
 				"local": "PER SF1",
 				"visitor": "PER SF2",	
@@ -84,10 +84,10 @@
 		]	
 	},
 	{
-		"date": "04/07/2015", 
 		"matches": [
 			{
 				"id": 8,
+				"date": "04/07/2015", 
 				"time": "17:00",
 				"local": "GAN SF1",
 				"visitor": "GAN SF2",	
