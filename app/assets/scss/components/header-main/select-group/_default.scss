@@ -54,17 +54,17 @@
 
 	&--list {
 		height: 0;
-		overflow: hidden;
-		transition: .2s height;
-
 		left: 0;
 		list-style: none;
 		margin: 0;
-		text-align: center;
-		top: 100%;
+		overflow: hidden;
 		padding: 0;
 		position: absolute;
+		transition: .2s height;
+		text-align: center;
+		top: 100%;
 		width: 120px;
+		z-index: 1;
 
 		button {
 			display: block;

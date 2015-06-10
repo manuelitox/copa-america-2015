@@ -176,17 +176,18 @@ button:focus, button:active {
 }
 .select-group--list {
   height: 0;
-  overflow: hidden;
-  -webkit-transition: .2s height;
-          transition: .2s height;
   left: 0;
   list-style: none;
   margin: 0;
-  text-align: center;
-  top: 100%;
+  overflow: hidden;
   padding: 0;
   position: absolute;
+  -webkit-transition: .2s height;
+          transition: .2s height;
+  text-align: center;
+  top: 100%;
   width: 120px;
+  z-index: 1;
 }
 .select-group--list button {
   display: block;
@@ -469,4 +470,5 @@ button:focus, button:active {
 .groups--team--points {
   background-color: #f7f7f7;
 }
+
 /*# sourceMappingURL=main.css.map */
