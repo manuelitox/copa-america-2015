@@ -1,16 +1,20 @@
-var React;
+var React, QuarterFinals, SemiFinals, ThirdPlace, Final;
 
-React = require('react');
+React         = require('react');
+QuarterFinals = require('./quarter-finals.jsx');
+SemiFinals    = require('./semi-finals.jsx');
+ThirdPlace    = require('./third-place.jsx');
+Final         = require('./final.jsx');
 
-APP = React.createClass({	
-	getInitialState: function() {
-		return { 
-
-		};
-	}, 	
+module.exports = React.createClass({	
 	render: function() {
 		return (
-
+			<section className="final-phase">
+				<QuarterFinals />
+				<SemiFinals />
+				<ThirdPlace />
+				<Final />
+			</section>
 		);
 	}
 });

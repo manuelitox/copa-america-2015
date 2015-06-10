@@ -1,9 +1,10 @@
-var React, Header, CalendarGroups, Standings;
+var React, Header, CalendarGroups, Standings, FinalPhase;
 
 React          = require('react');
 CalendarGroups = require('./calendars/groups/base.jsx');
 Standings      = require('./standings/base.jsx');
-Header 				 = require('./header/base.jsx');
+Header         = require('./header/base.jsx');
+FinalPhase     = require('./calendars/finals/base.jsx');
 
 APP = React.createClass({	
 	getInitialState: function() {
@@ -27,7 +28,7 @@ APP = React.createClass({
 				<main>
 					{ this.state.section == 'calendar' ? <CalendarGroups group={ this.state.group } url="data/calendar.json" /> : null }
 					{ this.state.section == 'groups' ? <Standings group={ this.state.group } url="data/teams.json" /> : null }
-					{ this.state.section == 'final' ? "fase final" : null }
+					{ this.state.section == 'final' ? <FinalPhase/> : null }
 				</main>
 			</div>
 		);
