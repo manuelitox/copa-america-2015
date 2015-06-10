@@ -18,26 +18,35 @@ module.exports = React.createClass({
 		});
 	},
 	getInitialState: function() {
-		return { 
-			data: []
-		};
+		return { data: [] };
 	},
+	haveMatches: function(day, group) {
+		var matches = [];
+		day.matches.map(function (match, index) {
+			match.belong_to === group ? matches.push(match) : false;
+		});
+		return matches.length;
+	},	
 	componentDidMount: function() {
 		this.loadResolutionsFromServer();
 	},	
  	render: function() {
- 		var daysNode, group = this.props.group;
+ 		var daysNode, 
+ 				group       = this.props.group,
+ 				haveMatches = this.haveMatches;
  		daysNode = this.state.data.map(function (daysMatches, index) {
-			return (
-				<div key={ index } className="by-day">
-					<header className="matches--header">
-						<h2>{ daysMatches.date }</h2>
-					</header>
-					<ByDay
-						group={ group } 
-						day={ daysMatches } />			
-				</div>	
-			);
+			return haveMatches(daysMatches, group) >= 1 ?
+				 (
+					<div key={ index } className="by-day">
+						<header className="matches--header">
+							<h2>{ daysMatches.date }</h2>
+						</header>
+						<ByDay
+							group={ group } 
+							day={ daysMatches } />			
+					</div>	
+				)
+			: null;
 		}); 		
 		return (
 			<section className="matches">

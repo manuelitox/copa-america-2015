@@ -60,26 +60,35 @@ module.exports = React.createClass({displayName: "exports",
 		});
 	},
 	getInitialState: function() {
-		return { 
-			data: []
-		};
+		return { data: [] };
 	},
+	haveMatches: function(day, group) {
+		var matches = [];
+		day.matches.map(function (match, index) {
+			match.belong_to === group ? matches.push(match) : false;
+		});
+		return matches.length;
+	},	
 	componentDidMount: function() {
 		this.loadResolutionsFromServer();
 	},	
  	render: function() {
- 		var daysNode, group = this.props.group;
+ 		var daysNode, 
+ 				group       = this.props.group,
+ 				haveMatches = this.haveMatches;
  		daysNode = this.state.data.map(function (daysMatches, index) {
-			return (
-				React.createElement("div", {key:  index, className: "by-day"}, 
-					React.createElement("header", {className: "matches--header"}, 
-						React.createElement("h2", null,  daysMatches.date)
-					), 
-					React.createElement(ByDay, {
-						group:  group, 
-						day:  daysMatches })			
-				)	
-			);
+			return haveMatches(daysMatches, group) >= 1 ?
+				 (
+					React.createElement("div", {key:  index, className: "by-day"}, 
+						React.createElement("header", {className: "matches--header"}, 
+							React.createElement("h2", null,  daysMatches.date)
+						), 
+						React.createElement(ByDay, {
+							group:  group, 
+							day:  daysMatches })			
+					)	
+				)
+			: null;
 		}); 		
 		return (
 			React.createElement("section", {className: "matches"}, 
