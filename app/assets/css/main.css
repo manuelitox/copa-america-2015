@@ -116,7 +116,7 @@ button:focus, button:active {
   font-size: 1rem;
   line-height: 60px;
   margin: 0;
-  padding-left: 30px;
+  padding-left: 10px;
   text-transform: uppercase;
   width: 120px;
 }
