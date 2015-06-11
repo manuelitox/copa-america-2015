@@ -6,8 +6,8 @@
 				"id": 1,
 				"date": "24/06/2015", 
 				"time": "20:30",
-				"local": "A1",
-				"visitor": "B3/C3"	
+				"local": { "codename": "A1", "country": "A1" },
+				"visitor": { "codename": "B3/C3", "country": "B3/C3" }	
 			}
 		]	
 	},
@@ -18,8 +18,8 @@
 				"id": 2,
 				"date": "25/06/2015", 
 				"time": "20:30",
-				"local": "A2",
-				"visitor": "C2"
+				"local": { "codename": "A2", "country": "A2" },
+				"visitor": { "codename": "C2", "country": "C2" }
 			}
 		]	
 	},
@@ -30,8 +30,8 @@
 				"id": 3,
 				"date": "26/06/2015", 
 				"time": "20:30",
-				"local": "B1",
-				"visitor": "A3/C3"
+				"local": { "codename": "B1", "country": "B1" },
+				"visitor": { "codename": "A3/C3", "country": "A3/C3" }
 			}
 		]	
 	},
@@ -42,8 +42,8 @@
 				"id": 4,
 				"date": "27/06/2015", 
 				"time": "18:30",
-				"local": "C1",
-				"visitor": "B2"	
+				"local":  { "codename": "C1", "country": "C1" },
+				"visitor":  { "codename": "B2", "country": "B2" }	
 			}
 		]	
 	},
@@ -54,8 +54,8 @@
 				"id": 5,
 				"date": "29/06/2015", 
 				"time": "20:30",
-				"local": "GAN CF1",
-				"visitor": "GAN CF2"	
+				"local": { "codename": "GAN CF1", "country": "GAN CF1" },
+				"visitor": { "codename": "GAN CF2", "country": "GAN CF2" }
 			}
 		]	
 	},
@@ -66,8 +66,8 @@
 				"id": 6,
 				"date": "30/06/2015", 
 				"time": "20:30",
-				"local": "GAN CF3",
-				"visitor": "GAN CF4"	
+				"local": { "codename": "GAN CF3", "country": "GAN CF3" },
+				"visitor": { "codename": "GAN CF4", "country": "GAN CF4" }
 			}
 		]	
 	},
@@ -78,8 +78,8 @@
 				"id": 7,
 				"date": "03/07/2015", 
 				"time": "20:30",
-				"local": "PER SF1",
-				"visitor": "PER SF2"
+				"local": { "codename": "PER SF1", "country": "PER SF1" },
+				"visitor": { "codename": "PER SF2", "country": "PER SF2" }
 			}
 		]	
 	},
@@ -90,8 +90,8 @@
 				"id": 8,
 				"date": "04/07/2015", 
 				"time": "17:00",
-				"local": "GAN SF1",
-				"visitor": "GAN SF2"	
+				"local": { "codename": "GAN SF1", "country": "GAN SF1" },
+				"visitor": { "codename": "GAN SF2", "country": "GAN SF2" }	
 			}
 		]	
 	}

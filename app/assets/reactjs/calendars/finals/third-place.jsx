@@ -1,7 +1,8 @@
-var React, Title;
+var React, Title, Matches;
 
-React = require('react');
-Title = require('./title.jsx');
+React   = require('react');
+Title   = require('./title.jsx');
+Matches = require('../../matches/base-final.jsx');
 
 module.exports = React.createClass({
 	getInitialState: function() {
@@ -10,10 +11,15 @@ module.exports = React.createClass({
 		});
 	},	 		
 	render: function() {
+		var matchesNode;
+		console.log(this.props.matches);
+		matchesNode = this.props.matches.map(function (match, index) {
+			return ( <Matches key={ index } match={ match.matches[0] } /> );
+		});			
 		return (
 			<div className="final--semi">
 				<Title title={ this.state.title } />
-				<p>Hola soy el 3er lugar.</p>
+				{ matchesNode }
 			</div>			
 		);
 	}

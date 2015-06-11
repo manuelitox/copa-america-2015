@@ -7,8 +7,8 @@ Results = require('./results.jsx');
 module.exports = React.createClass({
 	getInitialState: function() {
 		return {
-			goalsLocal: JSON.parse(localStorage[this.props.match.id] || 0) !== 0 ? JSON.parse(localStorage[this.props.match.id]).goalsLocal : null,
-			goalsVisitor: JSON.parse(localStorage[this.props.match.id] || 0) !== 0 ? JSON.parse(localStorage[this.props.match.id]).goalsVisitor : null,
+			goalsLocal: null,
+			goalsVisitor: null,
 			isActive: false
 		};
 	},	
@@ -25,15 +25,6 @@ module.exports = React.createClass({
 		});
 	},
  	render: function() {
- 		if (this.state.isActive) {
-			Results.get(
-	 	 		this.props.match.id, 
-	 	 		this.props.match.local.codename,
-	 	 		this.props.match.visitor.codename, 
-	 	 		this.state.goalsLocal, 
-	 	 		this.state.goalsVisitor
-	 	 	);
-	 	}
 		return (
 			<div className="match">
 				<form className="match--form" name={ this.props.match.id }>

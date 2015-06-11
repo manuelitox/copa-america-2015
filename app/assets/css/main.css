@@ -474,4 +474,10 @@ button:focus, button:active {
 .groups--team--points {
   background-color: #f7f7f7;
 }
+
+.final-phase > div {
+  clear: both;
+  float: left;
+  width: 100%;
+}
 /*# sourceMappingURL=main.css.map */
