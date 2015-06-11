@@ -7,7 +7,7 @@
 				"time": "20:30",
 				"local": "A1",
 				"visitor": "B3/C3",	
-				"belong_to": "Quarter final",
+				"belong_to": "Quarter final"
 			}
 		]	
 	},
@@ -19,7 +19,7 @@
 				"time": "20:30",
 				"local": "A2",
 				"visitor": "C2",	
-				"belong_to": "Quarter final",
+				"belong_to": "Quarter final"
 			}
 		]	
 	},
@@ -31,7 +31,7 @@
 				"time": "20:30",
 				"local": "B1",
 				"visitor": "A3/C3",	
-				"belong_to": "Quarter final",
+				"belong_to": "Quarter final"
 			}
 		]	
 	},
@@ -43,7 +43,7 @@
 				"time": "18:30",
 				"local": "C1",
 				"visitor": "B2",	
-				"belong_to": "Quarter finals",
+				"belong_to": "Quarter finals"
 			}
 		]	
 	},
@@ -55,7 +55,7 @@
 				"time": "20:30",
 				"local": "GAN CF1",
 				"visitor": "GAN CF2",	
-				"belong_to": "Semi finals",
+				"belong_to": "Semi finals"
 			}
 		]	
 	},
@@ -67,7 +67,7 @@
 				"time": "20:30",
 				"local": "GAN CF3",
 				"visitor": "GAN CF4",	
-				"belong_to": "Semi finals",
+				"belong_to": "Semi finals"
 			}
 		]	
 	},
@@ -79,7 +79,7 @@
 				"time": "20:30",
 				"local": "PER SF1",
 				"visitor": "PER SF2",	
-				"belong_to": "Third-place",
+				"belong_to": "Third-place"
 			}
 		]	
 	},
@@ -91,8 +91,8 @@
 				"time": "17:00",
 				"local": "GAN SF1",
 				"visitor": "GAN SF2",	
-				"belong_to": "Final",
+				"belong_to": "Final"
 			}
 		]	
-	},
+	}
 ]

@@ -29,7 +29,7 @@ APP = React.createClass({displayName: "APP",
 				React.createElement("main", null, 
 					 this.state.section == 'calendar' ? React.createElement(CalendarGroups, {group:  this.state.group, url: "data/calendar.json"}) : null, 
 					 this.state.section == 'groups' ? React.createElement(Standings, {group:  this.state.group, url: "data/teams.json"}) : null, 
-					 this.state.section == 'final' ? React.createElement(FinalPhase, null) : null
+					 this.state.section == 'final' ? React.createElement(FinalPhase, {url: "data/final-calendar.json"}) : null
 				)
 			)
 		);
@@ -49,7 +49,26 @@ SemiFinals    = require('./semi-finals.jsx');
 ThirdPlace    = require('./third-place.jsx');
 Final         = require('./final.jsx');
 
-module.exports = React.createClass({displayName: "exports",	
+module.exports = React.createClass({displayName: "exports",
+	loadResolutionsFromServer: function() {
+		$.ajax({
+			url: this.props.url,
+			dataType: 'json',
+			cache: false,
+			success: function(data) {
+				this.setState({data: data});
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)			
+		});
+	},
+	getInitialState: function() {
+		return { data: [] };
+	},	
+	componentDidMount: function() {
+		this.loadResolutionsFromServer();
+	},	
 	render: function() {
 		return (
 			React.createElement("section", {className: "final-phase"}, 
