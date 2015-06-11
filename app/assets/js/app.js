@@ -68,14 +68,21 @@ module.exports = React.createClass({displayName: "exports",
 	},	
 	componentDidMount: function() {
 		this.loadResolutionsFromServer();
+	},
+	filterByType: function(type) {
+		var newMatches = [];
+		this.state.data.map(function (matches) {
+			matches.belong_to == type ? newMatches.push(matches) : null;
+		});
+		return newMatches;
 	},	
 	render: function() {
 		return (
 			React.createElement("section", {className: "final-phase"}, 
-				React.createElement(QuarterFinals, null), 
-				React.createElement(SemiFinals, null), 
-				React.createElement(ThirdPlace, null), 
-				React.createElement(Final, null)
+				React.createElement(QuarterFinals, {matches:  this.filterByType('Quarter final') }), 
+				React.createElement(SemiFinals, {matches:  this.filterByType('Semi finals') }), 
+				React.createElement(ThirdPlace, {matches:  this.filterByType('Third-place') }), 
+				React.createElement(Final, {matches:  this.filterByType('Final') })
 			)
 		);
 	}

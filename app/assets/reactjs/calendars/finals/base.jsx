@@ -25,14 +25,21 @@ module.exports = React.createClass({
 	},	
 	componentDidMount: function() {
 		this.loadResolutionsFromServer();
+	},
+	filterByType: function(type) {
+		var newMatches = [];
+		this.state.data.map(function (matches) {
+			matches.belong_to == type ? newMatches.push(matches) : null;
+		});
+		return newMatches;
 	},	
 	render: function() {
 		return (
 			<section className="final-phase">
-				<QuarterFinals />
-				<SemiFinals />
-				<ThirdPlace />
-				<Final />
+				<QuarterFinals matches={ this.filterByType('Quarter final') } />
+				<SemiFinals matches={ this.filterByType('Semi finals') } />
+				<ThirdPlace matches={ this.filterByType('Third-place') } />
+				<Final matches={ this.filterByType('Final') } />
 			</section>
 		);
 	}
