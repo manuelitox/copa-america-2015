@@ -769,9 +769,9 @@ module.exports = {
 		for (var i = 1; i < 19; i++) {
 			if (JSON.parse(localStorage[i] || 0) !== 0) {
 				if (JSON.parse(localStorage[i]).local == codename) {
-			 		count += parseInt(JSON.parse(localStorage[i]).goalsLocal);
+			 		count += parseInt(JSON.parse(localStorage[i]).goalsLocal) || 0;
 			 	} else if (JSON.parse(localStorage[i]).visitor == codename) {
-			 		count += parseInt(JSON.parse(localStorage[i]).goalsVisitor);
+			 		count += parseInt(JSON.parse(localStorage[i]).goalsVisitor) || 0;
 			 	}
 			}
 		};
@@ -789,9 +789,9 @@ module.exports = {
 		for (var i = 1; i < 19; i++) {
 			if (JSON.parse(localStorage[i] || 0) !== 0) {
 				if (JSON.parse(localStorage[i]).local == codename) {
-			 		count += parseInt(JSON.parse(localStorage[i]).goalsVisitor);
+			 		count += parseInt(JSON.parse(localStorage[i]).goalsVisitor) || 0;
 			 	} else if (JSON.parse(localStorage[i]).visitor == codename) {
-			 		count += parseInt(JSON.parse(localStorage[i]).goalsLocal);
+			 		count += parseInt(JSON.parse(localStorage[i]).goalsLocal) || 0;
 			 	}
 			}
 		};
