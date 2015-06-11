@@ -12,7 +12,6 @@ module.exports = React.createClass({
 	},	 	
 	render: function() {
 		var matchesNode;
-		console.log(this.props.matches);
 		matchesNode = this.props.matches.map(function (match, index) {
 			return ( <Matches key={ index } match={ match.matches[0] } /> );
 		});		

@@ -1,5 +1,12 @@
-.final-phase > div {
-	clear: both;
-	float: left;
-	width: 100%;
+.final-phase {
+	
+	&.disabled input {
+		display: none;
+	}
+
+	& > div {
+		clear: both;
+		float: left;
+		width: 100%;
+	}
 }

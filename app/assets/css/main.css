@@ -475,6 +475,9 @@ button:focus, button:active {
   background-color: #f7f7f7;
 }
 
+.final-phase.disabled input {
+  display: none;
+}
 .final-phase > div {
   clear: both;
   float: left;

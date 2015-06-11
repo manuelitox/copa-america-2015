@@ -1,6 +1,7 @@
-var React, QuarterFinals, SemiFinals, ThirdPlace, Final;
+var React, QuarterFinals, SemiFinals, ThirdPlace, Final, Results;
 
 React         = require('react');
+Results       = require('../../matches/results-final.jsx');
 QuarterFinals = require('./quarter-finals.jsx');
 SemiFinals    = require('./semi-finals.jsx');
 ThirdPlace    = require('./third-place.jsx');
@@ -32,10 +33,13 @@ module.exports = React.createClass({
 			matches.belong_to == type ? newMatches.push(matches) : null;
 		});
 		return newMatches;
-	},	
+	},
+	isNotCompleted: function() {
+		return Results.groupsPhaseisCompleted() ? 'final-phase' : 'final-phase disabled';
+	},
 	render: function() {
 		return (
-			<section className="final-phase">
+			<section className={ this.isNotCompleted() }>
 				<QuarterFinals matches={ this.filterByType('Quarter final') } />
 				<SemiFinals matches={ this.filterByType('Semi finals') } />
 				<ThirdPlace matches={ this.filterByType('Third-place') } />
