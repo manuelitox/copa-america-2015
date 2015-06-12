@@ -24,7 +24,7 @@ APP = React.createClass({
 	},
 	render: function() {
 		return (
-			<div>
+			<div className="wrap">
 				<Header 
 					currentSection={ this.state.section } section={ this.setSection } 
 					currentGroup={ this.state.group } group={ this.setGroup } />

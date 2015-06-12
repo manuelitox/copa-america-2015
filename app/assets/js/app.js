@@ -25,7 +25,7 @@ APP = React.createClass({displayName: "APP",
 	},
 	render: function() {
 		return (
-			React.createElement("div", null, 
+			React.createElement("div", {className: "wrap"}, 
 				React.createElement(Header, {
 					currentSection:  this.state.section, section:  this.setSection, 
 					currentGroup:  this.state.group, group:  this.setGroup}), 
@@ -93,12 +93,12 @@ module.exports = React.createClass({displayName: "exports",
 			group.belong_to === 'B' ? groups.b.push(_this.getTeams(group.teams)) : null;
 			group.belong_to === 'C' ? groups.c.push(_this.getTeams(group.teams)) : null;			
 		});
-		this.storeLs(groups);
+		this.storeLS(groups);
 	},
 	getTeams: function (teams) {
 		return Stats.addStats(teams);
 	},
-	storeLs: function (groups) {
+	storeLS: function (groups) {
 		localStorage.setItem('groups', JSON.stringify(groups));
 	},
 	render: function() {
