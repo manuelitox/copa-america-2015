@@ -4,7 +4,7 @@
 		"matches": [
 			{
 				"id": 1,
-				"date": "24/06/2015", 
+				"date": "24 Junio", 
 				"time": "20:30",
 				"local": { "codename": "A1", "country": "example" },
 				"visitor": { "codename": "B3/C3", "country": "example" }	
@@ -28,7 +28,7 @@
 		"matches": [
 			{
 				"id": 3,
-				"date": "26/06/2015", 
+				"date": "26 Junio", 
 				"time": "20:30",
 				"local": { "codename": "B1", "country": "example" },
 				"visitor": { "codename": "A3/C3", "country": "example" }
@@ -40,7 +40,7 @@
 		"matches": [
 			{
 				"id": 4,
-				"date": "27/06/2015", 
+				"date": "27 Junio", 
 				"time": "18:30",
 				"local":  { "codename": "C1", "country": "example" },
 				"visitor":  { "codename": "B2", "country": "example" }	
@@ -52,7 +52,7 @@
 		"matches": [
 			{
 				"id": 5,
-				"date": "29/06/2015", 
+				"date": "29 Junio", 
 				"time": "20:30",
 				"local": { "codename": "GAN CF1", "country": "example" },
 				"visitor": { "codename": "GAN CF2", "country": "example" }
@@ -64,7 +64,7 @@
 		"matches": [
 			{
 				"id": 6,
-				"date": "30/06/2015", 
+				"date": "30 Junio", 
 				"time": "20:30",
 				"local": { "codename": "GAN CF3", "country": "example" },
 				"visitor": { "codename": "GAN CF4", "country": "example" }
@@ -76,7 +76,7 @@
 		"matches": [
 			{
 				"id": 7,
-				"date": "03/07/2015", 
+				"date": "03 Julio", 
 				"time": "20:30",
 				"local": { "codename": "PER SF1", "country": "example" },
 				"visitor": { "codename": "PER SF2", "country": "example" }
@@ -88,7 +88,7 @@
 		"matches": [
 			{
 				"id": 8,
-				"date": "04/07/2015", 
+				"date": "04 Julio", 
 				"time": "17:00",
 				"local": { "codename": "GAN SF1", "country": "example" },
 				"visitor": { "codename": "GAN SF2", "country": "example" }	
