@@ -4,7 +4,7 @@
 		"matches": [
 			{
 				"id": 1,
-				"time": "20:30",
+				"time": "19:00",
 				"belong_to": "A",
 				"local": { "codename": "CHI", "country": "chile" },
 				"visitor": { "codename": "ECU", "country": "ecuador" }	
@@ -16,7 +16,7 @@
 		"matches": [
 			{
 				"id": 2,				
-				"time": "20:30",
+				"time": "19:00",
 				"belong_to": "A",				
 				"local": { "codename": "MEX", "country": "mexico" },
 				"visitor": { "codename": "BOL", "country": "bolivia" }			
@@ -28,14 +28,14 @@
 		"matches": [
 			{
 				"id": 3,				
-				"time": "16:00",
+				"time": "14:30",
 				"belong_to": "B",				
 				"local": { "codename": "URU", "country": "uruguay" },
 				"visitor": { "codename": "JAM", "country": "jamaica" }			
 			},
 			{
 				"id": 4,				
-				"time": "18:30",
+				"time": "15:00",
 				"belong_to": "B",				
 				"local": { "codename": "ARG", "country": "argentina" },
 				"visitor": { "codename": "PAR", "country": "paraguay" }			
@@ -47,14 +47,14 @@
 		"matches": [
 			{
 				"id": 5,				
-				"time": "16:00",
+				"time": "14:30",
 				"belong_to": "C",				
 				"local": { "codename": "COL", "country": "colombia" },
 				"visitor": { "codename": "VEN", "country": "venezuela" }			
 			},
 			{
 				"id": 6,				
-				"time": "18:30",
+				"time": "17:00",
 				"belong_to": "C",
 				"local": { "codename": "BRA", "country": "brasil" },
 				"visitor": { "codename": "PER", "country": "peru" }			
@@ -66,14 +66,14 @@
 		"matches": [
 			{
 				"id": 7,
-				"time": "18:00",
+				"time": "16:30",
 				"belong_to": "A",				
 				"local": { "codename": "ECU", "country": "ecuador" },
 				"visitor": { "codename": "BOL", "country": "bolivia" }			
 			},
 			{
 				"id": 8,
-				"time": "20:30",
+				"time": "19:00",
 				"belong_to": "A",
 				"local": { "codename": "CHI", "country": "chile" },
 				"visitor": { "codename": "MEX", "country": "mexico" }			
@@ -85,14 +85,14 @@
 		"matches": [
 			{
 				"id": 9,
-				"time": "18:00",
+				"time": "16:30",
 				"belong_to": "B",
 				"local": { "codename": "PAR", "country": "paraguay" },
 				"visitor": { "codename": "JAM", "country": "jamaica" }			
 			},
 			{
 				"id": 10,
-				"time": "20:30",
+				"time": "19:00",
 				"belong_to": "B",				
 				"local": { "codename": "ARG", "country": "argentina" },
 				"visitor": { "codename": "URU", "country": "uruguay" }			
@@ -104,7 +104,7 @@
 		"matches": [
 			{
 				"id": 11,
-				"time": "21:00",
+				"time": "19:30",
 				"belong_to": "C",
 				"local": { "codename": "BRA", "country": "brasil" },
 				"visitor": { "codename": "COL", "country": "colombia" }			
@@ -116,7 +116,7 @@
 		"matches": [
 			{
 				"id": 12,
-				"time": "20:30",
+				"time": "19:00",
 				"belong_to": "C",
 				"local": { "codename": "PER", "country": "peru" },
 				"visitor": { "codename": "VEN", "country": "venezuela" }			
@@ -128,14 +128,14 @@
 		"matches": [
 			{
 				"id": 13,
-				"time": "18:00",
+				"time": "16:30",
 				"belong_to": "A",
 				"local": { "codename": "MEX", "country": "mexico" },
 				"visitor": { "codename": "ECU", "country": "ecuador" }			
 			},
 			{
 				"id": 14,
-				"time": "20:30",
+				"time": "19:00",
 				"belong_to": "A",
 				"local": { "codename": "CHI", "country": "chile" },
 				"visitor": { "codename": "BOL", "country": "bolivia" }			
@@ -147,14 +147,14 @@
 		"matches": [
 			{
 				"id": 15,
-				"time": "16:00",
+				"time": "14:30",
 				"belong_to": "B",
 				"local": { "codename": "URU", "country": "uruguay" },
 				"visitor": { "codename": "PAR", "country": "paraguay" }			
 			},
 			{
 				"id": 16,
-				"time": "18:30",
+				"time": "17:00",
 				"belong_to": "B",
 				"local": { "codename": "ARG", "country": "argentina" },
 				"visitor": { "codename": "JAM", "country": "jamaica" }			
@@ -166,14 +166,14 @@
 		"matches": [
 			{
 				"id": 17,
-				"time": "16:00",
+				"time": "14:30",
 				"belong_to": "C",
 				"local": { "codename": "COL", "country": "colombia" },
 				"visitor": { "codename": "PER", "country": "peru" }			
 			},
 			{
 				"id": 18,
-				"time": "18:30",
+				"time": "17:00",
 				"belong_to": "C",
 				"local": { "codename": "BRA", "country": "brasil" },
 				"visitor": { "codename": "VEN", "country": "venezuela" }			
