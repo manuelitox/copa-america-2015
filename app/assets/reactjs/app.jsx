@@ -10,7 +10,10 @@ APP = React.createClass({
 	getInitialState: function() {
 		return { 
 			group: "A",
-			section: "calendar"
+			section: "calendar",
+			calendarUrl: 'data/calendar.json',
+			teamsUrl: 'data/teams.json',
+			finalUrls: [ 'data/final-calendar.json', 'data/teams.json' ]
 		};
 	}, 	
 	setGroup: function(e) {
@@ -26,9 +29,9 @@ APP = React.createClass({
 					currentSection={ this.state.section } section={ this.setSection } 
 					currentGroup={ this.state.group } group={ this.setGroup } />
 				<main>
-					{ this.state.section == 'calendar' ? <CalendarGroups group={ this.state.group } url="data/calendar.json" /> : null }
-					{ this.state.section == 'groups' ? <Standings group={ this.state.group } url="data/teams.json" /> : null }
-					{ this.state.section == 'final' ? <FinalPhase url="data/final-calendar.json" /> : null }
+					{ this.state.section == 'calendar' ? <CalendarGroups group={ this.state.group } url={ this.state.calendarUrl } /> : null }
+					{ this.state.section == 'groups' ? <Standings group={ this.state.group } url={ this.state.teamsUrl } /> : null }
+					{ this.state.section == 'final' ? <FinalPhase url="data/final-calendar.json" urls={ this.state.finalUrls } /> : null }
 				</main>
 			</div>
 		);
