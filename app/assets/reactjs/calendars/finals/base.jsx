@@ -1,10 +1,11 @@
-var React, QuarterFinals, SemiFinals, ThirdPlace, Final;
+var React, QuarterFinals, SemiFinals, ThirdPlace, Final, Stats;
 
 React         = require('react');
 QuarterFinals = require('./quarter-finals.jsx');
 SemiFinals    = require('./semi-finals.jsx');
 ThirdPlace    = require('./third-place.jsx');
 Final         = require('./final.jsx');
+Stats         = require('../../standings/stats.jsx');
 
 module.exports = React.createClass({
 	loadResolutionsFromServer: function() {
@@ -39,8 +40,23 @@ module.exports = React.createClass({
 	isNotCompleted: function() {
 		return localStorage.length >= 18 ? 'final-phase' : 'final-phase disabled';
 	},
+	getGroups: function () {
+		var _this = this, groups = { a : [], b : [], c: [] };
+		this.state.groups.map(function (group) {
+			group.belong_to === 'A' ? groups.a.push(_this.getTeams(group.teams)) : null;
+			group.belong_to === 'B' ? groups.b.push(_this.getTeams(group.teams)) : null;
+			group.belong_to === 'C' ? groups.c.push(_this.getTeams(group.teams)) : null;			
+		});
+		this.storeLS(groups);
+	},
+	getTeams: function (teams) {
+		return Stats.addStats(teams);
+	},
+	storeLS: function (groups) {
+		localStorage.setItem('groups', JSON.stringify(groups));
+	},
 	render: function() {
-		console.log(this.state.groups);
+		this.getGroups()
 		return (
 			<section className={ this.isNotCompleted() }>
 				<QuarterFinals matches={ this.filterByType('Quarter final') } />

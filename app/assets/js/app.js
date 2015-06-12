@@ -44,13 +44,14 @@ React.render(
 	document.body
 );
 },{"./calendars/finals/base.jsx":2,"./calendars/groups/base.jsx":8,"./header/base.jsx":10,"./standings/base.jsx":18,"react":178}],2:[function(require,module,exports){
-var React, QuarterFinals, SemiFinals, ThirdPlace, Final;
+var React, QuarterFinals, SemiFinals, ThirdPlace, Final, Stats;
 
 React         = require('react');
 QuarterFinals = require('./quarter-finals.jsx');
 SemiFinals    = require('./semi-finals.jsx');
 ThirdPlace    = require('./third-place.jsx');
 Final         = require('./final.jsx');
+Stats         = require('../../standings/stats.jsx');
 
 module.exports = React.createClass({displayName: "exports",
 	loadResolutionsFromServer: function() {
@@ -85,8 +86,23 @@ module.exports = React.createClass({displayName: "exports",
 	isNotCompleted: function() {
 		return localStorage.length >= 18 ? 'final-phase' : 'final-phase disabled';
 	},
+	getGroups: function () {
+		var _this = this, groups = { a : [], b : [], c: [] };
+		this.state.groups.map(function (group) {
+			group.belong_to === 'A' ? groups.a.push(_this.getTeams(group.teams)) : null;
+			group.belong_to === 'B' ? groups.b.push(_this.getTeams(group.teams)) : null;
+			group.belong_to === 'C' ? groups.c.push(_this.getTeams(group.teams)) : null;			
+		});
+		this.storeLs(groups);
+	},
+	getTeams: function (teams) {
+		return Stats.addStats(teams);
+	},
+	storeLs: function (groups) {
+		localStorage.setItem('groups', JSON.stringify(groups));
+	},
 	render: function() {
-		console.log(this.state.groups);
+		this.getGroups()
 		return (
 			React.createElement("section", {className:  this.isNotCompleted() }, 
 				React.createElement(QuarterFinals, {matches:  this.filterByType('Quarter final') }), 
@@ -97,7 +113,7 @@ module.exports = React.createClass({displayName: "exports",
 		);
 	}
 });
-},{"./final.jsx":3,"./quarter-finals.jsx":4,"./semi-finals.jsx":5,"./third-place.jsx":6,"react":178}],3:[function(require,module,exports){
+},{"../../standings/stats.jsx":19,"./final.jsx":3,"./quarter-finals.jsx":4,"./semi-finals.jsx":5,"./third-place.jsx":6,"react":178}],3:[function(require,module,exports){
 var React, Title, Matches;
 
 React   = require('react');
