@@ -388,8 +388,8 @@ module.exports = React.createClass({displayName: "exports",
 	},
  	render: function() {
  		return (
- 			React.createElement("div", {className:  this.dinamycClasses() }, 
- 				React.createElement("button", {className: "select-group--current", onClick:  this.toggle}, 
+ 			React.createElement("div", {className:  this.dinamycClasses(), onClick:  this.toggle}, 
+ 				React.createElement("button", {className: "select-group--current"}, 
  					React.createElement("div", {className: "select-group--navicon"}), 
  					"Grupo ",  this.props.currentGroup
  				), 
