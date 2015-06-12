@@ -32,7 +32,7 @@ APP = React.createClass({displayName: "APP",
 				React.createElement("main", null, 
 					 this.state.section == 'calendar' ? React.createElement(CalendarGroups, {group:  this.state.group, url:  this.state.calendarUrl}) : null, 
 					 this.state.section == 'groups' ? React.createElement(Standings, {group:  this.state.group, url:  this.state.teamsUrl}) : null, 
-					 this.state.section == 'final' ? React.createElement(FinalPhase, {url: "data/final-calendar.json", urls:  this.state.finalUrls}) : null
+					 this.state.section == 'final' ? React.createElement(FinalPhase, {urls:  this.state.finalUrls}) : null
 				)
 			)
 		);
