@@ -67,4 +67,5 @@ module.exports = {
 		localStorage.setItem(id, JSON.stringify(this.match));
 		return localStorage;
 	}
+
 };

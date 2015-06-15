@@ -1,15 +1,19 @@
-var React, Header, CalendarGroups, Standings;
+var React, Header, CalendarGroups, Standings, FinalPhase;
 
 React          = require('react');
 CalendarGroups = require('./calendars/groups/base.jsx');
 Standings      = require('./standings/base.jsx');
-Header 				 = require('./header/base.jsx');
+Header         = require('./header/base.jsx');
+FinalPhase     = require('./calendars/finals/base.jsx');
 
 APP = React.createClass({	
 	getInitialState: function() {
 		return { 
 			group: "A",
-			section: "calendar"
+			section: "calendar",
+			calendarUrl: 'data/calendar.json',
+			teamsUrl: 'data/teams.json',
+			finalUrls: [ 'data/final-calendar.json', 'data/teams.json' ]
 		};
 	}, 	
 	setGroup: function(e) {
@@ -20,14 +24,14 @@ APP = React.createClass({
 	},
 	render: function() {
 		return (
-			<div>
+			<div className="wrap">
 				<Header 
 					currentSection={ this.state.section } section={ this.setSection } 
 					currentGroup={ this.state.group } group={ this.setGroup } />
 				<main>
-					{ this.state.section == 'calendar' ? <CalendarGroups group={ this.state.group } url="data/calendar.json" /> : null }
-					{ this.state.section == 'groups' ? <Standings group={ this.state.group } url="data/teams.json" /> : null }
-					{ this.state.section == 'final' ? "fase final" : null }
+					{ this.state.section == 'calendar' ? <CalendarGroups group={ this.state.group } url={ this.state.calendarUrl } /> : null }
+					{ this.state.section == 'groups' ? <Standings group={ this.state.group } url={ this.state.teamsUrl } /> : null }
+					{ this.state.section == 'final' ? <FinalPhase urls={ this.state.finalUrls } /> : null }
 				</main>
 			</div>
 		);

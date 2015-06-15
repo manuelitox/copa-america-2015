@@ -16,8 +16,8 @@ module.exports = React.createClass({
 	},
  	render: function() {
  		return (
- 			<div className={ this.dinamycClasses() }>
- 				<button className="select-group--current" onClick={ this.toggle }>
+ 			<div className={ this.dinamycClasses() } onClick={ this.toggle }>
+ 				<button className="select-group--current">
  					<div className="select-group--navicon"></div>
  					Grupo { this.props.currentGroup }
  				</button>

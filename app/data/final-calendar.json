@@ -1,98 +1,98 @@
 [
 	{
-		"date": "24/06/2015", 
+		"belong_to": "Quarter final",
 		"matches": [
 			{
 				"id": 1,
-				"time": "20:30",
-				"local": "A1",
-				"visitor": "B3/C3",	
-				"belong_to": "Quarter final",
+				"date": "24 Junio", 
+				"time": "19:00",
+				"local": { "codename": "A1", "country": "example" },
+				"visitor": { "codename": "B3/C3", "country": "example" }	
 			}
 		]	
 	},
 	{
-		"date": "25/06/2015", 
+		"belong_to": "Quarter final",
 		"matches": [
 			{
 				"id": 2,
-				"time": "20:30",
-				"local": "A2",
-				"visitor": "C2",	
-				"belong_to": "Quarter final",
+				"date": "25/06/2015", 
+				"time": "19:00",
+				"local": { "codename": "A2", "country": "example" },
+				"visitor": { "codename": "C2", "country": "example" }
 			}
 		]	
 	},
 	{
-		"date": "26/06/2015", 
+		"belong_to": "Quarter final",
 		"matches": [
 			{
 				"id": 3,
-				"time": "20:30",
-				"local": "B1",
-				"visitor": "A3/C3",	
-				"belong_to": "Quarter final",
+				"date": "26 Junio", 
+				"time": "19:00",
+				"local": { "codename": "B1", "country": "example" },
+				"visitor": { "codename": "A3/C3", "country": "example" }
 			}
 		]	
 	},
 	{
-		"date": "27/06/2015", 
+		"belong_to": "Quarter final",
 		"matches": [
 			{
 				"id": 4,
-				"time": "18:30",
-				"local": "C1",
-				"visitor": "B2",	
-				"belong_to": "Quarter finals",
+				"date": "27 Junio", 
+				"time": "17:00",
+				"local":  { "codename": "C1", "country": "example" },
+				"visitor":  { "codename": "B2", "country": "example" }	
 			}
 		]	
 	},
 	{
-		"date": "29/06/2015", 
+		"belong_to": "Semi finals",
 		"matches": [
 			{
 				"id": 5,
-				"time": "20:30",
-				"local": "GAN CF1",
-				"visitor": "GAN CF2",	
-				"belong_to": "Semi finals",
+				"date": "29 Junio", 
+				"time": "19:00",
+				"local": { "codename": "GAN CF1", "country": "example" },
+				"visitor": { "codename": "GAN CF2", "country": "example" }
 			}
 		]	
 	},
 	{
-		"date": "30/06/2015", 
+		"belong_to": "Semi finals",
 		"matches": [
 			{
 				"id": 6,
-				"time": "20:30",
-				"local": "GAN CF3",
-				"visitor": "GAN CF4",	
-				"belong_to": "Semi finals",
+				"date": "30 Junio", 
+				"time": "19:00",
+				"local": { "codename": "GAN CF3", "country": "example" },
+				"visitor": { "codename": "GAN CF4", "country": "example" }
 			}
 		]	
 	},
 	{
-		"date": "03/07/2015", 
+		"belong_to": "Third-place",
 		"matches": [
 			{
 				"id": 7,
-				"time": "20:30",
-				"local": "PER SF1",
-				"visitor": "PER SF2",	
-				"belong_to": "Third-place",
+				"date": "03 Julio", 
+				"time": "19:00",
+				"local": { "codename": "PER SF1", "country": "example" },
+				"visitor": { "codename": "PER SF2", "country": "example" }
 			}
 		]	
 	},
 	{
-		"date": "04/07/2015", 
+		"belong_to": "Final",
 		"matches": [
 			{
 				"id": 8,
-				"time": "17:00",
-				"local": "GAN SF1",
-				"visitor": "GAN SF2",	
-				"belong_to": "Final",
+				"date": "04 Julio", 
+				"time": "15:30",
+				"local": { "codename": "GAN SF1", "country": "example" },
+				"visitor": { "codename": "GAN SF2", "country": "example" }	
 			}
 		]	
-	},
+	}
 ]
