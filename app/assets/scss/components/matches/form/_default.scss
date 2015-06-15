@@ -10,9 +10,10 @@
 
 	input {
 		@include sizes(34px);
-		box-shadow: none;
 		border: 1px solid;
 		border-radius: 2px;
+		box-shadow: none;
+		box-sizing: border-box;
 		font-size: .8rem;
 		text-align: center;		
 		outline: 0;

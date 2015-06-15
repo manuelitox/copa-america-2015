@@ -5,10 +5,22 @@
 		margin-bottom: 0;
 	}
 
+	&--flag {
+		top: 2px;
+		position: relative;
+	}
+
 	&--codename {
-		font-size: 1.2rem;
 		line-height: 34px;
 		margin-left: 10px;
-		margin-right: 10px;		
+		margin-right: 10px;
+
+		@include breakpoint('medium-to-large') {
+			font-size: 1.2rem;
+		}
+
+		@include breakpoint('small') {
+			font-size: 1rem;
+		}
 	}
 }

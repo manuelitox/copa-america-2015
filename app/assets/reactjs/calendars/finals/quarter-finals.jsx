@@ -9,7 +9,7 @@ module.exports = React.createClass({
 		return ({  
 			title: 'Cuartos de Final'
 		});
-	},	 	 	
+	},	 	
 	render: function() {
 		var matchesNode;
 		matchesNode = this.props.matches.map(function (match, index) {

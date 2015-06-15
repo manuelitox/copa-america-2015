@@ -37,7 +37,7 @@ module.exports = React.createClass({
 		return (
 			<div className="match">
 				<form className="match--form" name={ this.props.match.id }>
-					<fieldset>
+					<fieldset>					
 						<FormTeam
 							type="local"
 							team={ this.props.match.local } 

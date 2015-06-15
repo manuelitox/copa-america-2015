@@ -151,7 +151,7 @@ module.exports = React.createClass({displayName: "exports",
 		return ({  
 			title: 'Cuartos de Final'
 		});
-	},	 	 	
+	},	 	
 	render: function() {
 		var matchesNode;
 		matchesNode = this.props.matches.map(function (match, index) {
@@ -495,7 +495,7 @@ module.exports = React.createClass({displayName: "exports",
 		return (
 			React.createElement("div", {className: "match"}, 
 				React.createElement("form", {className: "match--form", name:  this.props.match.id}, 
-					React.createElement("fieldset", null, 
+					React.createElement("fieldset", null, 					
 						React.createElement(FormTeam, {
 							type: "local", 
 							team:  this.props.match.local, 
