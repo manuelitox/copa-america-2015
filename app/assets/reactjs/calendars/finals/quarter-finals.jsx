@@ -12,8 +12,8 @@ module.exports = React.createClass({
 		});
 	},
 	render: function() {
+		
 		console.log(ClassifiedTeams.teams());
-
 
 		var matchesNode;
 		matchesNode = this.props.matches.map(function (match, index) {
