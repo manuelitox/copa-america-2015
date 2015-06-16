@@ -157,10 +157,8 @@ module.exports = React.createClass({displayName: "exports",
 		var groups, winners = [], thirdPlaces = [];
 		groups = JSON.parse(localStorage.groups);
 		if (groups.a.length >= 1) {
-			winners.a = this.getWinners(groups.a);
-			winners.b = this.getWinners(groups.b);
-			winners.c = this.getWinners(groups.c); 
-			thirdPlaces.push(this.getThirdPlace(groups.a), this.getThirdPlace(groups.b), this.getThirdPlace(groups.c));
+			winners.push(this.getWinners(groups.a), this.getWinners(groups.b), this.getWinners(groups.c));
+			thirdPlaces.push(this.getThirdPlace(groups.a, 'A'), this.getThirdPlace(groups.b, 'B'), this.getThirdPlace(groups.c, 'C'));
 
 			//return winners;
 			//return thirdPlaces;
@@ -174,9 +172,10 @@ module.exports = React.createClass({displayName: "exports",
 		});
 	 	return teams;
 	},
-	getThirdPlace: function(groups) {
+	getThirdPlace: function(group, who) {
 		var teams = [];
-		groups[0].map(function (team, i) {
+		group[0].map(function (team, i) {
+			team.belong_to = who;
 			i == 2 ? teams.push(team) : null;
 		});
 		return teams[0];
