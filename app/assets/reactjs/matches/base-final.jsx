@@ -1,8 +1,8 @@
-var React, FormTeam, Results;
+var React, FormTeam, Checking;
 
-React = require('react');
+React    = require('react');
 FormTeam = require('./form-team.jsx');
-Results = require('./results.jsx');
+Checking  = require('./checking.jsx');
 
 module.exports = React.createClass({
 	getInitialState: function() {
@@ -25,6 +25,11 @@ module.exports = React.createClass({
 		});
 	},
  	render: function() {
+ 		if (this.state.isActive) {
+ 			console.log(
+ 				Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor)
+ 			);
+	 	} 		
 		return (
 			<div className="match">
 				<form className="match--form" name={ this.props.match.id }>

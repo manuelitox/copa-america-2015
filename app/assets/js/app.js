@@ -502,11 +502,11 @@ module.exports = React.createClass({displayName: "exports",
 	}
 });
 },{"react":179}],14:[function(require,module,exports){
-var React, FormTeam, Results;
+var React, FormTeam, Checking;
 
-React = require('react');
+React    = require('react');
 FormTeam = require('./form-team.jsx');
-Results = require('./results.jsx');
+Checking  = require('./checking.jsx');
 
 module.exports = React.createClass({displayName: "exports",
 	getInitialState: function() {
@@ -529,6 +529,11 @@ module.exports = React.createClass({displayName: "exports",
 		});
 	},
  	render: function() {
+ 		if (this.state.isActive) {
+ 			console.log(
+ 				Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor)
+ 			);
+	 	} 		
 		return (
 			React.createElement("div", {className: "match"}, 
 				React.createElement("form", {className: "match--form", name:  this.props.match.id}, 
@@ -554,7 +559,7 @@ module.exports = React.createClass({displayName: "exports",
 		);
 	}
 });
-},{"./form-team.jsx":17,"./results.jsx":18,"react":179}],15:[function(require,module,exports){
+},{"./checking.jsx":16,"./form-team.jsx":17,"react":179}],15:[function(require,module,exports){
 var React, FormTeam, Results;
 
 React = require('react');
@@ -638,6 +643,24 @@ module.exports = {
 			match.loser  = null;
 			match.draw 	 = true;
 		}			
+	},
+
+	winnerFinalPhase: function(match, goalsLocal, goalsVisitor) {
+		var result = {};
+		if (goalsLocal > goalsVisitor) {
+			result.winner = match.local.codename;
+			result.loser  = match.visitor.codename;
+			result.draw 	= false;
+		} else if (goalsLocal < goalsVisitor) {
+			result.winner = match.visitor.codename;
+			result.loser  = match.local.codename;
+			result.draw 	= false;
+		} else {
+			result.winner = null;
+			result.loser  = null;
+			result.draw 	= true;					
+		}
+		return result;
 	},
 
 	// calculate goals difference
