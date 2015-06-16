@@ -39,16 +39,12 @@ module.exports = React.createClass({
 		return thirdPlaces.filter(filterByGroup)[0];
 	},		
 	render: function() {
-		
-		// localStorage.length >= 18 ? console.log(ClassifiedTeams.teams()) : null;
-		// console.log(ClassifiedTeams.teams());
-		// console.log(this.props.matches[0].matches[0].local);
-
-		var classifiedTeams = ClassifiedTeams.teams();
-		if (classifiedTeams != undefined) {
-			this.populateQuarters(this.props.matches, classifiedTeams.winners, classifiedTeams.twoBestThirdPlaces);
+		if (localStorage.length >= 18) {
+			var classifiedTeams = ClassifiedTeams.teams();
+			if (classifiedTeams != undefined) {
+				this.populateQuarters(this.props.matches, classifiedTeams.winners, classifiedTeams.twoBestThirdPlaces);
+			}
 		}
-
 		var matchesNode;
 		matchesNode = this.props.matches.map(function (match, index) {
 			return ( <Matches key={ index } match={ match.matches[0] } /> );
