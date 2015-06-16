@@ -125,16 +125,15 @@ module.exports = {
 	// 
 	//
 	teams: function() {
-		var groups, winners, thirdPlaces = [];
+		var groups, winners, thirdPlaces = [], output = { winners: [], twoBestThirdPlaces: [] };
 		groups = JSON.parse(localStorage.groups);
 		if (groups.a.length >= 1) {
 			var groupA = this.getWinners(groups.a);
 			winners = groupA.concat(this.getWinners(groups.b), this.getWinners(groups.c));
 			thirdPlaces.push(this.getThirdPlace(groups.a, 'A'), this.getThirdPlace(groups.b, 'B'), this.getThirdPlace(groups.c, 'C'));
-
-			//return winners;
-			//return thirdPlaces;
-			return this.getTwoBestThird(thirdPlaces);
+			output.winners = winners;
+			output.twoBestThirdPlaces = this.getTwoBestThird(thirdPlaces);
+			return output;
 		}
 	},
 
@@ -220,9 +219,25 @@ module.exports = React.createClass({displayName: "exports",
 			title: 'Cuartos de Final'
 		});
 	},
+	populateQuarters: function(matches, winners, twoBestThirdPlaces) {
+		console.log(winners);
+		matches.map(function (match, index) {
+			index == 0 ? match.matches[0].local = winners[0] : null;
+			index == 1 ? match.matches[0].local = winners[1] : null;
+			index == 2 ? match.matches[0].local = winners[2] : null;
+			index == 3 ? match.matches[0].local = winners[4] : null;
+		});
+	},
 	render: function() {
 		
-		console.log(ClassifiedTeams.teams());
+		// localStorage.length >= 18 ? console.log(ClassifiedTeams.teams()) : null;
+		// console.log(ClassifiedTeams.teams());
+		// console.log(this.props.matches[0].matches[0].local);
+
+		var classifiedTeams = ClassifiedTeams.teams();
+		if (classifiedTeams != undefined) {
+			this.populateQuarters(this.props.matches, classifiedTeams.winners, classifiedTeams.twoBestThirdPlaces);
+		}
 
 		var matchesNode;
 		matchesNode = this.props.matches.map(function (match, index) {

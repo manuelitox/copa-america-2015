@@ -9,16 +9,15 @@ module.exports = {
 	// 
 	//
 	teams: function() {
-		var groups, winners, thirdPlaces = [];
+		var groups, winners, thirdPlaces = [], output = { winners: [], twoBestThirdPlaces: [] };
 		groups = JSON.parse(localStorage.groups);
 		if (groups.a.length >= 1) {
 			var groupA = this.getWinners(groups.a);
 			winners = groupA.concat(this.getWinners(groups.b), this.getWinners(groups.c));
 			thirdPlaces.push(this.getThirdPlace(groups.a, 'A'), this.getThirdPlace(groups.b, 'B'), this.getThirdPlace(groups.c, 'C'));
-
-			//return winners;
-			//return thirdPlaces;
-			return this.getTwoBestThird(thirdPlaces);
+			output.winners = winners;
+			output.twoBestThirdPlaces = this.getTwoBestThird(thirdPlaces);
+			return output;
 		}
 	},
 
