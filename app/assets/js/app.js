@@ -220,7 +220,6 @@ module.exports = React.createClass({displayName: "exports",
 		});
 	},
 	populateQuarters: function(matches, winners, twoBestThirdPlaces) {
-		// console.log(twoBestThirdPlaces);
 		var _this = this;
 		matches.map(function (match, index) {
 			
