@@ -29,12 +29,12 @@ module.exports = {
 		result.goalsLocal   = goalsLocal || 0;
 		result.goalsVisitor = goalsVisitor || 0;		
 		if (goalsLocal > goalsVisitor) {
-			result.winner = match.local.codename;
-			result.loser  = match.visitor.codename;
+			result.winner = match.local;
+			result.loser  = match.visitor;
 			result.draw 	= false;
 		} else if (goalsLocal < goalsVisitor) {
-			result.winner = match.visitor.codename;
-			result.loser  = match.local.codename;
+			result.winner = match.visitor;
+			result.loser  = match.local;
 			result.draw 	= false;
 		} else {
 			result.winner = null;
