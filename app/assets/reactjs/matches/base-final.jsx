@@ -24,11 +24,16 @@ module.exports = React.createClass({
 			isActive: true			
 		});
 	},
+	storageLS: function() {
+		localStorage.setItem(
+			'CF'+[this.props.match.id], 
+			JSON.stringify(Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor))
+		);
+	},
  	render: function() {
+ 		var _this = this;
  		if (this.state.isActive) {
- 			console.log(
- 				Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor)
- 			);
+ 				_this.storageLS()
 	 	} 		
 		return (
 			<div className="match">

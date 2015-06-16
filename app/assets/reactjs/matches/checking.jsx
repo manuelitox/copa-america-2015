@@ -25,6 +25,9 @@ module.exports = {
 
 	winnerFinalPhase: function(match, goalsLocal, goalsVisitor) {
 		var result = {};
+		result.id           = match.id;
+		result.goalsLocal   = goalsLocal || 0;
+		result.goalsVisitor = goalsVisitor || 0;		
 		if (goalsLocal > goalsVisitor) {
 			result.winner = match.local.codename;
 			result.loser  = match.visitor.codename;

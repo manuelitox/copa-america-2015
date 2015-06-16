@@ -528,11 +528,16 @@ module.exports = React.createClass({displayName: "exports",
 			isActive: true			
 		});
 	},
+	storageLS: function() {
+		localStorage.setItem(
+			'CF'+[this.props.match.id], 
+			JSON.stringify(Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor))
+		);
+	},
  	render: function() {
+ 		var _this = this;
  		if (this.state.isActive) {
- 			console.log(
- 				Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor)
- 			);
+ 				_this.storageLS()
 	 	} 		
 		return (
 			React.createElement("div", {className: "match"}, 
@@ -647,6 +652,9 @@ module.exports = {
 
 	winnerFinalPhase: function(match, goalsLocal, goalsVisitor) {
 		var result = {};
+		result.id           = match.id;
+		result.goalsLocal   = goalsLocal || 0;
+		result.goalsVisitor = goalsVisitor || 0;		
 		if (goalsLocal > goalsVisitor) {
 			result.winner = match.local.codename;
 			result.loser  = match.visitor.codename;
