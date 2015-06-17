@@ -505,8 +505,7 @@ module.exports = React.createClass({displayName: "exports",
 					React.createElement("li", {className:  this.isActive('final') }, 
 						React.createElement("button", {"data-section": "final", onClick:  this.props.section.bind(null, 'final') }, 
 							React.createElement("span", {className: "icon-final", "data-grunticon-embed": true})
-						), 
-						React.createElement("div", {className: "notify"})						
+						)				
 					)
  				)
  			)

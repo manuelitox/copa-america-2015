@@ -283,20 +283,6 @@ button:focus, button:active {
   fill: white;
 }
 
-.notify {
-  height: 14px;
-  width: 14px;
-  border-radius: 14px;
-  right: 18px;
-  top: 10px;
-  position: absolute;
-  z-index: 5;
-}
-
-.notify {
-  background-color: red;
-}
-
 .titles {
   height: 40px;
   text-align: center;
