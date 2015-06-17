@@ -33,18 +33,28 @@ module.exports = React.createClass({
 	},
 	findCF: function() {
 		var output = {};
-		if (this.props.iMatch == 0) {
-			output.local = JSON.parse(localStorage.CF1 || 0) !== 0 ? JSON.parse(localStorage.CF1).goalsLocal : null;
-			output.visitor = JSON.parse(localStorage.CF1 || 0) !== 0 ? JSON.parse(localStorage.CF1).goalsVisitor : null;
-		} else if (this.props.iMatch == 1) {
-			output.local = JSON.parse(localStorage.CF2 || 0) !== 0 ? JSON.parse(localStorage.CF2).goalsLocal : null;
-			output.visitor = JSON.parse(localStorage.CF2 || 0) !== 0 ? JSON.parse(localStorage.CF2).goalsVisitor : null;
-		} else if (this.props.iMatch == 2) {
-			output.local = JSON.parse(localStorage.CF3 || 0) !== 0 ? JSON.parse(localStorage.CF3).goalsLocal : null;
-			output.visitor = JSON.parse(localStorage.CF3 || 0) !== 0 ? JSON.parse(localStorage.CF3).goalsVisitor : null;			
-		} else if (this.props.iMatch == 3) {
-			output.local = JSON.parse(localStorage.CF4 || 0) !== 0 ? JSON.parse(localStorage.CF4).goalsLocal : null;
-			output.visitor = JSON.parse(localStorage.CF4 || 0) !== 0 ? JSON.parse(localStorage.CF4).goalsVisitor : null;			
+		if (this.props.type == 'CF') {
+			if (this.props.identify == 0) {
+				output.local = JSON.parse(localStorage.CF1 || 0) !== 0 ? JSON.parse(localStorage.CF1).goalsLocal : null;
+				output.visitor = JSON.parse(localStorage.CF1 || 0) !== 0 ? JSON.parse(localStorage.CF1).goalsVisitor : null;
+			} else if (this.props.identify == 1) {
+				output.local = JSON.parse(localStorage.CF2 || 0) !== 0 ? JSON.parse(localStorage.CF2).goalsLocal : null;
+				output.visitor = JSON.parse(localStorage.CF2 || 0) !== 0 ? JSON.parse(localStorage.CF2).goalsVisitor : null;
+			} else if (this.props.identify == 2) {
+				output.local = JSON.parse(localStorage.CF3 || 0) !== 0 ? JSON.parse(localStorage.CF3).goalsLocal : null;
+				output.visitor = JSON.parse(localStorage.CF3 || 0) !== 0 ? JSON.parse(localStorage.CF3).goalsVisitor : null;			
+			} else if (this.props.identify == 3) {
+				output.local = JSON.parse(localStorage.CF4 || 0) !== 0 ? JSON.parse(localStorage.CF4).goalsLocal : null;
+				output.visitor = JSON.parse(localStorage.CF4 || 0) !== 0 ? JSON.parse(localStorage.CF4).goalsVisitor : null;			
+			}			
+		} else if (this.props.type == 'SF') {
+			if (this.props.identify == 0) {
+				output.local = JSON.parse(localStorage.SF1 || 0) !== 0 ? JSON.parse(localStorage.SF1).goalsLocal : null;
+				output.visitor = JSON.parse(localStorage.SF1 || 0) !== 0 ? JSON.parse(localStorage.SF1).goalsVisitor : null;
+			} else if (this.props.identify == 1) {
+				output.local = JSON.parse(localStorage.SF2 || 0) !== 0 ? JSON.parse(localStorage.SF2).goalsLocal : null;
+				output.visitor = JSON.parse(localStorage.SF2 || 0) !== 0 ? JSON.parse(localStorage.SF2).goalsVisitor : null;
+			} 
 		}
 		return output;
 	},
