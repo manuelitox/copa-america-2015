@@ -1,0 +1,7 @@
+$th-notify: (
+	bg: red,
+) !default;
+
+.notify {
+	background-color: map-get($th-notify, bg);
+}

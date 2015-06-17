@@ -24,6 +24,7 @@ module.exports = React.createClass({
 						<button data-section="final" onClick={ this.props.section.bind(null, 'final') }>
 							<span className="icon-final" data-grunticon-embed></span>
 						</button>
+						<div className="notify"></div>						
 					</li>
  				</ul>
  			</nav>
