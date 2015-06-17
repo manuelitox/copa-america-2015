@@ -7,8 +7,8 @@ Checking  = require('./checking.jsx');
 module.exports = React.createClass({
 	getInitialState: function() {
 		return {
-			goalsLocal: null,
-			goalsVisitor: null,
+			goalsLocal: this.findCF().local,
+			goalsVisitor: this.findCF().visitor,
 			isActive: false
 		};
 	},	
@@ -29,6 +29,23 @@ module.exports = React.createClass({
 			'CF'+[this.props.match.id], 
 			JSON.stringify(Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor))
 		);
+	},
+	findCF: function() {
+		var output = {};
+		if (this.props.iMatch == 0) {
+			output.local = JSON.parse(localStorage.CF1 || 0) !== 0 ? JSON.parse(localStorage.CF1).goalsLocal : null;
+			output.visitor = JSON.parse(localStorage.CF1 || 0) !== 0 ? JSON.parse(localStorage.CF1).goalsVisitor : null;
+		} else if (this.props.iMatch == 1) {
+			output.local = JSON.parse(localStorage.CF2 || 0) !== 0 ? JSON.parse(localStorage.CF2).goalsLocal : null;
+			output.visitor = JSON.parse(localStorage.CF2 || 0) !== 0 ? JSON.parse(localStorage.CF2).goalsVisitor : null;
+		} else if (this.props.iMatch == 2) {
+			output.local = JSON.parse(localStorage.CF3 || 0) !== 0 ? JSON.parse(localStorage.CF3).goalsLocal : null;
+			output.visitor = JSON.parse(localStorage.CF3 || 0) !== 0 ? JSON.parse(localStorage.CF3).goalsVisitor : null;			
+		} else if (this.props.iMatch == 3) {
+			output.local = JSON.parse(localStorage.CF4 || 0) !== 0 ? JSON.parse(localStorage.CF4).goalsLocal : null;
+			output.visitor = JSON.parse(localStorage.CF4 || 0) !== 0 ? JSON.parse(localStorage.CF4).goalsVisitor : null;			
+		}
+		return output;
 	},
  	render: function() {
  		var _this = this;

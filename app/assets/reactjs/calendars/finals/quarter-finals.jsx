@@ -46,7 +46,7 @@ module.exports = React.createClass({
 		}
 		var matchesNode;
 		matchesNode = this.props.matches.map(function (match, index) {
-			return ( <Matches key={ index } match={ match.matches[0] } /> );
+			return ( <Matches key={ index } iMatch={ index } match={ match.matches[0] } /> );
 		});
 		return (
 			<div className="final--quarter">
