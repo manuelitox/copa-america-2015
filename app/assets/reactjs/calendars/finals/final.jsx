@@ -9,8 +9,21 @@ module.exports = React.createClass({
 		return ({  
 			title: 'Final'
 		});
-	},	 		
+	},	
+	populateFinal: function(matches) {
+		var WSF1 = JSON.parse(localStorage.SF1),
+				WSF2 = JSON.parse(localStorage.SF2);
+		matches.map(function (match, index) {
+			
+			index == 0 ? match.matches[0].local = WSF1.winner : null;
+			index == 0 ? match.matches[0].visitor = WSF2.winner : null;
+
+		});				
+	},		 		
 	render: function() {
+		if (localStorage.SF2 != undefined) {
+			this.populateFinal(this.props.matches);
+		}			
 		var matchesNode;
 		matchesNode = this.props.matches.map(function (match, index) {
 			return ( <Matches key={ index } match={ match.matches[0] } /> );

@@ -191,8 +191,21 @@ module.exports = React.createClass({displayName: "exports",
 		return ({  
 			title: 'Final'
 		});
-	},	 		
+	},	
+	populateFinal: function(matches) {
+		var WSF1 = JSON.parse(localStorage.SF1),
+				WSF2 = JSON.parse(localStorage.SF2);
+		matches.map(function (match, index) {
+			
+			index == 0 ? match.matches[0].local = WSF1.winner : null;
+			index == 0 ? match.matches[0].visitor = WSF2.winner : null;
+
+		});				
+	},		 		
 	render: function() {
+		if (localStorage.SF2 != undefined) {
+			this.populateFinal(this.props.matches);
+		}			
 		var matchesNode;
 		matchesNode = this.props.matches.map(function (match, index) {
 			return ( React.createElement(Matches, {key:  index, match:  match.matches[0] }) );
@@ -320,8 +333,21 @@ module.exports = React.createClass({displayName: "exports",
 		return ({  
 			title: 'Tercer y Cuarto lugar'
 		});
+	},	
+	populateThirdPlace: function(matches) {
+		var LSF1 = JSON.parse(localStorage.SF1),
+				LSF2 = JSON.parse(localStorage.SF2);
+		matches.map(function (match, index) {
+			
+			index == 0 ? match.matches[0].local = LSF1.loser : null;
+			index == 0 ? match.matches[0].visitor = LSF2.loser : null;
+
+		});				
 	},	 		
 	render: function() {
+		if (localStorage.SF2 != undefined) {
+			this.populateThirdPlace(this.props.matches);
+		}		
 		var matchesNode;
 		matchesNode = this.props.matches.map(function (match, index) {
 			return ( React.createElement(Matches, {key:  index, match:  match.matches[0] }) );
