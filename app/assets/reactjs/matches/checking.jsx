@@ -37,9 +37,7 @@ module.exports = {
 			result.loser  = match.local;
 			result.draw 	= false;
 		} else {
-			result.winner = null;
-			result.loser  = null;
-			result.draw 	= true;					
+			return false;		
 		}
 		return result;
 	},

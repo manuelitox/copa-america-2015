@@ -25,11 +25,15 @@ module.exports = React.createClass({
 		});
 	},
 	storageLS: function() {
-		var identify = this.props.identify + 1;
-		localStorage.setItem(
-			this.props.type+[identify], 
-			JSON.stringify(Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor))
-		);
+		if (!Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor)) {
+			alert('¡No pueden quedar empatados!');
+		} else {
+			var identify = this.props.identify + 1;
+			localStorage.setItem(
+				this.props.type+[identify], 
+				JSON.stringify(Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor))
+			);
+		}
 	},
 	findCF: function() {
 		var output = {};
