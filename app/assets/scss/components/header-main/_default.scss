@@ -1,8 +1,12 @@
 .header-main {
 	box-sizing: border-box;
 	height: 60px;
+	left: 0;
 	padding: 0 10px;
-	position: relative;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 4;
 
 	h3 {
 		height: inherit;

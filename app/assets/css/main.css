@@ -107,8 +107,12 @@ button:focus, button:active {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 60px;
+  left: 0;
   padding: 0 10px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
 }
 .header-main h3 {
   height: inherit;
@@ -532,4 +536,9 @@ button:focus, button:active {
             box-sizing: border-box;
   }
 }
+
+main {
+  margin-top: 60px;
+}
+
 /*# sourceMappingURL=main.css.map */
