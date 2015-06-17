@@ -31,7 +31,7 @@ module.exports = React.createClass({
 		}
 		var matchesNode;
 		matchesNode = this.props.matches.map(function (match, index) {
-			return ( <Matches key={ index } match={ match.matches[0] } /> );
+			return ( <Matches key={ index } identify={ index } match={ match.matches[0] } type='SF' /> );
 		});		
 		return (
 			<div className="final--semi">

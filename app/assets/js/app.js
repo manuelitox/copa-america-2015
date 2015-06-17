@@ -254,7 +254,7 @@ module.exports = React.createClass({displayName: "exports",
 		}
 		var matchesNode;
 		matchesNode = this.props.matches.map(function (match, index) {
-			return ( React.createElement(Matches, {key:  index, iMatch:  index, match:  match.matches[0] }) );
+			return ( React.createElement(Matches, {key:  index, identify:  index, match:  match.matches[0], type: "CF"}) );
 		});
 		return (
 			React.createElement("div", {className: "final--quarter"}, 
@@ -298,7 +298,7 @@ module.exports = React.createClass({displayName: "exports",
 		}
 		var matchesNode;
 		matchesNode = this.props.matches.map(function (match, index) {
-			return ( React.createElement(Matches, {key:  index, match:  match.matches[0] }) );
+			return ( React.createElement(Matches, {key:  index, identify:  index, match:  match.matches[0], type: "SF"}) );
 		});		
 		return (
 			React.createElement("div", {className: "final--semi"}, 
@@ -547,8 +547,9 @@ module.exports = React.createClass({displayName: "exports",
 		});
 	},
 	storageLS: function() {
+		var identify = this.props.identify + 1;
 		localStorage.setItem(
-			'CF'+[this.props.match.id], 
+			this.props.type+[identify], 
 			JSON.stringify(Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor))
 		);
 	},

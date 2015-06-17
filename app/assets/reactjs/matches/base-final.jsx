@@ -25,8 +25,9 @@ module.exports = React.createClass({
 		});
 	},
 	storageLS: function() {
+		var identify = this.props.identify + 1;
 		localStorage.setItem(
-			'CF'+[this.props.match.id], 
+			this.props.type+[identify], 
 			JSON.stringify(Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor))
 		);
 	},
