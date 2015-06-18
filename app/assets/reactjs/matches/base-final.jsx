@@ -7,8 +7,8 @@ Checking  = require('./checking.jsx');
 module.exports = React.createClass({
 	getInitialState: function() {
 		return {
-			goalsLocal: this.findCF().local,
-			goalsVisitor: this.findCF().visitor,
+			goalsLocal: this.findCF().local || 0,
+			goalsVisitor: this.findCF().visitor || 0,
 			isActive: false,
 			isRefresh: false
 		};
