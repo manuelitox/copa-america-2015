@@ -323,6 +323,28 @@ button:focus, button:active {
     left: 0;
   }
 }
+footer {
+  padding: 30px 0;
+  text-align: center;
+}
+footer a {
+  text-decoration: underline;
+}
+footer p {
+  margin-bottom: 0;
+}
+footer .icon-love {
+  height: 15px;
+  width: 15px;
+  background-size: 15px;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+footer a, footer p {
+  color: #cccccc;
+}
+
 .titles {
   height: 40px;
   text-align: center;
@@ -488,10 +510,7 @@ button:focus, button:active {
 }
 
 .groups {
-  clear: both;
-  float: left;
   overflow: hidden;
-  width: 100%;
 }
 .groups--team {
   border-bottom: 1px solid;
@@ -567,6 +586,9 @@ button:focus, button:active {
   background-color: #f7f7f7;
 }
 
+.final-phase {
+  overflow: hidden;
+}
 .final-phase.disabled input {
   display: none;
 }

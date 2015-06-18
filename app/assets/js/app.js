@@ -33,6 +33,9 @@ APP = React.createClass({displayName: "APP",
 					 this.state.section == 'calendar' ? React.createElement(CalendarGroups, {group:  this.state.group, url:  this.state.calendarUrl}) : null, 
 					 this.state.section == 'groups' ? React.createElement(Standings, {group:  this.state.group, url:  this.state.teamsUrl}) : null, 
 					 this.state.section == 'final' ? React.createElement(FinalPhase, {urls:  this.state.finalUrls, section:  this.setSection}) : null
+				), 
+				React.createElement("footer", null, 
+					React.createElement("p", null, "Hecho con ", React.createElement("span", {className: "icon-love"}), " por ", React.createElement("a", {href: "#", target: "_blank"}, "Manuelitox"))
 				)
 			)
 		);

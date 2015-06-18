@@ -1,0 +1,10 @@
+$th-footer-main: (
+	txt: map-get($colors, gray)
+) !default;
+
+footer {
+
+	a, p {
+		color: map-get($th-footer-main, txt);
+	}
+}

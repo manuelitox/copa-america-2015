@@ -33,6 +33,9 @@ APP = React.createClass({
 					{ this.state.section == 'groups' ? <Standings group={ this.state.group } url={ this.state.teamsUrl } /> : null }
 					{ this.state.section == 'final' ? <FinalPhase urls={ this.state.finalUrls } section={ this.setSection } /> : null }
 				</main>
+				<footer>
+					<p>Hecho con <span className="icon-love"></span> por <a href="#" target="_blank">Manuelitox</a></p>
+				</footer>
 			</div>
 		);
 	}
