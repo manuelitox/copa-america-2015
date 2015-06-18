@@ -23,7 +23,7 @@ module.exports = React.createClass({
 					<li className={ this.isActive('final') }>
 						<button data-section="final" onClick={ this.props.section.bind(null, 'final') }>
 							<span className="icon-final" data-grunticon-embed></span>
-						</button>
+						</button>				
 					</li>
  				</ul>
  			</nav>

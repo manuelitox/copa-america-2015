@@ -22,6 +22,7 @@
 		text-align: center;
 		position: absolute;
 		z-index: 1;
+		-webkit-text-size-adjust: 100%;
 
 		@include breakpoint('large') {
 			top: 6px;

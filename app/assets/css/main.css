@@ -107,8 +107,29 @@ button:focus, button:active {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 60px;
+  top: 0;
   padding: 0 10px;
-  position: relative;
+  position: fixed;
+  z-index: 4;
+}
+@media (min-width: 1024px) {
+  .header-main {
+    left: -500px;
+    margin: 0 auto;
+    right: -500px;
+    width: 958px;
+  }
+}
+@media (min-width: 1360px) {
+  .header-main {
+    width: 1198px;
+  }
+}
+@media (min-width: 240px) and (max-width: 1023px) {
+  .header-main {
+    left: 0;
+    width: 100%;
+  }
 }
 .header-main h3 {
   height: inherit;
@@ -258,8 +279,70 @@ button:focus, button:active {
   background-size: 23px;
   display: inline-block;
 }
-.navigation li.actived svg path {
+.navigation li.actived svg {
+  -webkit-animation: refresh .4s 1;
+          animation: refresh .4s 1;
+  position: relative;
+}
+.navigation li.actived path {
   fill: white;
+}
+
+@-webkit-keyframes refresh {
+  0% {
+    left: 4px;
+  }
+  25% {
+    left: -4px;
+  }
+  50% {
+    left: 4px;
+  }
+  75% {
+    left: -4px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes refresh {
+  0% {
+    left: 4px;
+  }
+  25% {
+    left: -4px;
+  }
+  50% {
+    left: 4px;
+  }
+  75% {
+    left: -4px;
+  }
+  100% {
+    left: 0;
+  }
+}
+footer {
+  padding: 30px 0;
+  text-align: center;
+}
+footer a {
+  text-decoration: underline;
+}
+footer p {
+  margin-bottom: 0;
+}
+footer .icon-love {
+  height: 15px;
+  width: 15px;
+  background-size: 15px;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+footer a, footer p {
+  color: #cccccc;
 }
 
 .titles {
@@ -324,6 +407,7 @@ button:focus, button:active {
   text-align: center;
   position: absolute;
   z-index: 1;
+  -webkit-text-size-adjust: 100%;
 }
 @media (min-width: 1024px) {
   .match--time {
@@ -411,11 +495,22 @@ button:focus, button:active {
   border-color: #cccccc;
 }
 
+.btn-refresh {
+  height: 36px;
+  width: 200px;
+  border-radius: 2px;
+  display: block;
+  line-height: 36px;
+  margin: 0 auto 20px;
+}
+
+.btn-refresh {
+  background-color: #308ad9;
+  color: white;
+}
+
 .groups {
-  clear: both;
-  float: left;
   overflow: hidden;
-  width: 100%;
 }
 .groups--team {
   border-bottom: 1px solid;
@@ -491,6 +586,9 @@ button:focus, button:active {
   background-color: #f7f7f7;
 }
 
+.final-phase {
+  overflow: hidden;
+}
 .final-phase.disabled input {
   display: none;
 }
@@ -531,5 +629,9 @@ button:focus, button:active {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
+}
+
+main {
+  margin-top: 60px;
 }
 /*# sourceMappingURL=main.css.map */

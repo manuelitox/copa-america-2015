@@ -1,6 +1,7 @@
 // import all components
 
 @import "header-main/base";
+@import "footer-main/base";
 @import "titles/base";
 @import "subtitles/base";
 @import "matches/base";
@@ -16,4 +17,8 @@
 		border-color: #f7f7f7;
 		box-sizing: border-box;
 	}
+}
+
+main {
+	margin-top: 60px;
 }

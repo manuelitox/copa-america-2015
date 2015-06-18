@@ -23,6 +23,25 @@ module.exports = {
 		}			
 	},
 
+	winnerFinalPhase: function(match, goalsLocal, goalsVisitor) {
+		var result = {};
+		result.id           = match.id;
+		result.goalsLocal   = goalsLocal || 0;
+		result.goalsVisitor = goalsVisitor || 0;		
+		if (goalsLocal > goalsVisitor) {
+			result.winner = match.local;
+			result.loser  = match.visitor;
+			result.draw 	= false;
+		} else if (goalsLocal < goalsVisitor) {
+			result.winner = match.visitor;
+			result.loser  = match.local;
+			result.draw 	= false;
+		} else {
+			return false;		
+		}
+		return result;
+	},
+
 	// calculate goals difference
 	//
 	// @param 

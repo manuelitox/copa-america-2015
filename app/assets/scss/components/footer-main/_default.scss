@@ -1,0 +1,19 @@
+footer {
+	padding: 30px 0;
+	text-align: center;
+
+	a {
+		text-decoration: underline;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+	.icon-love {
+		@include sizes(15px);
+		background-size: 15px;
+		display: inline-block;
+		margin: 0 4px;
+	}
+}

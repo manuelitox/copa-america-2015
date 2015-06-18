@@ -59,8 +59,8 @@ module.exports = React.createClass({
 		this.getGroups()
 		return (
 			<section className={ this.isNotCompleted() }>
-				<QuarterFinals matches={ this.filterByType('Quarter final') } />
-				<SemiFinals matches={ this.filterByType('Semi finals') } />
+				<QuarterFinals matches={ this.filterByType('Quarter final') } section={ this.props.section } />
+				<SemiFinals matches={ this.filterByType('Semi finals') } section={ this.props.section } />
 				<ThirdPlace matches={ this.filterByType('Third-place') } />
 				<Final matches={ this.filterByType('Final') } />
 			</section>

@@ -30,7 +30,22 @@
 		display: inline-block;
 	}
 
-	li.actived svg path {
-		fill: white;
+	li.actived {
+		svg {
+			animation: refresh .4s 1;
+			position: relative;			
+		}
+
+		path {
+			fill: white;
+		}
 	}
+}
+
+@keyframes refresh {
+	0%   { left: 4px; }
+	25%  { left: -4px }
+	50%  { left: 4px; }
+	75%  { left: -4px }
+	100% { left: 0; }
 }

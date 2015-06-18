@@ -1,8 +1,26 @@
 .header-main {
 	box-sizing: border-box;
 	height: 60px;
+	top: 0;
 	padding: 0 10px;
-	position: relative;
+	position: fixed;
+	z-index: 4;
+
+	@include breakpoint('large') {
+		left: -500px;
+		margin: 0 auto;
+		right: -500px;		
+		width: 958px;
+	}
+
+	@include breakpoint('xxx-large') {
+		width: 1198px;
+	}
+
+	@include breakpoint('small-to-medium') {
+		left: 0;
+		width: 100%;
+	}
 
 	h3 {
 		height: inherit;

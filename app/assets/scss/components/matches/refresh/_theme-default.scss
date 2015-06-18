@@ -1,0 +1,9 @@
+$th-refresh: (
+	bg: map-get($colors, bg),
+	txt: white
+)!default;
+
+.btn-refresh {
+	background-color: map-get($th-refresh, bg);
+	color: map-get($th-refresh, txt);
+}
