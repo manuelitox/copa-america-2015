@@ -1,0 +1,41 @@
+$flags: ( 
+	'argentina',
+	'bolivia',
+	'brasil',
+	'chile',
+	'colombia',
+	'ecuador',
+	'jamaica',
+	'mexico',
+	'paraguay',
+	'peru',
+	'uruguay',
+	'venezuela',
+	'example'
+) !default;
+
+.team--flag {
+	
+	[class^='flag-'] {
+		@include sizes(34px);
+		background-size: 34px;
+		display: block;
+	}
+}
+
+@for $i from 1 through 13 {
+  .flag-#{nth($flags, $i)} {  	
+
+  	@include pixel-ratio('md') {
+  		background-image: url('#{map-get($paths, flags)}#{nth($flags, $i)}/1x.png');
+  	}  	
+
+  	@include pixel-ratio('hd-2x') {
+  		background-image: url('#{map-get($paths, flags)}#{nth($flags, $i)}/2x.png');
+  	}
+
+  	@include pixel-ratio('hd-3x') {
+  		background-image: url('#{map-get($paths, flags)}#{nth($flags, $i)}/3x.png');
+  	}  	
+  }
+}

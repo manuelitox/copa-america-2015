@@ -1209,24 +1209,13 @@ var React;
 React = require('react');
 
 module.exports = React.createClass({displayName: "exports", 
-	pathImage: function(name) {
-		name = !name ? '1x' : name;
-		return '/images/flags/'+this.props.country+'/'+name+'.png';
-	},
-	sourceSet: function() {
-		return this.pathImage()+', '+this.pathImage('2x')+' 2x, '+this.pathImage('3x')+' 3x';
+	classFlag: function() {
+		return 'flag-'+this.props.country;
 	},
  	render: function() {
 		return (
-			React.createElement("figure", {className: "team--flag"}, 
-				React.createElement("picture", null, 
-					React.createElement("source", {
-						srcSet:  this.sourceSet() }), 			
-					React.createElement("img", {
-						src:  this.pathImage(), 
-						height: "34", 
-						width: "34"})
-				)
+			React.createElement("div", {className: "team--flag"}, 
+				React.createElement("span", {className:  this.classFlag() })
 			)
 		);
 	}
