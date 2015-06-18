@@ -327,6 +327,11 @@ footer {
   padding: 30px 0;
   text-align: center;
 }
+@media (min-width: 1024px) {
+  footer {
+    border-bottom: 1px solid;
+  }
+}
 footer a {
   text-decoration: underline;
 }
@@ -341,6 +346,11 @@ footer .icon-love {
   margin: 0 4px;
 }
 
+@media (min-width: 1024px) {
+  footer {
+    border-color: #f7f7f7;
+  }
+}
 footer a, footer p {
   color: #cccccc;
 }
@@ -849,5 +859,4 @@ footer a, footer p {
 main {
   margin-top: 60px;
 }
-
 /*# sourceMappingURL=main.css.map */

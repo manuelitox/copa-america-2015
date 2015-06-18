@@ -1,8 +1,13 @@
 $th-footer-main: (
+	border: map-get($colors, lg-gray),
 	txt: map-get($colors, gray)
 ) !default;
 
 footer {
+	
+	@include breakpoint('large') {
+		border-color: map-get($th-footer-main, border);		
+	}
 
 	a, p {
 		color: map-get($th-footer-main, txt);
