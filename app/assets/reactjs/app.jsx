@@ -34,7 +34,7 @@ APP = React.createClass({
 					{ this.state.section == 'final' ? <FinalPhase urls={ this.state.finalUrls } section={ this.setSection } /> : null }
 				</main>
 				<footer>
-					<p>Hecho con <span className="icon-love"></span> por <a href="#" target="_blank">Manuelitox</a></p>
+					<p>Hecho con <span className="icon-love"></span> por <a href="http://manuelitox.com" target="_blank">Manuelitox</a></p>
 				</footer>
 			</div>
 		);
