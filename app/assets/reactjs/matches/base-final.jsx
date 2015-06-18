@@ -33,7 +33,7 @@ module.exports = React.createClass({
 		section;
 	},
 	enableRefresh: function() {
-		return this.state.isRefresh ? <button onClick={ this.setIsRefresh }>Actualizar</button> : null;
+		return this.state.isRefresh ? <button className="btn-refresh" onClick={ this.setIsRefresh }>Actualizar resultado</button> : null;
 	},
 	storageLS: function() {
 		if (!Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor)) {
@@ -80,7 +80,6 @@ module.exports = React.createClass({
 	 	} 		
 		return (
 			<div className="match">
-				{ this.props.enableRefresh ? this.enableRefresh() : null }
 				<form className="match--form" name={ this.props.match.id }>
 					<fieldset>
 						<div className="match--date">
@@ -100,6 +99,7 @@ module.exports = React.createClass({
 							id={ this.props.match.id } />
 					</fieldset>
 				</form>
+				{ this.props.enableRefresh ? this.enableRefresh() : null }				
 			</div>
 		);
 	}

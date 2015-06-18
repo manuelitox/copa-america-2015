@@ -473,6 +473,20 @@ button:focus, button:active {
   border-color: #cccccc;
 }
 
+.btn-refresh {
+  height: 36px;
+  width: 200px;
+  border-radius: 2px;
+  display: block;
+  line-height: 36px;
+  margin: 0 auto 20px;
+}
+
+.btn-refresh {
+  background-color: #308ad9;
+  color: white;
+}
+
 .groups {
   clear: both;
   float: left;
@@ -598,5 +612,4 @@ button:focus, button:active {
 main {
   margin-top: 60px;
 }
-
 /*# sourceMappingURL=main.css.map */

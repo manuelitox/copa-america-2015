@@ -1,0 +1,7 @@
+.btn-refresh {
+	@include sizes(200px, 36px);
+	border-radius: 2px;
+	display: block;
+	line-height: 36px;
+	margin: 0 auto 20px;
+}

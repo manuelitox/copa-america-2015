@@ -611,7 +611,7 @@ module.exports = React.createClass({displayName: "exports",
 		section;
 	},
 	enableRefresh: function() {
-		return this.state.isRefresh ? React.createElement("button", {onClick:  this.setIsRefresh}, "Actualizar") : null;
+		return this.state.isRefresh ? React.createElement("button", {className: "btn-refresh", onClick:  this.setIsRefresh}, "Actualizar resultado") : null;
 	},
 	storageLS: function() {
 		if (!Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor)) {
@@ -658,7 +658,6 @@ module.exports = React.createClass({displayName: "exports",
 	 	} 		
 		return (
 			React.createElement("div", {className: "match"}, 
-				 this.props.enableRefresh ? this.enableRefresh() : null, 
 				React.createElement("form", {className: "match--form", name:  this.props.match.id}, 
 					React.createElement("fieldset", null, 
 						React.createElement("div", {className: "match--date"}, 
@@ -677,7 +676,8 @@ module.exports = React.createClass({displayName: "exports",
 							goals:  this.state.goalsVisitor, 
 							id:  this.props.match.id})
 					)
-				)
+				), 
+				 this.props.enableRefresh ? this.enableRefresh() : null				
 			)
 		);
 	}
