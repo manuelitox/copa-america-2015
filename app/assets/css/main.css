@@ -279,10 +279,50 @@ button:focus, button:active {
   background-size: 23px;
   display: inline-block;
 }
-.navigation li.actived svg path {
+.navigation li.actived svg {
+  -webkit-animation: refresh .4s 1;
+          animation: refresh .4s 1;
+  position: relative;
+}
+.navigation li.actived path {
   fill: white;
 }
 
+@-webkit-keyframes refresh {
+  0% {
+    left: 4px;
+  }
+  25% {
+    left: -4px;
+  }
+  50% {
+    left: 4px;
+  }
+  75% {
+    left: -4px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes refresh {
+  0% {
+    left: 4px;
+  }
+  25% {
+    left: -4px;
+  }
+  50% {
+    left: 4px;
+  }
+  75% {
+    left: -4px;
+  }
+  100% {
+    left: 0;
+  }
+}
 .titles {
   height: 40px;
   text-align: center;
@@ -558,4 +598,5 @@ button:focus, button:active {
 main {
   margin-top: 60px;
 }
+
 /*# sourceMappingURL=main.css.map */
