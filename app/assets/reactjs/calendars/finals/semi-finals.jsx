@@ -7,7 +7,8 @@ Matches = require('../../matches/base-final.jsx');
 module.exports = React.createClass({
 	getInitialState: function() {
 		return ({  
-			title: 'Semifinales'
+			title: 'Semifinales',
+			enableRefresh: true			
 		});
 	},
 	populateSemis: function(matches) {
@@ -29,9 +30,17 @@ module.exports = React.createClass({
 		if (localStorage.CF4 != undefined) {
 			this.populateSemis(this.props.matches);
 		}
-		var matchesNode;
+		var matchesNode, section = this.props.section, enableRefresh = this.state.enableRefresh;
 		matchesNode = this.props.matches.map(function (match, index) {
-			return ( <Matches key={ index } identify={ index } match={ match.matches[0] } type='SF' /> );
+			return ( 
+				<Matches 
+					key={ index } 
+					identify={ index } 
+					match={ match.matches[0] } 
+					type='SF' 
+					section={ section } 
+					enableRefresh={ enableRefresh } /> 
+			);
 		});		
 		return (
 			<div className="final--semi">

@@ -9,20 +9,31 @@ module.exports = React.createClass({
 		return {
 			goalsLocal: this.findCF().local,
 			goalsVisitor: this.findCF().visitor,
-			isActive: false
+			isActive: false,
+			isRefresh: false
 		};
 	},	
 	setGoalsLocal: function(e) {
 		this.setState({ 
 			goalsLocal: e.target.value, 
-			isActive: true
+			isActive: true,
+			isRefresh: true
 		});
 	},
 	setGoalsVisitor: function(e) {
 		this.setState({ 
 			goalsVisitor: e.target.value,
-			isActive: true			
+			isActive: true,
+			isRefresh: true			
 		});
+	},
+	setIsRefresh: function(e) {
+		var section = this.props.section('final');
+		this.setState({ isRefresh: false });
+		section;
+	},
+	enableRefresh: function() {
+		return this.state.isRefresh ? <button onClick={ this.setIsRefresh }>Actualizar</button> : null;
 	},
 	storageLS: function() {
 		if (!Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor)) {
@@ -65,10 +76,11 @@ module.exports = React.createClass({
  	render: function() {
  		var _this = this;
  		if (this.state.isActive) {
- 				_this.storageLS()
+ 			_this.storageLS();
 	 	} 		
 		return (
 			<div className="match">
+				{ this.props.enableRefresh ? this.enableRefresh() : null }
 				<form className="match--form" name={ this.props.match.id }>
 					<fieldset>
 						<div className="match--date">

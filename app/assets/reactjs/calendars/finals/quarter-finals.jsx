@@ -8,9 +8,10 @@ ClassifiedTeams = require('./classified-teams.jsx');
 module.exports = React.createClass({
 	getInitialState: function() {
 		return ({  
-			title: 'Cuartos de Final'
+			title: 'Cuartos de Final',
+			enableRefresh: true
 		});
-	},
+	},	
 	populateQuarters: function(matches, winners, twoBestThirdPlaces) {
 		var _this = this;
 		matches.map(function (match, index) {
@@ -44,9 +45,17 @@ module.exports = React.createClass({
 				this.populateQuarters(this.props.matches, classifiedTeams.winners, classifiedTeams.twoBestThirdPlaces);
 			}
 		}
-		var matchesNode;
+		var matchesNode, section = this.props.section, enableRefresh = this.state.enableRefresh;
 		matchesNode = this.props.matches.map(function (match, index) {
-			return ( <Matches key={ index } identify={ index } match={ match.matches[0] } type="CF" /> );
+			return ( 
+				<Matches 
+					key={ index } 
+					identify={ index } 
+					match={ match.matches[0] } 
+					type="CF" 
+					section={ section } 
+					enableRefresh={ enableRefresh } /> 
+			);
 		});
 		return (
 			<div className="final--quarter">

@@ -32,7 +32,7 @@ APP = React.createClass({displayName: "APP",
 				React.createElement("main", null, 
 					 this.state.section == 'calendar' ? React.createElement(CalendarGroups, {group:  this.state.group, url:  this.state.calendarUrl}) : null, 
 					 this.state.section == 'groups' ? React.createElement(Standings, {group:  this.state.group, url:  this.state.teamsUrl}) : null, 
-					 this.state.section == 'final' ? React.createElement(FinalPhase, {urls:  this.state.finalUrls}) : null
+					 this.state.section == 'final' ? React.createElement(FinalPhase, {urls:  this.state.finalUrls, section:  this.setSection}) : null
 				)
 			)
 		);
@@ -105,8 +105,8 @@ module.exports = React.createClass({displayName: "exports",
 		this.getGroups()
 		return (
 			React.createElement("section", {className:  this.isNotCompleted() }, 
-				React.createElement(QuarterFinals, {matches:  this.filterByType('Quarter final') }), 
-				React.createElement(SemiFinals, {matches:  this.filterByType('Semi finals') }), 
+				React.createElement(QuarterFinals, {matches:  this.filterByType('Quarter final'), section:  this.props.section}), 
+				React.createElement(SemiFinals, {matches:  this.filterByType('Semi finals'), section:  this.props.section}), 
 				React.createElement(ThirdPlace, {matches:  this.filterByType('Third-place') }), 
 				React.createElement(Final, {matches:  this.filterByType('Final') })
 			)
@@ -189,7 +189,8 @@ Matches = require('../../matches/base-final.jsx');
 module.exports = React.createClass({displayName: "exports",	 
 	getInitialState: function() {
 		return ({  
-			title: 'Final'
+			title: 'Final',
+			enableRefresh: false			
 		});
 	},	
 	populateFinal: function(matches) {
@@ -206,9 +207,14 @@ module.exports = React.createClass({displayName: "exports",
 		if (localStorage.SF2 != undefined) {
 			this.populateFinal(this.props.matches);
 		}			
-		var matchesNode;
+		var matchesNode, enableRefresh = this.state.enableRefresh;
 		matchesNode = this.props.matches.map(function (match, index) {
-			return ( React.createElement(Matches, {key:  index, match:  match.matches[0] }) );
+			return ( 
+				React.createElement(Matches, {
+					key:  index, 
+					match:  match.matches[0], 
+					enableRefresh:  enableRefresh }) 
+			);
 		});			
 		return (
 			React.createElement("div", {className: "final--end"}, 
@@ -229,9 +235,10 @@ ClassifiedTeams = require('./classified-teams.jsx');
 module.exports = React.createClass({displayName: "exports",
 	getInitialState: function() {
 		return ({  
-			title: 'Cuartos de Final'
+			title: 'Cuartos de Final',
+			enableRefresh: true
 		});
-	},
+	},	
 	populateQuarters: function(matches, winners, twoBestThirdPlaces) {
 		var _this = this;
 		matches.map(function (match, index) {
@@ -265,9 +272,17 @@ module.exports = React.createClass({displayName: "exports",
 				this.populateQuarters(this.props.matches, classifiedTeams.winners, classifiedTeams.twoBestThirdPlaces);
 			}
 		}
-		var matchesNode;
+		var matchesNode, section = this.props.section, enableRefresh = this.state.enableRefresh;
 		matchesNode = this.props.matches.map(function (match, index) {
-			return ( React.createElement(Matches, {key:  index, identify:  index, match:  match.matches[0], type: "CF"}) );
+			return ( 
+				React.createElement(Matches, {
+					key:  index, 
+					identify:  index, 
+					match:  match.matches[0], 
+					type: "CF", 
+					section:  section, 
+					enableRefresh:  enableRefresh }) 
+			);
 		});
 		return (
 			React.createElement("div", {className: "final--quarter"}, 
@@ -287,7 +302,8 @@ Matches = require('../../matches/base-final.jsx');
 module.exports = React.createClass({displayName: "exports",
 	getInitialState: function() {
 		return ({  
-			title: 'Semifinales'
+			title: 'Semifinales',
+			enableRefresh: true			
 		});
 	},
 	populateSemis: function(matches) {
@@ -309,9 +325,17 @@ module.exports = React.createClass({displayName: "exports",
 		if (localStorage.CF4 != undefined) {
 			this.populateSemis(this.props.matches);
 		}
-		var matchesNode;
+		var matchesNode, section = this.props.section, enableRefresh = this.state.enableRefresh;
 		matchesNode = this.props.matches.map(function (match, index) {
-			return ( React.createElement(Matches, {key:  index, identify:  index, match:  match.matches[0], type: "SF"}) );
+			return ( 
+				React.createElement(Matches, {
+					key:  index, 
+					identify:  index, 
+					match:  match.matches[0], 
+					type: "SF", 
+					section:  section, 
+					enableRefresh:  enableRefresh }) 
+			);
 		});		
 		return (
 			React.createElement("div", {className: "final--semi"}, 
@@ -331,7 +355,8 @@ Matches = require('../../matches/base-final.jsx');
 module.exports = React.createClass({displayName: "exports",
 	getInitialState: function() {
 		return ({  
-			title: 'Tercer y Cuarto lugar'
+			title: 'Tercer y Cuarto lugar',
+			enableRefresh: false			
 		});
 	},	
 	populateThirdPlace: function(matches) {
@@ -348,9 +373,14 @@ module.exports = React.createClass({displayName: "exports",
 		if (localStorage.SF2 != undefined) {
 			this.populateThirdPlace(this.props.matches);
 		}		
-		var matchesNode;
+		var matchesNode, enableRefresh = this.state.enableRefresh;
 		matchesNode = this.props.matches.map(function (match, index) {
-			return ( React.createElement(Matches, {key:  index, match:  match.matches[0] }) );
+			return ( 
+				React.createElement(Matches, {
+					key:  index, 
+					match:  match.matches[0], 
+					enableRefresh:  enableRefresh }) 
+			);
 		});			
 		return (
 			React.createElement("div", {className: "final--semi"}, 
@@ -557,20 +587,31 @@ module.exports = React.createClass({displayName: "exports",
 		return {
 			goalsLocal: this.findCF().local,
 			goalsVisitor: this.findCF().visitor,
-			isActive: false
+			isActive: false,
+			isRefresh: false
 		};
 	},	
 	setGoalsLocal: function(e) {
 		this.setState({ 
 			goalsLocal: e.target.value, 
-			isActive: true
+			isActive: true,
+			isRefresh: true
 		});
 	},
 	setGoalsVisitor: function(e) {
 		this.setState({ 
 			goalsVisitor: e.target.value,
-			isActive: true			
+			isActive: true,
+			isRefresh: true			
 		});
+	},
+	setIsRefresh: function(e) {
+		var section = this.props.section('final');
+		this.setState({ isRefresh: false });
+		section;
+	},
+	enableRefresh: function() {
+		return this.state.isRefresh ? React.createElement("button", {onClick:  this.setIsRefresh}, "Actualizar") : null;
 	},
 	storageLS: function() {
 		if (!Checking.winnerFinalPhase(this.props.match, this.state.goalsLocal, this.state.goalsVisitor)) {
@@ -613,10 +654,11 @@ module.exports = React.createClass({displayName: "exports",
  	render: function() {
  		var _this = this;
  		if (this.state.isActive) {
- 				_this.storageLS()
+ 			_this.storageLS();
 	 	} 		
 		return (
 			React.createElement("div", {className: "match"}, 
+				 this.props.enableRefresh ? this.enableRefresh() : null, 
 				React.createElement("form", {className: "match--form", name:  this.props.match.id}, 
 					React.createElement("fieldset", null, 
 						React.createElement("div", {className: "match--date"}, 
